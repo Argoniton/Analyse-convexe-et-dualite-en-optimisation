@@ -1,0 +1,154 @@
+IMAT
+Analyse dp
+Application mécanique, optimisation probabilités, géométrie algébrique, codage orthographique, informatique. Numérique.
+imath.fr
+Buchitte Guy
+google scholar
+
+\title {Analyse convexe et dualité en optimisation}
+1. Principes généraux en optimisation
+2. Analyse convexe
+3. Problèmes en dualité (en dimension infinie)
+4. Application en transport optimal
+
+Problèmes du calcul des variations.
+\chapter{}
+On considère des problèmes du type: $\inf\{F(u)|u\in X}X$ espace vectoriel (Banach de dimension infinie)
+$F:u\in X-> ]-∞,+∞]$
+\begin{itemize}
+	\item Existence d'un minimisation ù
+	\item Unicité?
+	\item Conditions d'optimalisés
+\end{itemize}
+Nécessaire ou suffisante ou des deux.
+Si dom $F≠ø$.
+\begin{remarque}
+	Il existe une suite $(u_n)$ dans $X$ telle que 
+	$\lim_{n\to∞}F(u_n)=\inf_X F$
+\end{remarque}
+\begin{notation}
+	$dom F=\{u\in X|F(u)<+∞\}$.
+\end{notation}
+Si dom $F≠ø$ => $\inf F<+∞$. $\forall α>\inf F \exists u\in X tel que \inf_XF≤F(u)<α$. $(u_n)$ est une suite minimisante.
+
+
+\section{Cas $X=\R^N$} % (fold)
+\label{sec:cas_x_r_n}
+
+% section cas_x_r_n (end)Cas $X=\R^N$. 
+Soit $f:\R^N->\R$ continue et $C$ une partie \underline{fermée, non vide} de $\R^N$.
+	\begin{theorem}
+		$f$ atteint son minimum sur $C$ sous l'une des conditions suivantes:
+		\begin{enumerate}
+			\item $C$ est bornée
+			\item $\lim_{\norm{x}->+∞}$ (coercitive)
+		\end{enumerate}
+	\end{theorem}
+	\begin{proof}
+		Soit $(x_n)$ une suite minimalé i.e. $x_n\in C$ et $f(x_n)-> α:=\inf_Xf$.
+		Cas i) $x_n\in C$ compact => $\exists x_{n_k}$, $\exists \bar x | x_{n_k}\to\bar x$.
+		Alors $α=\lim_{n\to∞}f(x_{n_k})=f(\bar x)$ par continuité de $f$ au pt $\bar x$
+		Cas ii) Soit $β>α$. Puisque $f(x)\to+∞$ qd $n\norm{x}\to∞$ : $\exists R>0 | f(x)>β si \norm{x}≥R$.
+		D'autre part $\exists N|\forall n≥N f(x_n)≤β$. Donc on a $\norm{x_n}≤R \forall n≥N$ et la suite $(x_n)$ est bornée.
+		Donc $\exists x_{n_k}$, $\exists \bar x\in \R^N | x_{n_k}\to \bar x$.
+		$x_{n_k}\in C$ fermé et $x_{n_k}\to \bar x |$ => $\bar x\in C$.
+		donc on a: $\bar x\in C$ et $f(x)=\lim_{k\to ∞} f(x_{n_k})=α=\inf_C f$
+		Bien on a: $F:X->]-∞,+∞]$
+	\end{proof}
+	$F(x)= f(s)$ si $x\in C$ $+∞$ sinon, $X=\R^n$
+	$\inf_C f=\inf_X F$.
+	\begin{remark}
+		Ici $F$ n'est pas continue mais dans les cas i) et ii), on a $\lim_{\norm{x}\to∞}F(x)=+∞$. En optimisation $f$ s'appelle le critère et $C$ est la contrainte.
+		$F=f+δ_C$. Où $δ_C = 0$ si $x\in C$ et $+∞$ sinon.
+	\end{remark}
+	Mais $F$ vérifie la propriété $x_n\to x$ => $\lim\inf_{n\to ∞} F(x_n)≥F(x)$
+	($\lim\inf_{n\to∞}F(x)=\liminf_{n\to ∞}[f(x_n)+δ_C(x_n)]≥\underbrace{\lim\inf_{n\to∞} f(x_n)}_{f(x)}+\underbrace{\lim\inf_{n\to ∞}δ_C(x_n))}_{≥δ_C(x)}$)
+	$\lim\inf_{n\to +∞} δ_C(x_n)\overset{?}≥δ_C(x)$. \underline{1er} cas $\lim\inf_{n\to ∞}δ_C(x_n)<+∞$. $\forall N\exists n> N\ x_n\in C$ => $\exists x_{n_k}|x_{n_k}\in C \forall k$ => $x\in C$ ($C$ est fermé) => $δ_C(x)=0$. \underline{2me} cas $\lim\inf_{n\to ∞}δ_C(x_n)=+∞$ trivial.
+	
+	Autre preuve
+	$x\in C $trivial $x\not\in C$ => $\exists N|x_n\not\in C\ \forall n≥N$ => $δ_C(x_n)=+∞ \forall n≥N$. 
+	
+	\begin{definition}
+		$F: (X,d)->]-∞,+∞]$ espace métrique est demi-continue inférieure au point $x\in X$ si $\forallα<F(x) \exists R>0 | d(x,y)<R $=> $F(y)>α$ (on bien $\exists V$ ouvert contenant $x$ tel que $\inf_VF>α$)
+	\end{definition}
+	\begin{definition}
+		$F$ est s.c.i sur $X$ (f.s.c. fermer semi-continuons) si $F$ est s.c.i. en tout point $x\in X$.
+	\end{definition}
+	\begin{lemme}
+		$F$ est s.c.i. sur $X$ si et seulement si l'une des conditions suivantes est vérifié:
+		\begin{enumerate}
+			\item  $\forall R\in\R |\{F≤R\}$ est un fermé de $X$ ($\{F≤R\}=\{x\in X|F(u)≤R\}$)
+			\item L'ensemble $\epi F=\{(u,x)\in X\times \R|F(u)≤α\}$ est fermé dans $X\times\R$.
+			\item On a pour toute suite $(u_n)$ dans $X$ $u_n\to u$ => $\lim\inf_{n\to ∞} F(u_n)≥F(u)$ 
+		\end{enumerate}
+	\end{lemme}
+	$X=\R$
+	$F(x)=\cases{0}{x≠0}{-1}{x=0}$ $\epi F=\{(x,α), F(x)≤α\}$. $F_n(x)=\cases{0}{x≤0\text{ ou } x≥\frac 1n}{1-n\abs{x}}{0≤\abs{x}≤\frac 1n}$.
+
+\begin{theorem}
+	Soit $F:X->]-∞,+∞]$ où $X$ est un e.v.n. local compact; $F$ s.c.i. et coercive alors F atteint son minimum et l'ensemble ses solutions $\Argmin F=\{u\in X| F(x)=\inf F\}$ est un compact non vide. 
+\end{theorem}
+\begin{proof}
+	Soit α_n une suite de de réels telle que: $α_{n+1}≤α_n$. $α_n\to \inf_XF α_n>\inf_X F$. Posons $K_n=\{u\in X|F(u)≤α_n\}$. On a:
+	\begin{itemize}
+		\item $K_n≠ø$ (car $α_n>\inf F$)
+		\item $K_{n+1}\subset K_n$ (car $α_{n+1}<α_n$)
+		\item $K_n$ fermé (car $F$ est s.c.i.)
+	\end{itemize}
+	Posons $K=\cap_{n=1}^{n=+∞}K_n$. Si $\lim_{\norm{u}\to+∞}F(u)=+∞$, alors $\exists R>0$. $K_n\subset\{\norm{u}≤R\}$ (c'est compact de $X$) $\forall n$. (car $\exists R>0 | \norm{u{>r => F(u)>α_n \forall n}}$)
+	$(K_n)$ et une suite \> de compacts non vides: $K_n$ est fermé borné
+	Donc $K=\cap K_n$ est donc un compact non vide. Or $K=\{u\in X| F(u)≤α_n\forall n\} =\{u\in X| F(u)≤\inf_X F\}=\Argmin F$.
+\end{proof}
+\begin{problem}
+	X Banach \dim X=+∞ => X non local compact;
+	Idée: utiliser une topologie G plus faible que la topologie de la norme et telle que:
+	\begin{itemize}
+		\item F est G s.c.i. et \forall α|\{F≤α\} est G-compact.
+	\end{itemize}
+\end{problem}
+\section{Cas où $X$ est un Hilbert} % (fold)
+\label{sec:cas_ou_x_est_un_hilbert}
+\begin{rappel}
+	$X$ Hilbert avec produit scalaire $(u|v)$ $\norm{u}=\sqrt{(u|u)}$. Soit $C$ \textsc{convexe} fermé non vide de $X$. $x\in X$ $f:y\in X->\norm{x-y}$.
+	$\inf_{y\in C} \norm{x-y}=d(x,C)$ distance de $x$ à $C$.
+\end{rappel}
+\begin{theorem}
+	$\exists! x^\ast \in C$ tel que $\norm{x-x^*}=d(x,C)=\inf_{y\in C}\norm{x-y}$. (ici $F(y)=\norm{x-y}+δ_C(y)$).
+\end{theorem}
+\begin{remark}
+	$F$ est s.c.i. et coercive. ($\lim_{\norm{y}\to+∞}\norm{x-y}=+∞)$ mais $X$ n'est pas local compact.
+\end{remark}
+\begin{proof}
+	Soit $(y_n)$ une suite dans $C$ telle que $\norm{x-y_n}\to α=d(x,C)$. Alors on montre que $(y_n)$ est une suite de Cauchy en utilisant:
+	$\norm{a-b}^2+\norm{a+b}^2=2\norm{a}^2+2\norm{b}^2$
+	$a=\frac{x-y_n}2$, $b=\frac{x-y_m}2$.
+	donc $\frac{\norm{y_n-y_m}^2}4+\norm{x-\frac{y_n+y_m}2}^2 = \frac{\norm{x-y_n}^2}2+\frac{\norm{x-y_m}^2}2\to α^2$ ($C$ convexe $\frac{y_n+y_m}2\in C$ et $\norm{x-\frac{y_n+y_m}2}≥α$)
+\end{proof}
+
+x_1^*, x_2^* solutions => x_1^* + x_2^*/2 solution.
+0≤\norm{x-\frac{x_1^*+ x_2^*}2}≤\frac 12 \norm{x-x_1^*}+\frac 12 \norm{x-x_1^*}< \frac 12 α+\frac 12 α
+
+x^* est solution <=> Re((x^*-x|x^*-y))≤0 \forall y\in C.
+X espace de Hilbert sur \R a(u,v) ferme bilinéaire symétrique: (a(v, u)=a(u, v)).
+Telle que
+\begin{itemize}
+	\item \abs{a(u,v)}≤C\norm{u}\norm{v} (continuité) \forall(a,v)\in X\times X
+	\item (i) \exists k> 0 a(u,u)≥k\norm{u}^2 \foral u\in X (ii) 
+	\item f une forme linéaire continue sur X (f\in X^*) (notation \expval{f,u} au bien de f(v)).
+\end{itemize}
+\begin{theorem}[Lax-Milgram]
+	\exists!u\in X tel que a(u,v)=\expval{f,v} \forall v\in X. De plus, si on pose F(u)=\frac 12 a(v,u)-\expval{f,v}, on a: F(u)≤F(v) \forall v\in X (i.e. F(u)=\min_X F) et u est l'unique minimiser de F.
+\end{theorem}
+\begin{remark}
+	F est continue d'après i) (exo) \lim_{\norm{u}\to ∞}F(u)=+∞ d'après ii) (exo) (F(u)≥k\norm{u}^2 - \expval{f,u}≥k\norm{u}^2_X-\norm{f}_{X^*}\norm{u}_X) F est convexe.
+\end{remark}
+\begin{corollary}[Stampacchia]
+	Soit C un convexe fermé de X et E(v)=\frac 12 a(v,v)-\expval{f,v} (qui est convexe, continue, convexe sur X)
+	(F(v)=E(v)+δ_C(v)).
+	Alors \exists! u\in C tel que E(u)=\inf_{v\in C} E(v) u est caractérisée par l'inéquation:
+	a(u,v-u)≥\expval{f,v-u} \forall v\in C. 
+\end{corollary}
+\begin{remark}
+	On prenont C=X, on retrouve Lux-Milgran car a(u,w)≥\expval{f,w} \forall w\in X (w=v-u) => a(u,w)=\expval{f,w}.
+\end{remark}
+% section cas_ou_x_est_un_hilbert (end)
