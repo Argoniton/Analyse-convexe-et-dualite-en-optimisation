@@ -1,18 +1,19 @@
-IMAT
-Analyse dp
-Application mécanique, optimisation probabilités, géométrie algébrique, codage orthographique, informatique. Numérique.
-imath.fr
-Buchitte Guy
+IMAT\\
+Analyse dp\\
+Application mécanique, optimisation probabilités, géométrie algébrique, codage orthographique, informatique. Numérique.\\
+imath.fr\\
+Buchitte Guy,
 google scholar
 
-\title {Analyse convexe et dualité en optimisation}
+\title{Analyse convexe et dualité en optimisation}
 1. Principes généraux en optimisation
 2. Analyse convexe
 3. Problèmes en dualité (en dimension infinie)
 4. Application en transport optimal
 
 Problèmes du calcul des variations.
-\section{Principes généraux en optimisation}
+\chapter{Principes généraux en optimisation}
+\section{initiation}
 On considère des problèmes du type: $\inf\{F(u)|u\in X\}$, où $X$---espace vectoriel (Banach de dimension infinie)
 $F:u\in X\rightarrow  ]-∞,+∞]$
 \begin{itemize}
@@ -27,63 +28,64 @@ Si dom $F≠ø$.
 	$\lim_{n\to∞}F(u_n)=\inf_X F$
 \end{remark}
 \begin{notations}
-	$dom F=\{u\in X|F(u)<+∞\}$.
+	$\dom F=\{u\in X|F(u)<+∞\}$.
 \end{notations}
-Si dom $F≠ø$ $\Rightarrow$ $\inf F<+∞$. $\forall α>\inf F \exists u\in X tel que \inf_XF≤F(u)<α$. $(u_n)$ est une suite minimisante.
-
+Si dom $F≠ø$ $\Rightarrow$ $\inf F<+∞$. $\forall α>\inf_XF \exists u\in X$ tel que $\inf_XF≤F(u)<α$. $(u_n)$ est une suite minimisante.
 
 \section{Cas $X=\R^N$} % (fold)
 \label{sec:cas_x_r_n}
 
 % section cas_x_r_n (end)Cas $X=\R^N$. 
 Soit $f:\R^N\rightarrow \R$ continue et $C$ une partie \underline{fermée, non vide} de $\R^N$.
-	\begin{theorem}
-		$f$ atteint son minimum sur $C$ sous l'une des conditions suivantes:
-		\begin{enumerate}
-			\item $C$ est bornée
-			\item $\lim_{\norm{x}\rightarrow +∞}$ (coercitive)
-		\end{enumerate}
-	\end{theorem}
-	\begin{proof}
-		Soit $(x_n)$ une suite minimalé i.e. $x_n\in C$ et $f(x_n)\rightarrow  α:=\inf_Xf$.
-		Cas i) $x_n\in C$ compact $\Rightarrow$ $\exists x_{n_k}$, $\exists \bar x | x_{n_k}\to\bar x$.
-		Alors $α=\lim_{n\to∞}f(x_{n_k})=f(\bar x)$ par continuité de $f$ au pt $\bar x$
-		Cas ii) Soit $β>α$. Puisque $f(x)\to+∞$ qd $n\norm{x}\to∞$ : $\exists R>0 | f(x)>β si \norm{x}≥R$.
-		D'autre part $\exists N|\forall n≥N f(x_n)≤β$. Donc on a $\norm{x_n}≤R \forall n≥N$ et la suite $(x_n)$ est bornée.
-		Donc $\exists x_{n_k}$, $\exists \bar x\in \R^N | x_{n_k}\to \bar x$.
-		$x_{n_k}\in C$ fermé et $x_{n_k}\to \bar x |$ $\Rightarrow$ $\bar x\in C$.
-		donc on a: $\bar x\in C$ et $f(x)=\lim_{k\to ∞} f(x_{n_k})=α=\inf_C f$
-		Bien on a: $F:X\rightarrow ]-∞,+∞]$
-	\end{proof}
-	$F(x)= f(s)$ si $x\in C$ $+∞$ sinon, $X=\R^n$
-	$\inf_C f=\inf_X F$.
-	\begin{remark}
-		Ici $F$ n'est pas continue mais dans les cas i) et ii), on a $\lim_{\norm{x}\to∞}F(x)=+∞$. En optimisation $f$ s'appelle le critère et $C$ est la contrainte.
-		$F=f+δ_C$. Où $δ_C = 0$ si $x\in C$ et $+∞$ sinon.
-	\end{remark}
-	Mais $F$ vérifie la propriété $x_n\to x$ $\Rightarrow$ $\lim\inf_{n\to ∞} F(x_n)≥F(x)$
-	($\lim\inf_{n\to∞}F(x)=\liminf_{n\to ∞}[f(x_n)+δ_C(x_n)]≥\underbrace{\lim\inf_{n\to∞} f(x_n)}_{f(x)}+\underbrace{\lim\inf_{n\to ∞}δ_C(x_n))}_{≥δ_C(x)}$)
-	$\lim\inf_{n\to +∞} δ_C(x_n)\overset{?}≥δ_C(x)$. \underline{1er} cas $\lim\inf_{n\to ∞}δ_C(x_n)<+∞$. $\forall N\exists n> N\ x_n\in C$ $\Rightarrow$ $\exists x_{n_k}|x_{n_k}\in C \forall k$ $\Rightarrow$ $x\in C$ ($C$ est fermé) $\Rightarrow$ $δ_C(x)=0$. \underline{2me} cas $\lim\inf_{n\to ∞}δ_C(x_n)=+∞$ trivial.
+\begin{theorem}
+	$f$ atteint son minimum sur $C$ sous l'une des conditions suivantes:
+	\begin{enumerate}[(i)]
+		\item $C$ est bornée
+		\item $\lim_{\norm{x}\rightarrow +∞}f(x)≤+∞$ (coercitive)
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Soit $(x_n)$ une suite minimalé i.e. $x_n\in C$ et $f(x_n)\rightarrow  α:=\inf_Xf$.
 	
-	Autre preuve
-	$x\in C $trivial $x\not\in C$ $\Rightarrow$ $\exists N|x_n\not\in C\ \forall n≥N$ $\Rightarrow$ $δ_C(x_n)=+∞ \forall n≥N$. 
+	Cas i) $x_n\in C$ compact $\Rightarrow$ $\exists x_{n_k}$, $\exists \bar x | x_{n_k}\to\bar x$.
+	Alors $α=\lim_{n\to∞}f(x_{n_k})=f(\bar x)$ par continuité de $f$ au pt $\bar x$
 	
-	\begin{definition}
-		$F: (X,d)\rightarrow ]-∞,+∞]$ espace métrique est demi-continue inférieure au point $x\in X$ si $\forallα<F(x) \exists R>0 | d(x,y)<R $$\Rightarrow$ $F(y)>α$ (on bien $\exists V$ ouvert contenant $x$ tel que $\inf_VF>α$)
-	\end{definition}
-	\begin{definition}
-		$F$ est s.c.i sur $X$ (f.s.c. fermer semi-continuons) si $F$ est s.c.i. en tout point $x\in X$.
-	\end{definition}
-	\begin{lemme}
-		$F$ est s.c.i. sur $X$ si et seulement si l'une des conditions suivantes est vérifié:
-		\begin{enumerate}
-			\item  $\forall R\in\R |\{F≤R\}$ est un fermé de $X$ ($\{F≤R\}=\{x\in X|F(u)≤R\}$)
-			\item L'ensemble $\epi F=\{(u,x)\in X\times \R|F(u)≤α\}$ est fermé dans $X\times\R$.
-			\item On a pour toute suite $(u_n)$ dans $X$ $u_n\to u$ $\Rightarrow$ $\lim\inf_{n\to ∞} F(u_n)≥F(u)$ 
-		\end{enumerate}
-	\end{lemme}
-	$X=\R$
-	$F(x)=\left\{\qty{0\text{, si }x≠0 \\-1\text{, si }x=0}\right.$ $\epi F=\{(x,α), F(x)≤α\}$. $F_n(x)=\left\{ \qty{0\text{, si }x≤0\text{ ou } x≥\frac 1n\\1-n\abs{x}\text{, si }0≤\abs{x}≤\frac 1n}\right.$.
+	Cas ii) Soit $β>α$. Puisque $f(x)\to+∞$ qd $n\norm{x}\to∞$ : $\exists R>0 | f(x)>β si \norm{x}≥R$.
+	D'autre part $\exists N|\forall n≥N f(x_n)≤β$. Donc on a $\norm{x_n}≤R\ \forall n≥N$ et la suite $(x_n)$ est bornée.
+	Donc $\exists x_{n_k}$, $\exists \bar x\in \R^N | x_{n_k}\to \bar x$.
+	$x_{n_k}\in C$ fermé et $x_{n_k}\to \bar x$ $\Rightarrow$ $\bar x\in C$.
+	donc on a: $\bar x\in C$ et $f(x)=\lim_{k\to ∞} f(x_{n_k})=α=\inf_C f$
+	Bien on a: $F:X\rightarrow ]-∞,+∞]$
+\end{proof}
+$F(x)= f(s)$ si $x\in C$ et $+∞$ sinon, $X=\R^n$,
+$\inf_C f=\inf_X F$.
+\begin{remark}
+	Ici $F$ n'est pas continue mais dans les cas i) et ii), on a $\lim_{\norm{x}\to∞}F(x)=+∞$. En optimisation $f$ s'appelle le critère et $C$ est la contrainte.
+	$F=f+δ_C$. Où $δ_C = 0$ si $x\in C$ et $+∞$ sinon.
+\end{remark}
+Mais $F$ vérifie la propriété $x_n\to x$ $\Rightarrow$ $\liminf_{n\to ∞} F(x_n)≥F(x)$
+($\liminf_{n\to∞}F(x)=\liminf_{n\to ∞}[f(x_n)+δ_C(x_n)]≥\underbrace{\liminf_{n\to∞} f(x_n)}_{f(x)}+\underbrace{\liminf_{n\to ∞}δ_C(x_n))}_{≥δ_C(x)}$)
+$\liminf_{n\to +∞} δ_C(x_n)\overset{?}≥δ_C(x)$. \underline{1er} cas $\liminf_{n\to ∞}δ_C(x_n)<+∞$. $\forall N\exists n> N\ x_n\in C$ $\Rightarrow$ $\exists x_{n_k}|x_{n_k}\in C \forall k$ $\Rightarrow$ $x\in C$ ($C$ est fermé) $\Rightarrow$ $δ_C(x)=0$. \underline{2me} cas $\liminf_{n\to ∞}δ_C(x_n)=+∞$ trivial.
+
+Autre preuve.
+$x\in C$---trivial; $x\not\in C$ $\Rightarrow$ $\exists N|x_n\not\in C\ \forall n≥N$ $\Rightarrow$ $δ_C(x_n)=+∞\ \forall n≥N$. 
+
+\begin{definition}
+	$F: (X,d)\rightarrow ]-∞,+∞]$ espace métrique est \textsc{Semi-Continue Inférieure} au point $x\in X$ si $\forallα<F(x)\  \exists R>0\ |\ d(x,y)<R$ $\Rightarrow$ $F(y)>α$ (ou bien $\exists V$ ouvert contenant $x$ tel que $\inf_VF>α$)
+\end{definition}
+\begin{definition}
+	$F$ est f.c.i sur $X$ (f.s.c.---\textsc{Fermer Semi-Continuons}) si $F$ est s.c.i. en tout point $x\in X$.
+\end{definition}
+\begin{lemme}
+	$F$ est s.c.i. sur $X$ si et seulement si l'une des conditions suivantes est vérifié:
+	\begin{enumerate}
+		\item  $\forall R\in\R |\{F≤R\}$ est un fermé de $X$ ($\{F≤R\}=\{x\in X|F(u)≤R\}$)
+		\item L'ensemble $\epi F=\{(u,x)\in X\times \R|F(u)≤α\}$ est fermé dans $X\times\R$.
+		\item On a pour toute suite $(u_n)$ dans $X$ $u_n\to u$ $\Rightarrow$ $\liminf_{n\to ∞} F(u_n)≥F(u)$ 
+	\end{enumerate}
+\end{lemme}
+$X=\R$
+$F(x)=\left\{\mqty{0\text{, si }x≠0 \\-1\text{, si }x=0}\right.$ \\$\epi F=\{(x,α), F(x)≤α\}$. $F_n(x)=\left\{ \mqty{0\text{, si }x≤0\text{ ou } x≥\frac 1n\\1-n\abs{x}\text{, si }0≤\abs{x}≤\frac 1n}\right.$.
 
 \begin{theorem}
 	Soit $F:X\rightarrow ]-∞,+∞]$ où $X$ est un e.v.n. local compact; $F$ s.c.i. et coercive alors F atteint son minimum et l'ensemble ses solutions $\Argmin F=\{u\in X| F(x)=\inf F\}$ est un compact non vide. 
@@ -109,7 +111,7 @@ Soit $f:\R^N\rightarrow \R$ continue et $C$ une partie \underline{fermée, non v
 \section{Cas où $X$ est un Hilbert} % (fold)
 \label{sec:cas_ou_x_est_un_hilbert}
 \begin{rappel}
-	$X$ Hilbert avec produit scalaire $(u|v)$ $\norm{u}=\sqrt{(u|u)}$. Soit $C$ \textsc{convexe} fermé non vide de $X$. $x\in X$ $f:y\in X\rightarrow \norm{x-y}$.
+	$X$ Hilbert avec produit scalaire $(u|v)$ $\norm{u}=\sqrt{(u|u)}$. Soit $C$ \emph{convexe} fermé non vide de $X$; $x\in X$ $f:y\in X\rightarrow \norm{x-y}$;
 	$\inf_{y\in C} \norm{x-y}=d(x,C)$ distance de $x$ à $C$.
 \end{rappel}
 \begin{theorem}
@@ -128,7 +130,7 @@ Soit $f:\R^N\rightarrow \R$ continue et $C$ une partie \underline{fermée, non v
 $x_1^*$, $x_2^*$ solutions $\Rightarrow$ $x_1^* + x_2^*/2$ solution.
 $0≤\norm{x-\frac{x_1^*+ x_2^*}2}≤\frac 12 \norm{x-x_1^*}+\frac 12 \norm{x-x_1^*}< \frac 12 α+\frac 12 α$
 
-$x^*$ est solution $\Leftrightarrow$ $\Re((x^*-x|x^*-y))≤0\$ \forall y\in C$.
+$x^*$ est solution $\Leftrightarrow$ $\Re((x^*-x|x^*-y))≤0$ $\forall y\in C$.
 $X$ espace de Hilbert sur $\R$, $a(u,v)$ forme bilinéaire symétrique: $(a(v, u)=a(u, v))$.
 Telle que
 \begin{itemize}
@@ -151,4 +153,191 @@ Telle que
 \begin{remark}
 	On prenant $C=X$, on retrouve Lux-Milgran car $a(u,w)≥\expval{f,w}$ $\forall w\in X (w=v-u)$ $\Rightarrow$ $a(u,w)=\expval{f,w}$.
 \end{remark}
+
+$a:X\times X\rightarrow \R$ $f\in X^*$
+$\left\{\mqty{a(u,v)≤M\norm{u}\norm{v}\\a(u,v)≥k\norm{u}^2}\right.$.
+
+$\inf_{u\in C}\{\frac 12 a(u,u)-\expval{f,u}\}$
+$C$ convexe fermé de $X$.
+
+$\exists!\bar u\in C$ tel que $\frac 12 a(\bar u,\bar u)-\expval{f,\bar u}≤\frac 12a(v,v)-\expval{f,v}\ \forall v\in C$. Alors $a(\bar u,v-\bar u)≥\expval{f,v-\bar u}\ \forall v\in C$.
+
+\begin{remark}
+	La fonctionnelle $F(v)=\frac 12 a(v,v)-\expval{f,v}$ est continue sur $X$ (exo). Elle est convexe (même strictement convexe). Elle es coercive car $F(v)≥\frac k2\norm{v}_X^2-\norm{f}_{X^*}\norm{v}_X$ $\Rightarrow$ $\lim_{\norm{v}\to +∞}F(v)=+∞$. Si ($u_n$) est une suite minimisante  sur $C$, alors ($u_n$) est bornée dans $X$. Mais on ne peut pas extraire une sous suite ($u_{n_k}$) telle que $u_{n_k}\to u$ dans $X$ ($X$ n'est pas loc compact).
+\end{remark}
+\begin{proof}
+	(argument analogue à celui du Thm de projection dans un Hilbert)
+	
+	Posons $(u|v)_a=a(u,v)$. C'est une forme bilinéaire symétrique positive: 
+	$(u|u)_a≥k\norm{u}^2>0$ si $u≠0$. Donc c'est un produit scalaire sur $X$. Norme associée $\norm{u}_a=\sqrt{(u|u)_a}$.
+	
+	Les normes $\norm{•}$ et $\norm{•}_a$ sont équivalente car:
+	$k\norm{u}^2≤\norm{u}_a^2≤M\norm{u}^2$. En particulier $(X, \norm{•}_a)$ est un espace de Hilbert. La forme linéaire.
+	$L:v\in X \rightarrow  \expval{f,v}$ est continue dans $(X,\norm{•}_a)$. D'après Riesz:
+	$$\exists !u_0\in X\text{ tel que } (u_0|v)_a=\expval{f,v} \forall v\in X.$$
+	D'après le Thm de projection ($C$ est un convexe ferme de $(X,\norm{•})$):
+	$$\exists!\bar u\in C\text{ tel que } \norm{u_0-\bar u}_a=\inf_{u\in C}\norm{u_0-v}_a.$$
+	En particulier, on aura:
+	$$a(\bar u-u_0,\bar u-u_0)=\inf_{u\in C}a(v-u_0,v-u_0)$$
+	Or $\frac 12a(v-u_0,v-u_0) =\frac{a(v,v)}2-a(v,u_0)+\frac{a(u_0,u_0)}2=\frac 12 a(v,v)-\expval{f,v}+\frac{a(u_0,u_0)}2$ d'où 
+	$\frac 12a(v,v)-\expval{f,v}≥\frac 12 a(\bar u,\bar u)-\expval{f,\bar u} \forall v\in X$. ($\frac 12 a(v-u_0,v-u_0)-\frac{a(u_0,u_0)}2≥\frac{a(\bar u-u_0,\bar u-u_0)}2-\frac{a(u_0,u_0)}2$)
+	
+	En fait on a:
+	$\bar u\in \Argmin_CF$ $\Leftrightarrow$ $\bar u=\proj_Cu_0$.
+	
+	De plus toute suite minimisante $(u_n)$ vérifie $\norm{u_0-u_n}_d\to\inf_{u\in C}\norm{u_0-v}_a$
+	et donc de Cauchy pour $\norm{•}_a$ (donc aussi $\norm{•}$)
+	
+	$\bar u sol$ $\Leftrightarrow$ $\bar u=\proj_Cu_0$ $\Leftrightarrow$ $(u_0-\bar u|u_0-v)_a≤0 \forall v\in C$ $\Leftrightarrow$ $a(u_0-\bar u|v-u_0)≤0\ \forall v\in C$ $\Leftrightarrow$ $a(\bar u-u_0|\bar u-v)≤0\forall v\in C$ $\Leftrightarrow$ $a(\bar u,\bar u-v)≤a(u_0,\bar u-v)$ $\Leftrightarrow$  $a(\bar u,v-\bar u)≥a(u_0,v-\bar u)$ $\Leftrightarrow$ $a(\bar u, v-\bar u)≥\expval{f,v-\bar u}\ \forall v\in C$.
+\end{proof}
+\begin{remark}
+	Si la contrante $C$ est un sous espace vectoriel fermé $V$ de $X$ on obtient:
+	$$\bar u\text{ minimise }\frac 12a(v,v)-\expval{f,v}\text{ sur }X \Leftrightarrow a(\bar u, v)=\expval{f,w}\ \forall w\in V$$
+	
+	Si $V=X$ on obtient l'équation $a(\bar u, w)=\expval{f,w}\forall w\in X$. ($A\bar u|w)=\expval{f,w}$ où $A$ opérateur linéaire auto adjacent-continue de $X$ dans $X$. 
+	$\Rightarrow$ $A\bar u=f$
+\end{remark}
+\begin{rappel}
+	$A\in s(X)$ ($A^*=A$.)
+	$a(u,v)=(Au|v)$ bilinéaire symétrique $|a(u,v)|≤M\norm{u}\norm{v}$
+\end{rappel}
+\begin{example} élémentaire.
+	$X=\{u\in L^2(0,1)\ |\ u'\in L^2(0,1)\}$
+	$u\in X$ $\Leftrightarrow$ $u\in L^2(0,1)$ et $\exists v\in L^2(0,1)$ tel que:
+	$∫_0^1uφ'\dd{x}=-∫_0^1vφ\dd{x}$
+	
+	$\forall f\in C^1(0,1)$ et $φ(0)=φ(1)=0$.
+	\begin{itemize}
+		\item si $u\in C^1$ on trouve $v=u'$	
+		\item si $u$ est $C$ continue, $C^1$ par morceaux 
+		$u = 1$ si $x<\frac12$ et $-1$ si $x>\frac 12$
+		$∫_0^1uφ'=∫_0^{\frac 12}uφ'+∫_{\frac 12}^1uφ'=-∫_0^1 vφ + (u(\frac 12+0)-u(\frac 12 -0))φ(\frac 12)$.
+	\end{itemize}
+	$(u|v)=∫_0^1(uv+u'v')\dd{x}$
+	$\norm{u}^2=∫_0^1(|u|^2+|u'|^2)\dd{x}$.
+	$u\in X$ $\Rightarrow$  $\exists \tilde u=u$ pp $|\tilde u(x)-\tilde u(y)|≤\norm{u'}_{L^2(0,1)}\sqrt{|x-y|}$
+	$x<y$ $|u(x)-u(y)|=|∫_x^yu'(t)\dd{t}|≤\sqrt{|y-x|}\sqrt{∫_0^1|u'|^2\dd{t}}$.
+	$\inf\limits_{\substack{v\in X\\v(0)=v(1)=0}}[\frac 12∫_0^1|u'|^2\dd{x}-∫_0^1fv\dd{x}]$, $f\in L^1(0,1)$.
+	
+	Soit $H=\{u\in X\ |\ u(0)=u(1)=0\}$. $u_n\overset{X}{\to}$ $\Rightarrow$ $u_n\rightarrow u$ uniformément sur $[0,1]$. C'est un sous espace fermé de $X$, donc un Hilbert.
+	
+	Ici $a(u,v)=∫_0^1u'v'\dd{x}$
+	\begin{itemize}
+		\item $|a(u,v)|≤\norm{x'}_{L^2}\norm{v}_{L^2}≤\norm{u}_H\norm{v}_H$
+		\item $a(u,u)=∫_0^1|u'|^2\dd{x}\overset{?}≥ k\norm{u}^2_H$.
+		$u(x)=u(0)+∫_0^1u'(t)\dd{t}$ $\Rightarrow$ $|u(x)|≤\norm{u'}_{L^2}\sqrt{x} ≤\norm{u'}_{L^2}$ $\Rightarrow$ $∫_0^1|u(x)|^2\dd{x}≤\norm{u'}^2_{L^2}$ $\Rightarrow$ $\norm{u}_{L^2}≤\norm{u'}_{L^2}$ si $u\in H$, Donc 2 $a(u,u)≥∫_0^1 {u'}^2\dd{x}+∫_0^1u^2\dd{x}=\norm{u}_H^2$.
+		
+		$a(u,u)≥\frac 12 \norm{u}_H^2$
+		
+		Lax Milgram $\Rightarrow$ $\exists!u\in H\ |\ \frac 12$ ${u'}^2-∫_0^1fu'\dd{x}≤\frac 12∫_0^1|v'|^2-∫_0^1fv\dd{x} \forall v\in H$.
+		
+		Conclusion de la schuhcnu $a(u,v)=\expval{f,v} \forall v\in H$
+		$∫_0^1 u'v'\dd{x}=∫_0^1 fv\dd{x}$,$ \forall v\in H (u(0)=v(1)=0)$.
+		
+		Supposons que la sol $u$ est 2 fois dérivable sur $]0,1[$
+		$∫_0^1u'v'\dd{x}=[u'v]_0^1-∫_0^1u''v\dd{x}$ $\Rightarrow$ $ -∫u''v\dd{x}=∫_0^1 fx\dd{x} \forall v\in H$ $\Leftrightarrow$ $ -u''=f$
+		
+		Ainsi
+		$$\left\{ \mqty{-u''=f\text{ sur } ]0,1[\\u(0)=u(1)=0}\right.$$
+		Posons $f(x)=∫_0^1xf(t)\dd{t}$
+		$-u'=F(x)+λ$.
+		$u(0)=u(1)=0$ $\Rightarrow$ $∫_0^1 u'(t)\dd{t} =0$ $\Rightarrow$ $λ=-∫_0^1F(x)\dd{x}$.
+		$u(x)=u(0)+∫_0^xu'(t)\dd{t}$ $\Rightarrow$ $u(x)=x∫_0^1F(t)\dd{t}-∫_0^xF(t)\dd{t}$.
+	\end{itemize}
+\end{example}
 % section cas_ou_x_est_un_hilbert (end)
+\section{Cas où $X$ est un Banach (non Hilbert)} % (fold)
+\label{sec:cas_ou_x_est_un_banach_non_hilbert}
+On considère une topologie $C$ sur $X$ telle que
+$\forall R\ \{u\in X\ \norm{u}≤R\}$ est $C$-compact.
+\begin{rappel}
+	$C$ est plus faible que la topologie associée a la norme.
+\end{rappel}
+\subsection{Cas Importantes} % (fold)
+\label{sub:cas_importantes}
+\begin{itemize}
+	\item $X$ est un Banach réflexif ($X^*=X$)
+	$x\in X\rightarrow \hat x\in X^{**}$ ou $\hat x(f)=f(x) \forall f\in X^*$ (évaluation de $f$ au point $x$) $\norm{\hat x}_{X^{**}}=\sup_{\norm{f}_{X^*}≤1}\hat x(f)=\sup_{\norm{f}_{X^*}≤1}f(x)=\norm{x}_X$. L'application $x\in X\rightarrow \hat x\in X^{**}$ est une isométrie.
+	
+	$C$=topologie faible de $X$.
+	$x_n\overset{\text{faible}}{\to}x \overset{\text{def}}{\Leftrightarrow}\forall f\in X^*\ f(x_n)\to f(x)$
+	
+	\textbf{Ex}. $X$ Hilbert sur $\R$ $(•|•)$. $f\in X^*$ $\Rightarrow$ $\exists y\in X\ |\ f(x_n)=(x_n|y) $
+	
+	$x_n\overset{\text{faible}}{\to}x$ $\Leftrightarrow$ $(x_n|y)\to (x|y)\ \forall y\in X$. $x_n\overset{\text{febi}}{\to}x$ $\Leftrightarrow$ $x_n\overset{\text{faible}}{\to}x \oplus \limsup_{n\to ∞}\norm{x_n}≤\norm{x}.$
+	
+	On a toujours:
+	$x_n\overset{\text{faible}}{\to}x$ $\Rightarrow$ $\liminf_{n\to∞}\norm{x_n}≥x$ La fondamentale $F(x)=\frac 12\norm{x}^2-f(x)$ est C s.c.i. pour tout $f\in X^*$.
+\end{itemize}
+\begin{rappel}
+	Dans un Banach réflexif pour tout $R>0$, $\{x\in X\ |\ \norm{x}≤R\}$
+	est faiblement-compact. De toute suite bornée $(x_n)$ on peut extraire une sous-suite $(x_{n_k})$ telle que il existe $x\in X$ tel que $x_{n_k}\overset{\text{faible}}{\to}x$ qd $k\to ∞$.
+\end{rappel}
+\begin{exercise}
+	
+	$X$ Hilbert $\{e_n,\ n\in\N\}$ borne orthonormale $\norm{e_n}=1$.
+
+	$\forall y\in X\ (e_n|y)$ $\Rightarrow$ $\lim_{n\to∞}(y|e_n)=0 \forall y\in E e_n\rightharpoonup 0$ faiblement.
+\end{exercise}
+\begin{exercise}
+	$X =L^2(0,1)$ $f_n(x)=\sin(2πnx)$
+	
+	$(f_n|g)=∫_0^1f_n(x)g(x)\dd{x}\to ∫_0^1fg$
+	
+	$|∫_0^1g(x)\sin(2πnx)\dd{x}|=|∫_0^1g'(x)\frac{\cos(2πnx)}{2πn}\dd{x}|≤\frac C{2πn}\to 0$.
+	
+	$∫_0^1g(x)\sin(2πnx)\dd{x}=\frac 12$.
+	$\norm{f_n}=\frac 1{\sqrt{2}}$
+\end{exercise}
+
+$L^p(Ω)$ $Ω\subset\R^N u\in L^p(Ω)$ $\Leftrightarrow$ $∫_Ω |u|^p\dd{x}<+∞$.
+$\norm{u}_{L^p}=(∫_Ω|u|^p\dd{x})^{\frac 1p} p réel \in [1,+∞[$.
+
+$L^∞(Ω)=\{u:Ω\rightarrow  \R\ \exists k\ |\ (u|u)≤k\}$
+$\norm{u}_{L^∞(Ω)}=\inf\{k\ |\ |u(x)|≤k pp\}$
+
+Sii $Ω$ est borne dans $\R^N$ $L^p(Ω)\subset L^q(Ω)$ si $1≤q≤p≤+∞$. $u\in L^∞(Ω)$ $\Rightarrow$ $\norm{u}_{L^∞(Ω)}=\lim_{q\to ∞}\norm{u}_{L^q(Ω)}$
+
+$L^p(Ω)$ est Banach séparable $\forall p\in [1,+∞]$. $L^p(Ω)$ réflexif $\Leftrightarrow$ $1<p<+∞$.
+
+$(L^p(Ω))^*\sim L^{p'}(Ω)$ si $p\in [1,+∞[$ et $p'=\frac p{p-1}$ ($\frac 1p+\frac 1{p'}=1$) ; $p'=∞$ si $p=1$.
+
+$l\in (L^p(Ω))^*$ $\Rightarrow$ $\exists g\in L^{p'}(Ω)$ | $l(f)=∫_Ωfg\dd{x}$
+$\forall f\in L^p(Ω)$, $(L^p(Ω))^{**}\sim (L^{p'})\sim L^p(Ω)$ si $1<p<+∞$.
+
+\paragraph{$L^1(Ω)$ n'est pas réflexif} % (fold)
+
+$Ω=\R$
+$u_n(x)=\left\{\mqty{n \text{ si } 0≤x≤\frac 1n\\0\text{ sinon}}\right.$
+$\norm{u_n}_{L^1(\R)}=1$.
+$u_n\to u$ faiblement dans $L^{1}(\R)$ si (définition) 
+$\forall v\in L^∞$ $∫_0^1u_nv\dd{x}\to ∫_0^1uv\dd{x}$. Soit $v$ continue sur $[0,1]$.
+
+$∫_0^1u_nv\dd{x}=n∫_0^{\frac 1n}v(x)\dd{x}$. Donc $∫_0^1u_nv\dd{x}\to v(0)$.
+$\expval{δ_0,v}=v(0)$. Si $u$ existe, on doit avoir $u(0)=∫uv\dd{x}$.
+
+2eme cas important. $X$ est le dual d'un espace de Bansch séparable $Y$. $X=Y^*$ (ex. $X=L^∞(Ω)$, $Y=L^1(Ω))$)(ex. $X=M_b(\R)$, $Y=C_0(\R)$)
+
+On choisit pour $C$ la topologie *-faible
+Soit $(f_n)$ suite dans $X^*$.
+\begin{definition}
+	$f_n\overset{*}{\to}f$ $\Leftrightarrow$ $\forall x\in X\ f_n(x)\to f(x)$.
+\end{definition}
+
+\begin{theorem}
+	$\norm{f_n}_{X^*}≤M\ \forall n$ $\Rightarrow$ $\exists f_{n_k}$,$ \exists f\in X$ tel que $f_{n_k}\overset{*}{\to}f$.
+\end{theorem}
+\begin{example}
+	Soit $(u_n)$ une suite dans $L^∞(Ω)$ ( $Ω$ ouvert de $\R^N$). Telle que $|u_n(x)|≤M$ pp $x\inΩ$, $\forall n\in \N$. Alors $\exists u\in L^∞(Ω)$, $\exists u_{n_k}\ |\ \lim_{k\to ∞}∫_Ωu_{n_k}v\dd{x}=∫_Ωuv\dd{x}\ \forall v\in L^1(Ω)$.
+\end{example}
+\begin{example}
+	Soit $(ψ_n)$ une suite de mesures positives bornées sur $[0,1]$. Alors $\exists ψ$ mesure borne sur $[0,1]$ telle que
+	$∫_0^1φ\dd{ψ}\to ∫_0^1φ\dd{ψ}$ $\forall φ$ continue sur $[0,1]$
+	$ψ_n=f_n\dd{x} ψ=δ_0$
+	
+	$ψ_n\overset{*}{\to}δ_0, ψ$
+\end{example}
+
+% paragraph l_1_\xCF\x89_n_est_pas_reflexif (end)  
+% subsection cas_importantes (end)
+% section cas_ou_x_est_un_banach_non_hilbert (end)
