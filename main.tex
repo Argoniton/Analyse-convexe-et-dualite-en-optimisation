@@ -338,6 +338,230 @@ Soit $(f_n)$ suite dans $X^*$.
 	$ψ_n\overset{*}{\to}δ_0, ψ$
 \end{example}
 
+$X$ Banach $G$ \texttt{faible} si $X$ réflexif et \texttt{*faible} si $X=Y^\perp Y$ Banach séparable.
+Propreté $\norm{u_n}_X≤C$ $\Rightarrow$ $\exists u\in X \exists u_{nk}\ |\ u_{nk}\overset{G}{\to} u$ 
+
+Notations: $\left\{\mqty{u_n\rightharpoonup u \text{ faible}\\ u_n\overset*\rightharpoonup u \text{ *faible} }\right.$
+
+\begin{theorem}
+	Soit $F:X\rightarrow  ]-∞,+∞]$ telle que: 
+	\begin{enumerate}
+		\item $F$ est $G$ s.c.i. (et $\exists u_0\in X\ F(u_0)<+∞$)
+		\item $\lim_{\norm{u}\to ∞}F(u)=+∞$
+	\end{enumerate}
+	Alors $\Argmin F$ est un $G$-compact non vide de X.
+\end{theorem}
+\begin{proof}
+	(identique au cas $X$ local compact)
+\end{proof}
+\begin{remark}
+	La propriété i) est souvent difficile à établir même si $F$ est continue par la topologie forte de $X$.
+\end{remark}
+\begin{example}
+	$X=\{u\in C^0([0,1])\ |\ u(0)=u(1)=0\ |\ u'\in L^2(0,1)\}$
+	$I=]0,1[$ $\norm{u}_X=\sqrt{∫_0^1|u|^2+|u'|^2\dd{x}}$ ( ou bien $\norm{u}=(∫_0^1 |u'|^2\dd{x})^{\frac 12}$) ($|u(x)|≤∫_0^1 |u'(x)|\dd{x})≤\norm{u'}_{L^2}$ $\Rightarrow$ $\norm{u}_{L^2}≤\norm{u'}_{L^2}$)
+	
+	$X$ est Hilbert noté $H_0^1(I)$ (ou bien $W_0^{1,2}(I)$)
+	
+	Choix de $G$. $G$ topologie faible ($X$ est réflexif)
+	(ou $G$ topologie associe a la convergence uniforme $u_n\overset{G}{\to} si \sup_I|u_n-u|\to 0$)
+	
+	$u_n\rightharpoonup u$ faiblement $\Leftrightarrow$def $\left\{\mqty{u_n\rightharpoonup u\ L^2\mbox{-faible}\\u'_n\rightharpoonup u'\ L^2\mbox{-faible}}\right.$
+	
+	$\overset{Rellich}\Rightarrow$ $u_n\to u$ uniformément.
+	$|u_n(x)-u_n(y)|≤\sqrt{|y-x|}\norm{u'_n}_{L^2} $ 
+\end{example}
+
+\begin{theorem}[Ascoli]
+	$u_n$ continue sur un compact équicontinue et $\forall x (u_n(x))$ bornée dans $\R$ $\Rightarrow$ $\exists u_{nk}$, $\exists u$ continue | $u_{nk}\to u$ uniformément.
+\end{theorem}
+
+$\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
+
+
+	\textbullet On a bien que $\lim_{\norm{u}_X\to +∞}F(u)=+∞$
+	\begin{align*}
+		∫_0^1 |(u')^2-1|\dd{x}&≥∫_0^1|u'|^2-1\\
+		&≥\norm{u}_X^2 -1
+	\end{align*}
+	\textbullet $F$ est elle faiblement s.c.i. Soit $φ$ une fonction 1-périodique de classe $C^1$ telle que $φ(0)=φ(1)=0$ (par exemple $φ(x)=\sin 2πx$).
+	Soit $u_n=\frac 1nφ(nx)$. Alors $u_n(0)=u_n(1)=0 (φ(0)=φ(1)=0)$.
+	$u'_n=φ'(nx)$
+	$∫_0^1|u_n|^2\dd{x} =\frac{1}{n^2}∫_0^1|φ(nx)|^2\dd{x}≤\frac{C}{n^2}$ où $C=\sup|φ^2|$ $\Rightarrow$ $u_n\to 0$ uniformément et dans $L^2(I)$.
+	
+	$∫_0^1|u'_n|^2\dd{x}=∫_0^1|φ'(nx)|^2\dd{x}=∫_0^1|φ'(y)|^2\dd{y}$
+	
+	Donc $(u_n)$ est bornée dans $X$. Soit $(u_{nk})$ une sous-suite telle que $u_{nk}\overset{G}{\to}u$ ($G$=faible sans $X$)
+	
+	Alors on a $u=0$ d'où $u_n\overset G\to 0$ ($u_n'\to 0$ dans $L^2(I)$ faible)
+
+
+\begin{example}
+	$ψ:\R\to\R$ 1 périodique $ ∫_0^1|ψ|^2\dd{x}<+∞$. Alors $ψ_n(x)=ψ(nx)$ est une suite bornée dans $L^2(0,1)$ et bornée dans $L^1(0,1)$ et $ψ_n\to c$ faiblement dans $L^2(0,1)$ où $c=∫_0^1 ψ(y)\dd{y}$. En particulier si $ψ=φ'$ où $φ$ est 1-périodique, on a $ψ_n\to 0$ car $∫_0^1 ψ(y)\dd{y}=∫_0^1 φ'(y)\dd{y} = φ(1)-φ(0)=0$.
+	Conclusion $u_n\rightharpoonup 0$ faiblement dans $X$. Calculons:
+	\begin{align*}
+		\liminf_{n\to ∞}F(u_{n})&=\liminf_{n\to ∞}∫_0^1|1-(u'_n)^2|^2\dd{x}\\
+		&=\liminf_{n\to ∞}∫_0^1|1-|\\
+		&=\liminf_{n\to ∞}∫_0^1 |1-φ^2|\dd{y}
+	\end{align*}
+	$F(0)=∫_0^1|1-0|^2\dd{x}=1$
+
+
+	Si $F$ était $G$ s.c.i., on aurait:
+	$∫_0^1|1-(φ')^2|\dd{x}≥1$.
+	$\forall φ$ 1-périodique avec $φ(0)=φ(1)=0$.
+
+	Impossible (prendre $φ=\frac 12 -|\frac 12 -x|$).
+
+	\textbullet $\inf_{u\in X}F(u)=0$
+
+	$u_n=\frac 1nφ(nx)$ où $φ(x)=x$ si $x<\frac 12$ et $1-x$ si $x>\frac 12$
+	sur la période $[0,1]$
+
+	Alors $F(u_n)\to 0$ qd $n\to ∞$ car $∫_0^1|1-|u_n'|^2|\dd{x}=0$ et $∫u^2_n=\to 0$.
+
+	Puisque $F≥0$, on a donc $\inf_XF=0$. L'infinum n'est pas atteint car
+	$F(u)=0$ $\Rightarrow$ $∫_0^1|1-{u'}^2|\dd{x}+∫_0^1|u|^2\dd{x}=0$ $\Rightarrow$ $u=0$ pp et $u'=±1$ pp impossible. Donc $F(u)>0\ \forall u\in X$.
+
+	Raidon Théorique
+\end{example}
+\begin{example}
+	$X=H_0^1(0,1)$
+	$F(u)=\frac 12∫_0^1|u'|^2+∫_0^1g(u)\dd{x}$
+	où $g:\R\rightarrow [0,+∞]$ est s.c.i.
+	
+	$G =$ topologie faible de $X$
+	($u_n\overset{G}\rightharpoonup u$ $\Rightarrow$ $\left\{ \mqty{u_n'\to u'\text{ faible $L^(0,1)$}\\ u_n\to u\mbox{ uniformément}} \right.$)
+	
+	où $g:\R\to [0,+∞]$ est s.c.i.
+	
+	Alors $F$ vérifie:
+	\begin{enumerate}[i]
+		\item $G$ s.c.i.
+		\item $\lim_{\norm{u}\to+∞}F(u)=+∞$ ($F(u)≥\frac 12\norm{u'}^2_{L^2}≥\frac 14\norm{u}_X^2$)
+		
+		Soit $u_n\overset{G}\to u$. Alors $u_n'\to u'$ faible $\Rightarrow$ $\liminf_{n\to ∞}∫_0^1|u'_n|^2≥∫_0^1|u'|$. ($\liminf\norm{u'_n}≥\norm{u'}$)
+		
+		$\Rightarrow$ $\liminf_{n\to ∞}∫_0^1g(u_n)\dd{x}≥∫_0^1(\liminf_n(g(u_n)))\dd{x}≥∫g(x)\dd{x}$
+		(car $\liminf_{n\to ∞}g(u_n)≥g(u)$).
+	\end{enumerate}
+\end{example}
+\begin{example}
+	$Ω$ ouvert convexe et fermé de $\R^d$
+	
+	$k(x)$ continue: $\bar Ω\rightarrow ]0,+∞[$. Soit $a,b\inΩ$.
+	$\sup\{u(b)-u(a)\ |\ u\in Lip(Ω) |\nabla u(x)|\overset{pp}≤k(x)\text{ sur }Ω\}:= M_{k,Ω}(a,b)$
+	
+	Soit $γ(t):[0,1]\rightarrow Ω$ | $γ(0)=a et γ(1)=b$
+		\begin{align*}
+			u(b)-u(a)=u(γ(1))-u(γ(0)) = u(γ(t))|_0^1 &= ∫_0^1(uºγ)'(t)\dd{t}\\
+			&=∫_0^1\nabla u(γ(t))•γ'(t)\dd{t}\\
+			&≤∫_0^1k(γ(t))|γ'(t)|\dd{t}\\
+			&≤C∫_0^1|γ'(t)|\dd{t}\\
+			&≤CL(γ)	
+		\end{align*}
+	où $C=\sup_{\bar Ω}k(x)$
+	
+	$L(γ)=$longer de la courbe
+	
+	Donc $M_{k,Ω}(a,b)<+∞$ s'il existe une courbe de longueur finie joignant $a$ à $b$.
+	
+	On considère $X=Lip(Ω)=\{u\text{ continue, }u(b)=0\ |\ \nabla u\in L^∞(Ω)\}$
+	
+	$F:u\in X\rightarrow \left\{\mqty{u(a)\text{ si }|\nabla u|≤k|x|\text{ et }u(b)=0\\ +∞\text{ sinon}}\right.$
+	
+	$\inf_XF(u)=\inf\{u(a)\ |\ |\nabla u|≤k\text{ pp sur $Ω$ }u(b)=0\}=-M_{k,Ω}(a,b)$
+	
+	$\norm{u}_X\overset{\text{def}}= \norm{\nabla u}_{L^∞(Ω)}$
+	
+	(si $\nabla u=0$ pp $\Rightarrow$ $u=\const$ $\Rightarrow$ $u=0 $(car $u(b)=0$))
+	
+	Choix de $G$
+	
+	$\norm{u_n}_X≤C$ $\Rightarrow$ $\norm{\nabla u_n}_{L^∞}≤ C L^∞(Ω)=(L^1(Ω))^*$
+	
+	Alors $\forall x |u_n(x)-u_n(y)|≤C|x-y|$ pour $y$ racine de $x$
+	
+	$\Rightarrow$ $(u_n)$ est équicontinue au point $x$
+	
+	$u_n(b)=0$ $\Rightarrow$ $|u_n(x)|≤CL(γ)$ où $φ$ est une courbe joignant $b$ au point $x$.
+	
+	Alors d'après Ascoli: $\exists u_{uk}$ $\exists u$ continue | $u_{uk}\to u$ uniformément sur $\bar Ω$
+	$\norm{\nabla u_{nk}}_{L^∞}≤M$ $\Rightarrow$ $\nabla u_{nk}\overset*\rightharpoonup u$ dans $L^∞(Ω)$ faible.
+	
+	$G$= converge uniforme sur $\bar Ω$.
+	\begin{enumerate}
+		\item $F(u)<+∞$ $\Rightarrow$ $\norm{u}_X≤\sup_Ωk=M$ $\Rightarrow$ $\lim_{\norm{u}\to∞}F(u)=+∞$
+		\item $F$ est $G$ s.c.i. 
+	\end{enumerate}
+	Soit $(u_n)$ une suite telle que $u_n\to u$ uniformément et telle que $\liminf_{n\to∞} F(u_n)<+∞$ Il faut montrer que $\liminf F(u_n)≥F(u)$. Quitte à extraire une sous suite, on peut supposer que $\liminf_nF(u_n)=\lim_{n\to∞}F(u_n)$. Alors $F(u_n)$ est majoré pour $n$ assez grand et donc $\sup_n\norm{u_n}_X<+∞$. Donc on a $u_n\to u$ uniformément $|\nabla u_n|≤M$.
+	
+	On a donc $u_n(a)\to u(a)$.
+	Montrons que $u\in X$ et $|\nabla u(x)|≤k(x)$ pp sur $Ω$.
+	
+	On sait que $\nabla u_n\overset{*}\rightharpoonup\nabla u$ dans $L^∞(Ω)$
+	
+	$\Rightarrow$ $∫_Ω\nabla u_n•v(x)\to ∫_Ω\nabla u(x)v(x)$
+	
+	$\forall v\in (L^1(Ω))^d $
+	$v(x)=z\ind_{B(x_0,ε)} z\in\R^2$
+	
+	\textbullet $B(x_0,ε)$ boule centre dans $Ω$
+	$\Rightarrow$ $∫_{B(x_0,ε)}(\nabla u_n(x),z)\to∫_{B(x_0,ε)}\nabla u(x),z$
+	
+	$|∫_{B(x_0,ε)}\nabla u_n(x) z|≤∫_{B(x_0,ε)}\nabla |u_n(x)| |z|\dd{x}≤(∫_{B(x_0,ε)}k(x)\dd{x})|z|$
+	
+	d'où qd $n\to ∞$
+	$|∫_{B(x_0,ε)}\nabla u(x) z|≤(∫_{B(x,ε)}k(x))|z|$
+	
+	$\Rightarrow$
+	$\frac{1}{B(x_0,ε)}|∫_{B(x_0,ε)}\nabla u_n(x) z\dd{x}|≤$
+	$\frac{1}{B(x_0,ε)}|∫_{B(x_0,ε)}k(x)\dd{x} |z|$
+	
+	D'après le Thm des points de Lebesgue pp $x_0\inΩ \lim_{ε\to 0}\frac1{B(x_0,ε)}∫_{B(x_0,ε)}\nabla u(x) z=\nabla u(x_0) z$
+	
+	$\lim_{ε\to 0}\frac 1{B}∫_{B(x_0,ε)}k(x)\dd{x}=k(x_0)$
+	
+	$\nabla u(x_0) z≤k(x_0) z$
+	$\forall z\in\R^d pp x_0\in Ω$ $\Rightarrow$ $|\nabla u(x_0)|≤k(x_0) pp x_0\in Ω$
+	
+	Conclusion $u_n(a)\to u(a)$ $u_n(b)$ $\forall x$ $\Rightarrow$ $u(b)=0$
+	$|\nabla u|≤k(x) pp x\inΩ$
+	
+	Donc $u\in X$, avec $|\nabla u|≤k$ pp et $F(u)=u(a)$.
+	
+	\begin{rappel}
+		$F(u_n)=u_n(a)$. Donc $F(u_n)\to F(u)$
+		$F(u_n)\to α$, $α<+∞$ $u_n\rightharpoonup u$ uniformément $α=F(u)$
+	\end{rappel}
+	Ainsi $F$ est $G$ s.c.i. d'où existence d'une solution $u\in X$.
+	On a:
+	$M_{k,Ω}(a,b)=\sup\{u(b)-u(a)\ |\ |\nabla u|≤k sur Ω\}$
+	$=\inf(∫_0^1 k(γ(t))|γ'(t)|\dd{t}, γ\in Lip(0,1,Ω)\ γ(0)=a\ γ(1)=b)$
+	
+	On a déjà vu que
+	$u(b)-u(a)≤∫_0^1 k(γ)|γ(a)|$ si $u\in X$ et $γ\in Lip([0,1],Ω)$ $γ(0)=a$ et $γ(1)=b$
+	$\Rightarrow$ $M_{Ω,k}(a,b)≤\inf\{∫_0^1k(γ)|γ'|\dd{t},\ γ(0)=a\ γ(1)=b\ \}$---distance géodésique.
+	
+	Posons $\bar U(x)=-\inf\{∫_0^1k(γ(t))|γ'(t)|\dd{t}\ |\ γ(0)=x\ γ(1)=b\}$
+	
+	Alors $\bar u(b)=0 $
+	$-\bar u(a)=d_{Ω, k}(a,b)$---distance géodésique entre $a$ et $b$.
+	
+	Si $|\nabla\bar u|≤k(x)$ pp sur $Ω$, alors
+	
+	$M_{Ω,k}(a,b)≥-\bar u(a)=d_{Ω,k}(a,b)$
+	
+	$z\nabla \bar u(x)=\lim\frac{\bar u(x+tx)-\bar u(x)}{t}$
+	
+	$|\bar u(x+tz)-\bar u(x)|≤∫_0^tk(x+tz)t|z|\dd{z}$
+	$\Rightarrow$ $\nabla \bar u(x)z≤k(x)|z|$
+	
+	$k(x)=k_1, k(x)=k_2$
+	
+	$k_1|c-a|+k_2|b-c|$
+	
+\end{example}
 % paragraph l_1_\xCF\x89_n_est_pas_reflexif (end)  
 % subsection cas_importantes (end)
 % section cas_ou_x_est_un_banach_non_hilbert (end)
