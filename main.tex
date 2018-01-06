@@ -1,3 +1,5 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = xelatex
 IMAT\\
 Analyse dp\\
 Application mécanique, optimisation probabilités, géométrie algébrique, codage orthographique, informatique. Numérique.\\
@@ -30,7 +32,7 @@ Si dom $F≠ø$.
 \begin{notations}
 	$\dom F=\{u\in X|F(u)<+∞\}$.
 \end{notations}
-Si dom $F≠ø$ $\Rightarrow$ $\inf F<+∞$. $\forall α>\inf_XF \exists u\in X$ tel que $\inf_XF≤F(u)<α$. $(u_n)$ est une suite minimisante.
+Si dom $F≠ø$ $\implies$ $\inf F<+∞$. $\forall α>\inf_XF \exists u\in X$ tel que $\inf_XF≤F(u)<α$. $(u_n)$ est une suite minimisante.
 
 \section{Cas $X=\R^N$} % (fold)
 \label{sec:cas_x_r_n}
@@ -47,13 +49,13 @@ Soit $f:\R^N\rightarrow \R$ continue et $C$ une partie \underline{fermée, non v
 \begin{proof}
 	Soit $(x_n)$ une suite minimalé i.e. $x_n\in C$ et $f(x_n)\rightarrow  α:=\inf_Xf$.
 	
-	Cas i) $x_n\in C$ compact $\Rightarrow$ $\exists x_{n_k}$, $\exists \bar x | x_{n_k}\to\bar x$.
+	Cas i) $x_n\in C$ compact $\implies$ $\exists x_{n_k}$, $\exists \bar x | x_{n_k}\to\bar x$.
 	Alors $α=\lim_{n\to∞}f(x_{n_k})=f(\bar x)$ par continuité de $f$ au pt $\bar x$
 	
 	Cas ii) Soit $β>α$. Puisque $f(x)\to+∞$ qd $n\norm{x}\to∞$ : $\exists R>0 | f(x)>β si \norm{x}≥R$.
 	D'autre part $\exists N|\forall n≥N f(x_n)≤β$. Donc on a $\norm{x_n}≤R\ \forall n≥N$ et la suite $(x_n)$ est bornée.
 	Donc $\exists x_{n_k}$, $\exists \bar x\in \R^N | x_{n_k}\to \bar x$.
-	$x_{n_k}\in C$ fermé et $x_{n_k}\to \bar x$ $\Rightarrow$ $\bar x\in C$.
+	$x_{n_k}\in C$ fermé et $x_{n_k}\to \bar x$ $\implies$ $\bar x\in C$.
 	donc on a: $\bar x\in C$ et $f(x)=\lim_{k\to ∞} f(x_{n_k})=α=\inf_C f$
 	Bien on a: $F:X\rightarrow ]-∞,+∞]$
 \end{proof}
@@ -63,15 +65,15 @@ $\inf_C f=\inf_X F$.
 	Ici $F$ n'est pas continue mais dans les cas i) et ii), on a $\lim_{\norm{x}\to∞}F(x)=+∞$. En optimisation $f$ s'appelle le critère et $C$ est la contrainte.
 	$F=f+δ_C$. Où $δ_C = 0$ si $x\in C$ et $+∞$ sinon.
 \end{remark}
-Mais $F$ vérifie la propriété $x_n\to x$ $\Rightarrow$ $\liminf_{n\to ∞} F(x_n)≥F(x)$
+Mais $F$ vérifie la propriété $x_n\to x$ $\implies$ $\liminf_{n\to ∞} F(x_n)≥F(x)$
 ($\liminf_{n\to∞}F(x)=\liminf_{n\to ∞}[f(x_n)+δ_C(x_n)]≥\underbrace{\liminf_{n\to∞} f(x_n)}_{f(x)}+\underbrace{\liminf_{n\to ∞}δ_C(x_n))}_{≥δ_C(x)}$)
-$\liminf_{n\to +∞} δ_C(x_n)\overset{?}≥δ_C(x)$. \underline{1er} cas $\liminf_{n\to ∞}δ_C(x_n)<+∞$. $\forall N\exists n> N\ x_n\in C$ $\Rightarrow$ $\exists x_{n_k}|x_{n_k}\in C \forall k$ $\Rightarrow$ $x\in C$ ($C$ est fermé) $\Rightarrow$ $δ_C(x)=0$. \underline{2me} cas $\liminf_{n\to ∞}δ_C(x_n)=+∞$ trivial.
+$\liminf_{n\to +∞} δ_C(x_n)\overset{?}≥δ_C(x)$. \underline{1er} cas $\liminf_{n\to ∞}δ_C(x_n)<+∞$. $\forall N\exists n> N\ x_n\in C$ $\implies$ $\exists x_{n_k}|x_{n_k}\in C \forall k$ $\implies$ $x\in C$ ($C$ est fermé) $\implies$ $δ_C(x)=0$. \underline{2me} cas $\liminf_{n\to ∞}δ_C(x_n)=+∞$ trivial.
 
 Autre preuve.
-$x\in C$---trivial; $x\not\in C$ $\Rightarrow$ $\exists N|x_n\not\in C\ \forall n≥N$ $\Rightarrow$ $δ_C(x_n)=+∞\ \forall n≥N$. 
+$x\in C$---trivial; $x\not\in C$ $\implies$ $\exists N|x_n\not\in C\ \forall n≥N$ $\implies$ $δ_C(x_n)=+∞\ \forall n≥N$. 
 
 \begin{definition}
-	$F: (X,d)\rightarrow ]-∞,+∞]$ espace métrique est \textsc{Semi-Continue Inférieure} au point $x\in X$ si $\forallα<F(x)\  \exists R>0\ |\ d(x,y)<R$ $\Rightarrow$ $F(y)>α$ (ou bien $\exists V$ ouvert contenant $x$ tel que $\inf_VF>α$)
+	$F: (X,d)\rightarrow ]-∞,+∞]$ espace métrique est \textsc{Semi-Continue Inférieure} au point $x\in X$ si $\forallα<F(x)\  \exists R>0\ |\ d(x,y)<R$ $\implies$ $F(y)>α$ (ou bien $\exists V$ ouvert contenant $x$ tel que $\inf_VF>α$)
 \end{definition}
 \begin{definition}
 	$F$ est f.c.i sur $X$ (f.s.c.---\textsc{Fermer Semi-Continuons}) si $F$ est s.c.i. en tout point $x\in X$.
@@ -81,7 +83,7 @@ $x\in C$---trivial; $x\not\in C$ $\Rightarrow$ $\exists N|x_n\not\in C\ \forall 
 	\begin{enumerate}
 		\item  $\forall R\in\R |\{F≤R\}$ est un fermé de $X$ ($\{F≤R\}=\{x\in X|F(u)≤R\}$)
 		\item L'ensemble $\epi F=\{(u,x)\in X\times \R|F(u)≤α\}$ est fermé dans $X\times\R$.
-		\item On a pour toute suite $(u_n)$ dans $X$ $u_n\to u$ $\Rightarrow$ $\liminf_{n\to ∞} F(u_n)≥F(u)$ 
+		\item On a pour toute suite $(u_n)$ dans $X$ $u_n\to u$ $\implies$ $\liminf_{n\to ∞} F(u_n)≥F(u)$ 
 	\end{enumerate}
 \end{lemme}
 $X=\R$
@@ -97,12 +99,12 @@ $F(x)=\left\{\mqty{0\text{, si }x≠0 \\-1\text{, si }x=0}\right.$ \\$\epi F=\{(
 		\item $K_{n+1}\subset K_n$ (car $α_{n+1}<α_n$)
 		\item $K_n$ fermé (car $F$ est s.c.i.)
 	\end{itemize}
-	Posons $K=\cap_{n=1}^{n=+∞}K_n$. Si $\lim_{\norm{u}\to+∞}F(u)=+∞$, alors $\exists R>0$. $K_n\subset\{\norm{u}≤R\}$ (c'est compact de $X$) $\forall n$. (car $\exists R>0 | \norm{u}>r$ $\Rightarrow$ $F(u)>α_n \forall n$)
+	Posons $K=\cap_{n=1}^{n=+∞}K_n$. Si $\lim_{\norm{u}\to+∞}F(u)=+∞$, alors $\exists R>0$. $K_n\subset\{\norm{u}≤R\}$ (c'est compact de $X$) $\forall n$. (car $\exists R>0 | \norm{u}>r$ $\implies$ $F(u)>α_n \forall n$)
 	$(K_n)$ et une suite $\searrow$ de compacts non vides: $K_n$ est fermé borné
 	Donc $K=\cap K_n$ est donc un compact non vide. Or $K=\{u\in X| F(u)≤α_n\forall n\} =\{u\in X| F(u)≤\inf_X F\}=\Argmin F$.
 \end{proof}
 \begin{problem}
-	$X$ Banach $\dim X=+∞$ $\Rightarrow$ $X$ non local compact;
+	$X$ Banach $\dim X=+∞$ $\implies$ $X$ non local compact;
 	Idée: utiliser une topologie $G$ plus faible que la topologie de la norme et telle que:
 	\begin{itemize}
 		\item $F$ est $G$ s.c.i. et $\forall α|\{F≤α\}$ est $G$-compact.
@@ -118,7 +120,7 @@ $F(x)=\left\{\mqty{0\text{, si }x≠0 \\-1\text{, si }x=0}\right.$ \\$\epi F=\{(
 	$\exists! x^\ast \in C$ tel que $\norm{x-x^*}=d(x,C)=\inf_{y\in C}\norm{x-y}$. (ici $F(y)=\norm{x-y}+δ_C(y)$).
 \end{theorem}
 \begin{remark}
-	$F$ est s.c.i. et coercive. ($\lim_{\norm{y}\to+∞}\norm{x-y}=+∞)$ mais $X$ n'est pas local compact.
+	$F$ est s.c.i. et coercive. ( $\lim_{\norm{y}\to+∞}\norm{x-y}=+∞$ ) mais $X$ n'est pas local compact.
 \end{remark}
 \begin{proof}
 	Soit $(y_n)$ une suite dans $C$ telle que $\norm{x-y_n}\to α=d(x,C)$. Alors on montre que $(y_n)$ est une suite de Cauchy en utilisant:
@@ -127,10 +129,10 @@ $F(x)=\left\{\mqty{0\text{, si }x≠0 \\-1\text{, si }x=0}\right.$ \\$\epi F=\{(
 	donc $\frac{\norm{y_n-y_m}^2}4+\norm{x-\frac{y_n+y_m}2}^2 = \frac{\norm{x-y_n}^2}2+\frac{\norm{x-y_m}^2}2\to α^2$ ($C$ convexe $\frac{y_n+y_m}2\in C$ et $\norm{x-\frac{y_n+y_m}2}≥α$)
 \end{proof}
 
-$x_1^*$, $x_2^*$ solutions $\Rightarrow$ $x_1^* + x_2^*/2$ solution.
+$x_1^*$, $x_2^*$ solutions $\implies$ $x_1^* + x_2^*/2$ solution.
 $0≤\norm{x-\frac{x_1^*+ x_2^*}2}≤\frac 12 \norm{x-x_1^*}+\frac 12 \norm{x-x_1^*}< \frac 12 α+\frac 12 α$
 
-$x^*$ est solution $\Leftrightarrow$ $\Re((x^*-x|x^*-y))≤0$ $\forall y\in C$.
+$x^*$ est solution $\iff$ $\Re((x^*-x|x^*-y))≤0$ $\forall y\in C$.
 $X$ espace de Hilbert sur $\R$, $a(u,v)$ forme bilinéaire symétrique: $(a(v, u)=a(u, v))$.
 Telle que
 \begin{itemize}
@@ -151,7 +153,7 @@ Telle que
 	$a(u,v-u)≥\expval{f,v-u} \forall v\in C$. 
 \end{corollary}
 \begin{remark}
-	On prenant $C=X$, on retrouve Lux-Milgran car $a(u,w)≥\expval{f,w}$ $\forall w\in X (w=v-u)$ $\Rightarrow$ $a(u,w)=\expval{f,w}$.
+	On prenant $C=X$, on retrouve Lux-Milgran car $a(u,w)≥\expval{f,w}$ $\forall w\in X (w=v-u)$ $\implies$ $a(u,w)=\expval{f,w}$.
 \end{remark}
 
 $a:X\times X\rightarrow \R$ $f\in X^*$
@@ -163,7 +165,7 @@ $C$ convexe fermé de $X$.
 $\exists!\bar u\in C$ tel que $\frac 12 a(\bar u,\bar u)-\expval{f,\bar u}≤\frac 12a(v,v)-\expval{f,v}\ \forall v\in C$. Alors $a(\bar u,v-\bar u)≥\expval{f,v-\bar u}\ \forall v\in C$.
 
 \begin{remark}
-	La fonctionnelle $F(v)=\frac 12 a(v,v)-\expval{f,v}$ est continue sur $X$ (exo). Elle est convexe (même strictement convexe). Elle es coercive car $F(v)≥\frac k2\norm{v}_X^2-\norm{f}_{X^*}\norm{v}_X$ $\Rightarrow$ $\lim_{\norm{v}\to +∞}F(v)=+∞$. Si ($u_n$) est une suite minimisante  sur $C$, alors ($u_n$) est bornée dans $X$. Mais on ne peut pas extraire une sous suite ($u_{n_k}$) telle que $u_{n_k}\to u$ dans $X$ ($X$ n'est pas loc compact).
+	La fonctionnelle $F(v)=\frac 12 a(v,v)-\expval{f,v}$ est continue sur $X$ (exo). Elle est convexe (même strictement convexe). Elle es coercive car $F(v)≥\frac k2\norm{v}_X^2-\norm{f}_{X^*}\norm{v}_X$ $\implies$ $\lim_{\norm{v}\to +∞}F(v)=+∞$. Si ($u_n$) est une suite minimisante  sur $C$, alors ($u_n$) est bornée dans $X$. Mais on ne peut pas extraire une sous suite ($u_{n_k}$) telle que $u_{n_k}\to u$ dans $X$ ($X$ n'est pas loc compact).
 \end{remark}
 \begin{proof}
 	(argument analogue à celui du Thm de projection dans un Hilbert)
@@ -183,19 +185,19 @@ $\exists!\bar u\in C$ tel que $\frac 12 a(\bar u,\bar u)-\expval{f,\bar u}≤\fr
 	$\frac 12a(v,v)-\expval{f,v}≥\frac 12 a(\bar u,\bar u)-\expval{f,\bar u} \forall v\in X$. ($\frac 12 a(v-u_0,v-u_0)-\frac{a(u_0,u_0)}2≥\frac{a(\bar u-u_0,\bar u-u_0)}2-\frac{a(u_0,u_0)}2$)
 	
 	En fait on a:
-	$\bar u\in \Argmin_CF$ $\Leftrightarrow$ $\bar u=\proj_Cu_0$.
+	$\bar u\in \Argmin_CF$ $\iff$ $\bar u=\proj_Cu_0$.
 	
 	De plus toute suite minimisante $(u_n)$ vérifie $\norm{u_0-u_n}_d\to\inf_{u\in C}\norm{u_0-v}_a$
 	et donc de Cauchy pour $\norm{•}_a$ (donc aussi $\norm{•}$)
 	
-	$\bar u sol$ $\Leftrightarrow$ $\bar u=\proj_Cu_0$ $\Leftrightarrow$ $(u_0-\bar u|u_0-v)_a≤0 \forall v\in C$ $\Leftrightarrow$ $a(u_0-\bar u|v-u_0)≤0\ \forall v\in C$ $\Leftrightarrow$ $a(\bar u-u_0|\bar u-v)≤0\forall v\in C$ $\Leftrightarrow$ $a(\bar u,\bar u-v)≤a(u_0,\bar u-v)$ $\Leftrightarrow$  $a(\bar u,v-\bar u)≥a(u_0,v-\bar u)$ $\Leftrightarrow$ $a(\bar u, v-\bar u)≥\expval{f,v-\bar u}\ \forall v\in C$.
+	$\bar u sol$ $\iff$ $\bar u=\proj_Cu_0$ $\iff$ $(u_0-\bar u|u_0-v)_a≤0 \forall v\in C$ $\iff$ $a(u_0-\bar u|v-u_0)≤0\ \forall v\in C$ $\iff$ $a(\bar u-u_0|\bar u-v)≤0\forall v\in C$ $\iff$ $a(\bar u,\bar u-v)≤a(u_0,\bar u-v)$ $\iff$  $a(\bar u,v-\bar u)≥a(u_0,v-\bar u)$ $\iff$ $a(\bar u, v-\bar u)≥\expval{f,v-\bar u}\ \forall v\in C$.
 \end{proof}
 \begin{remark}
 	Si la contrante $C$ est un sous espace vectoriel fermé $V$ de $X$ on obtient:
-	$$\bar u\text{ minimise }\frac 12a(v,v)-\expval{f,v}\text{ sur }X \Leftrightarrow a(\bar u, v)=\expval{f,w}\ \forall w\in V$$
+	$$\bar u\text{ minimise }\frac 12a(v,v)-\expval{f,v}\text{ sur }X \iff a(\bar u, v)=\expval{f,w}\ \forall w\in V$$
 	
 	Si $V=X$ on obtient l'équation $a(\bar u, w)=\expval{f,w}\forall w\in X$. ($A\bar u|w)=\expval{f,w}$ où $A$ opérateur linéaire auto adjacent-continue de $X$ dans $X$. 
-	$\Rightarrow$ $A\bar u=f$
+	$\implies$ $A\bar u=f$
 \end{remark}
 \begin{rappel}
 	$A\in s(X)$ ($A^*=A$.)
@@ -203,7 +205,7 @@ $\exists!\bar u\in C$ tel que $\frac 12 a(\bar u,\bar u)-\expval{f,\bar u}≤\fr
 \end{rappel}
 \begin{example} élémentaire.
 	$X=\{u\in L^2(0,1)\ |\ u'\in L^2(0,1)\}$
-	$u\in X$ $\Leftrightarrow$ $u\in L^2(0,1)$ et $\exists v\in L^2(0,1)$ tel que:
+	$u\in X$ $\iff$ $u\in L^2(0,1)$ et $\exists v\in L^2(0,1)$ tel que:
 	$∫_0^1uφ'\dd{x}=-∫_0^1vφ\dd{x}$
 	
 	$\forall f\in C^1(0,1)$ et $φ(0)=φ(1)=0$.
@@ -215,35 +217,34 @@ $\exists!\bar u\in C$ tel que $\frac 12 a(\bar u,\bar u)-\expval{f,\bar u}≤\fr
 	\end{itemize}
 	$(u|v)=∫_0^1(uv+u'v')\dd{x}$
 	$\norm{u}^2=∫_0^1(|u|^2+|u'|^2)\dd{x}$.
-	$u\in X$ $\Rightarrow$  $\exists \tilde u=u$ pp $|\tilde u(x)-\tilde u(y)|≤\norm{u'}_{L^2(0,1)}\sqrt{|x-y|}$
+	$u\in X$ $\implies$  $\exists \tilde u=u$ pp $|\tilde u(x)-\tilde u(y)|≤\norm{u'}_{L^2(0,1)}\sqrt{|x-y|}$
 	$x<y$ $|u(x)-u(y)|=|∫_x^yu'(t)\dd{t}|≤\sqrt{|y-x|}\sqrt{∫_0^1|u'|^2\dd{t}}$.
 	$\inf\limits_{\substack{v\in X\\v(0)=v(1)=0}}[\frac 12∫_0^1|u'|^2\dd{x}-∫_0^1fv\dd{x}]$, $f\in L^1(0,1)$.
 	
-	Soit $H=\{u\in X\ |\ u(0)=u(1)=0\}$. $u_n\overset{X}{\to}$ $\Rightarrow$ $u_n\rightarrow u$ uniformément sur $[0,1]$. C'est un sous espace fermé de $X$, donc un Hilbert.
+	Soit $H=\{u\in X\ |\ u(0)=u(1)=0\}$. $u_n\overset{X}{\to}$ $\implies$ $u_n\rightarrow u$ uniformément sur $[0,1]$. C'est un sous espace fermé de $X$, donc un Hilbert.
 	
-	Ici $a(u,v)=∫_0^1u'v'\dd{x}$
-	\begin{itemize}
-		\item $|a(u,v)|≤\norm{x'}_{L^2}\norm{v}_{L^2}≤\norm{u}_H\norm{v}_H$
-		\item $a(u,u)=∫_0^1|u'|^2\dd{x}\overset{?}≥ k\norm{u}^2_H$.
-		$u(x)=u(0)+∫_0^1u'(t)\dd{t}$ $\Rightarrow$ $|u(x)|≤\norm{u'}_{L^2}\sqrt{x} ≤\norm{u'}_{L^2}$ $\Rightarrow$ $∫_0^1|u(x)|^2\dd{x}≤\norm{u'}^2_{L^2}$ $\Rightarrow$ $\norm{u}_{L^2}≤\norm{u'}_{L^2}$ si $u\in H$, Donc 2 $a(u,u)≥∫_0^1 {u'}^2\dd{x}+∫_0^1u^2\dd{x}=\norm{u}_H^2$.
+	Ici $a(u,v)=∫_0^1u'v'\dd{x}$\\
+		\textbullet  $|a(u,v)|≤\norm{x'}_{L^2}\norm{v}_{L^2}≤\norm{u}_H\norm{v}_H$\\
+		\textbullet  $a(u,u)=∫_0^1|u'|^2\dd{x}\overset{?}≥ k\norm{u}^2_H$.
+		$u(x)=u(0)+∫_0^1u'(t)\dd{t}$ $\implies$ $|u(x)|≤\norm{u'}_{L^2}\sqrt{x} ≤\norm{u'}_{L^2}$ $\implies$ $∫_0^1|u(x)|^2\dd{x}≤\norm{u'}^2_{L^2}$ $\implies$ $\norm{u}_{L^2}≤\norm{u'}_{L^2}$ si $u\in H$, Donc 2 $a(u,u)≥∫_0^1 {u'}^2\dd{x}+∫_0^1u^2\dd{x}=\norm{u}_H^2$.
 		
 		$a(u,u)≥\frac 12 \norm{u}_H^2$
 		
-		Lax Milgram $\Rightarrow$ $\exists!u\in H\ |\ \frac 12$ ${u'}^2-∫_0^1fu'\dd{x}≤\frac 12∫_0^1|v'|^2-∫_0^1fv\dd{x} \forall v\in H$.
+		Lax Milgram $\implies$ $\exists!u\in H\ |\ \frac 12$ ${u'}^2-∫_0^1fu'\dd{x}≤\frac 12∫_0^1|v'|^2-∫_0^1fv\dd{x} \forall v\in H$.
 		
 		Conclusion de la schuhcnu $a(u,v)=\expval{f,v} \forall v\in H$
 		$∫_0^1 u'v'\dd{x}=∫_0^1 fv\dd{x}$,$ \forall v\in H (u(0)=v(1)=0)$.
 		
 		Supposons que la sol $u$ est 2 fois dérivable sur $]0,1[$
-		$∫_0^1u'v'\dd{x}=[u'v]_0^1-∫_0^1u''v\dd{x}$ $\Rightarrow$ $ -∫u''v\dd{x}=∫_0^1 fx\dd{x} \forall v\in H$ $\Leftrightarrow$ $ -u''=f$
+		$∫_0^1u'v'\dd{x}=[u'v]_0^1-∫_0^1u''v\dd{x}$ $\implies$ $ -∫u''v\dd{x}=∫_0^1 fx\dd{x} \forall v\in H$ $\iff$ $ -u''=f$
 		
 		Ainsi
 		$$\left\{ \mqty{-u''=f\text{ sur } ]0,1[\\u(0)=u(1)=0}\right.$$
 		Posons $f(x)=∫_0^1xf(t)\dd{t}$
 		$-u'=F(x)+λ$.
-		$u(0)=u(1)=0$ $\Rightarrow$ $∫_0^1 u'(t)\dd{t} =0$ $\Rightarrow$ $λ=-∫_0^1F(x)\dd{x}$.
-		$u(x)=u(0)+∫_0^xu'(t)\dd{t}$ $\Rightarrow$ $u(x)=x∫_0^1F(t)\dd{t}-∫_0^xF(t)\dd{t}$.
-	\end{itemize}
+		$u(0)=u(1)=0$ $\implies$ $∫_0^1 u'(t)\dd{t} =0$ $\implies$ $λ=-∫_0^1F(x)\dd{x}$.
+		$u(x)=u(0)+∫_0^xu'(t)\dd{t}$ $\implies$ $u(x)=x∫_0^1F(t)\dd{t}-∫_0^xF(t)\dd{t}$.
+
 \end{example}
 % section cas_ou_x_est_un_hilbert (end)
 \section{Cas où $X$ est un Banach (non Hilbert)} % (fold)
@@ -256,18 +257,18 @@ $\forall R\ \{u\in X\ \norm{u}≤R\}$ est $C$-compact.
 \subsection{Cas Importantes} % (fold)
 \label{sub:cas_importantes}
 \begin{itemize}
-	\item $X$ est un Banach réflexif ($X^*=X$)
+	\item $X$ est un Banach réflexif ($X^{**}=X$)
 	$x\in X\rightarrow \hat x\in X^{**}$ ou $\hat x(f)=f(x) \forall f\in X^*$ (évaluation de $f$ au point $x$) $\norm{\hat x}_{X^{**}}=\sup_{\norm{f}_{X^*}≤1}\hat x(f)=\sup_{\norm{f}_{X^*}≤1}f(x)=\norm{x}_X$. L'application $x\in X\rightarrow \hat x\in X^{**}$ est une isométrie.
 	
 	$C$=topologie faible de $X$.
-	$x_n\overset{\text{faible}}{\to}x \overset{\text{def}}{\Leftrightarrow}\forall f\in X^*\ f(x_n)\to f(x)$
+	$x_n\overset{\text{faible}}{\to}x \overset{\text{def}}{\iff}\forall f\in X^*\ f(x_n)\to f(x)$
 	
-	\textbf{Ex}. $X$ Hilbert sur $\R$ $(•|•)$. $f\in X^*$ $\Rightarrow$ $\exists y\in X\ |\ f(x_n)=(x_n|y) $
+	\textbf{Ex}. $X$ Hilbert sur $\R$ $(•|•)$. $f\in X^*$ $\implies$ $\exists y\in X\ |\ f(x_n)=(x_n|y) $
 	
-	$x_n\overset{\text{faible}}{\to}x$ $\Leftrightarrow$ $(x_n|y)\to (x|y)\ \forall y\in X$. $x_n\overset{\text{febi}}{\to}x$ $\Leftrightarrow$ $x_n\overset{\text{faible}}{\to}x \oplus \limsup_{n\to ∞}\norm{x_n}≤\norm{x}.$
+	$x_n\overset{\text{faible}}{\to}x$ $\iff$ $(x_n|y)\to (x|y)\ \forall y\in X$. $x_n\overset{\text{febi}}{\to}x$ $\iff$ $x_n\overset{\text{faible}}{\to}x \oplus \limsup_{n\to ∞}\norm{x_n}≤\norm{x}.$
 	
 	On a toujours:
-	$x_n\overset{\text{faible}}{\to}x$ $\Rightarrow$ $\liminf_{n\to∞}\norm{x_n}≥x$ La fondamentale $F(x)=\frac 12\norm{x}^2-f(x)$ est C s.c.i. pour tout $f\in X^*$.
+	$x_n\overset{\text{faible}}{\to}x$ $\implies$ $\liminf_{n\to∞}\norm{x_n}≥x$ La fondamentale $F(x)=\frac 12\norm{x}^2-f(x)$ est C s.c.i. pour tout $f\in X^*$.
 \end{itemize}
 \begin{rappel}
 	Dans un Banach réflexif pour tout $R>0$, $\{x\in X\ |\ \norm{x}≤R\}$
@@ -277,7 +278,7 @@ $\forall R\ \{u\in X\ \norm{u}≤R\}$ est $C$-compact.
 	
 	$X$ Hilbert $\{e_n,\ n\in\N\}$ borne orthonormale $\norm{e_n}=1$.
 
-	$\forall y\in X\ (e_n|y)$ $\Rightarrow$ $\lim_{n\to∞}(y|e_n)=0 \forall y\in E e_n\rightharpoonup 0$ faiblement.
+	$\forall y\in X\ (e_n|y)$ $\implies$ $\lim_{n\to∞}(y|e_n)=0 \forall y\in E e_n\rightharpoonup 0$ faiblement.
 \end{exercise}
 \begin{exercise}
 	$X =L^2(0,1)$ $f_n(x)=\sin(2πnx)$
@@ -290,19 +291,19 @@ $\forall R\ \{u\in X\ \norm{u}≤R\}$ est $C$-compact.
 	$\norm{f_n}=\frac 1{\sqrt{2}}$
 \end{exercise}
 
-$L^p(Ω)$ $Ω\subset\R^N u\in L^p(Ω)$ $\Leftrightarrow$ $∫_Ω |u|^p\dd{x}<+∞$.
+$L^p(Ω)$ $Ω\subset\R^N u\in L^p(Ω)$ $\iff$ $∫_Ω |u|^p\dd{x}<+∞$.
 $\norm{u}_{L^p}=(∫_Ω|u|^p\dd{x})^{\frac 1p} p réel \in [1,+∞[$.
 
 $L^∞(Ω)=\{u:Ω\rightarrow  \R\ \exists k\ |\ (u|u)≤k\}$
 $\norm{u}_{L^∞(Ω)}=\inf\{k\ |\ |u(x)|≤k pp\}$
 
-Sii $Ω$ est borne dans $\R^N$ $L^p(Ω)\subset L^q(Ω)$ si $1≤q≤p≤+∞$. $u\in L^∞(Ω)$ $\Rightarrow$ $\norm{u}_{L^∞(Ω)}=\lim_{q\to ∞}\norm{u}_{L^q(Ω)}$
+Sii $Ω$ est borne dans $\R^N$ $L^p(Ω)\subset L^q(Ω)$ si $1≤q≤p≤+∞$. $u\in L^∞(Ω)$ $\implies$ $\norm{u}_{L^∞(Ω)}=\lim_{q\to ∞}\norm{u}_{L^q(Ω)}$
 
-$L^p(Ω)$ est Banach séparable $\forall p\in [1,+∞]$. $L^p(Ω)$ réflexif $\Leftrightarrow$ $1<p<+∞$.
+$L^p(Ω)$ est Banach séparable $\forall p\in [1,+∞]$. $L^p(Ω)$ réflexif $\iff$ $1<p<+∞$.
 
 $(L^p(Ω))^*\sim L^{p'}(Ω)$ si $p\in [1,+∞[$ et $p'=\frac p{p-1}$ ($\frac 1p+\frac 1{p'}=1$) ; $p'=∞$ si $p=1$.
 
-$l\in (L^p(Ω))^*$ $\Rightarrow$ $\exists g\in L^{p'}(Ω)$ | $l(f)=∫_Ωfg\dd{x}$
+$l\in (L^p(Ω))^*$ $\implies$ $\exists g\in L^{p'}(Ω)$ | $l(f)=∫_Ωfg\dd{x}$
 $\forall f\in L^p(Ω)$, $(L^p(Ω))^{**}\sim (L^{p'})\sim L^p(Ω)$ si $1<p<+∞$.
 
 \paragraph{$L^1(Ω)$ n'est pas réflexif} % (fold)
@@ -321,11 +322,11 @@ $\expval{δ_0,v}=v(0)$. Si $u$ existe, on doit avoir $u(0)=∫uv\dd{x}$.
 On choisit pour $C$ la topologie *-faible
 Soit $(f_n)$ suite dans $X^*$.
 \begin{definition}
-	$f_n\overset{*}{\to}f$ $\Leftrightarrow$ $\forall x\in X\ f_n(x)\to f(x)$.
+	$f_n\overset{*}{\to}f$ $\iff$ $\forall x\in X\ f_n(x)\to f(x)$.
 \end{definition}
 
 \begin{theorem}
-	$\norm{f_n}_{X^*}≤M\ \forall n$ $\Rightarrow$ $\exists f_{n_k}$,$ \exists f\in X$ tel que $f_{n_k}\overset{*}{\to}f$.
+	$\norm{f_n}_{X^*}≤M\ \forall n$ $\implies$ $\exists f_{n_k}$,$ \exists f\in X$ tel que $f_{n_k}\overset{*}{\to}f$.
 \end{theorem}
 \begin{example}
 	Soit $(u_n)$ une suite dans $L^∞(Ω)$ ( $Ω$ ouvert de $\R^N$). Telle que $|u_n(x)|≤M$ pp $x\inΩ$, $\forall n\in \N$. Alors $\exists u\in L^∞(Ω)$, $\exists u_{n_k}\ |\ \lim_{k\to ∞}∫_Ωu_{n_k}v\dd{x}=∫_Ωuv\dd{x}\ \forall v\in L^1(Ω)$.
@@ -339,7 +340,7 @@ Soit $(f_n)$ suite dans $X^*$.
 \end{example}
 
 $X$ Banach $G$ \texttt{faible} si $X$ réflexif et \texttt{*faible} si $X=Y^\perp Y$ Banach séparable.
-Propreté $\norm{u_n}_X≤C$ $\Rightarrow$ $\exists u\in X \exists u_{nk}\ |\ u_{nk}\overset{G}{\to} u$ 
+Propreté $\norm{u_n}_X≤C$ $\implies$ $\exists u\in X \exists u_{nk}\ |\ u_{nk}\overset{G}{\to} u$ 
 
 Notations: $\left\{\mqty{u_n\rightharpoonup u \text{ faible}\\ u_n\overset*\rightharpoonup u \text{ *faible} }\right.$
 
@@ -359,26 +360,24 @@ Notations: $\left\{\mqty{u_n\rightharpoonup u \text{ faible}\\ u_n\overset*\righ
 \end{remark}
 \begin{example}
 	$X=\{u\in C^0([0,1])\ |\ u(0)=u(1)=0\ |\ u'\in L^2(0,1)\}$
-	$I=]0,1[$ $\norm{u}_X=\sqrt{∫_0^1|u|^2+|u'|^2\dd{x}}$ ( ou bien $\norm{u}=(∫_0^1 |u'|^2\dd{x})^{\frac 12}$) ($|u(x)|≤∫_0^1 |u'(x)|\dd{x})≤\norm{u'}_{L^2}$ $\Rightarrow$ $\norm{u}_{L^2}≤\norm{u'}_{L^2}$)
+	$I=]0,1[$ $\norm{u}_X=\sqrt{∫_0^1|u|^2+|u'|^2\dd{x}}$ ( ou bien $\norm{u}=(∫_0^1 |u'|^2\dd{x})^{\frac 12}$) ($|u(x)|≤∫_0^1 |u'(x)|\dd{x})≤\norm{u'}_{L^2}$ $\implies$ $\norm{u}_{L^2}≤\norm{u'}_{L^2}$)
 	
 	$X$ est Hilbert noté $H_0^1(I)$ (ou bien $W_0^{1,2}(I)$)
 	
 	Choix de $G$. $G$ topologie faible ($X$ est réflexif)
 	(ou $G$ topologie associe a la convergence uniforme $u_n\overset{G}{\to} si \sup_I|u_n-u|\to 0$)
 	
-	$u_n\rightharpoonup u$ faiblement $\Leftrightarrow$def $\left\{\mqty{u_n\rightharpoonup u\ L^2\mbox{-faible}\\u'_n\rightharpoonup u'\ L^2\mbox{-faible}}\right.$
+	$u_n\rightharpoonup u$ faiblement $\iff$def $\left\{\mqty{u_n\rightharpoonup u\ L^2\mbox{-faible}\\u'_n\rightharpoonup u'\ L^2\mbox{-faible}}\right.$
 	
-	$\overset{Rellich}\Rightarrow$ $u_n\to u$ uniformément.
+	$\overset{Rellich}\implies$ $u_n\to u$ uniformément.
 	$|u_n(x)-u_n(y)|≤\sqrt{|y-x|}\norm{u'_n}_{L^2} $ 
 \end{example}
 
 \begin{theorem}[Ascoli]
-	$u_n$ continue sur un compact équicontinue et $\forall x (u_n(x))$ bornée dans $\R$ $\Rightarrow$ $\exists u_{nk}$, $\exists u$ continue | $u_{nk}\to u$ uniformément.
+	$u_n$ continue sur un compact équicontinue et $\forall x (u_n(x))$ bornée dans $\R$ $\implies$ $\exists u_{nk}$, $\exists u$ continue | $u_{nk}\to u$ uniformément.
 \end{theorem}
 
-$\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
-
-
+$\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$\\
 	\textbullet On a bien que $\lim_{\norm{u}_X\to +∞}F(u)=+∞$
 	\begin{align*}
 		∫_0^1 |(u')^2-1|\dd{x}&≥∫_0^1|u'|^2-1\\
@@ -387,7 +386,7 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	\textbullet $F$ est elle faiblement s.c.i. Soit $φ$ une fonction 1-périodique de classe $C^1$ telle que $φ(0)=φ(1)=0$ (par exemple $φ(x)=\sin 2πx$).
 	Soit $u_n=\frac 1nφ(nx)$. Alors $u_n(0)=u_n(1)=0 (φ(0)=φ(1)=0)$.
 	$u'_n=φ'(nx)$
-	$∫_0^1|u_n|^2\dd{x} =\frac{1}{n^2}∫_0^1|φ(nx)|^2\dd{x}≤\frac{C}{n^2}$ où $C=\sup|φ^2|$ $\Rightarrow$ $u_n\to 0$ uniformément et dans $L^2(I)$.
+	$∫_0^1|u_n|^2\dd{x} =\frac{1}{n^2}∫_0^1|φ(nx)|^2\dd{x}≤\frac{C}{n^2}$ où $C=\sup|φ^2|$ $\implies$ $u_n\to 0$ uniformément et dans $L^2(I)$.
 	
 	$∫_0^1|u'_n|^2\dd{x}=∫_0^1|φ'(nx)|^2\dd{x}=∫_0^1|φ'(y)|^2\dd{y}$
 	
@@ -401,7 +400,6 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	Conclusion $u_n\rightharpoonup 0$ faiblement dans $X$. Calculons:
 	\begin{align*}
 		\liminf_{n\to ∞}F(u_{n})&=\liminf_{n\to ∞}∫_0^1|1-(u'_n)^2|^2\dd{x}\\
-		&=\liminf_{n\to ∞}∫_0^1|1-|\\
 		&=\liminf_{n\to ∞}∫_0^1 |1-φ^2|\dd{y}
 	\end{align*}
 	$F(0)=∫_0^1|1-0|^2\dd{x}=1$
@@ -421,7 +419,7 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	Alors $F(u_n)\to 0$ qd $n\to ∞$ car $∫_0^1|1-|u_n'|^2|\dd{x}=0$ et $∫u^2_n=\to 0$.
 
 	Puisque $F≥0$, on a donc $\inf_XF=0$. L'infinum n'est pas atteint car
-	$F(u)=0$ $\Rightarrow$ $∫_0^1|1-{u'}^2|\dd{x}+∫_0^1|u|^2\dd{x}=0$ $\Rightarrow$ $u=0$ pp et $u'=±1$ pp impossible. Donc $F(u)>0\ \forall u\in X$.
+	$F(u)=0$ $\implies$ $∫_0^1|1-{u'}^2|\dd{x}+∫_0^1|u|^2\dd{x}=0$ $\implies$ $u=0$ pp et $u'=±1$ pp impossible. Donc $F(u)>0\ \forall u\in X$.
 
 	Raidon Théorique
 \end{example}
@@ -431,7 +429,7 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	où $g:\R\rightarrow [0,+∞]$ est s.c.i.
 	
 	$G =$ topologie faible de $X$
-	($u_n\overset{G}\rightharpoonup u$ $\Rightarrow$ $\left\{ \mqty{u_n'\to u'\text{ faible $L^(0,1)$}\\ u_n\to u\mbox{ uniformément}} \right.$)
+	($u_n\overset{G}\rightharpoonup u$ $\implies$ $\left\{ \mqty{u_n'\to u'\text{ faible $L^(0,1)$}\\ u_n\to u\mbox{ uniformément}} \right.$)
 	
 	où $g:\R\to [0,+∞]$ est s.c.i.
 	
@@ -440,9 +438,9 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 		\item $G$ s.c.i.
 		\item $\lim_{\norm{u}\to+∞}F(u)=+∞$ ($F(u)≥\frac 12\norm{u'}^2_{L^2}≥\frac 14\norm{u}_X^2$)
 		
-		Soit $u_n\overset{G}\to u$. Alors $u_n'\to u'$ faible $\Rightarrow$ $\liminf_{n\to ∞}∫_0^1|u'_n|^2≥∫_0^1|u'|$. ($\liminf\norm{u'_n}≥\norm{u'}$)
+		Soit $u_n\overset{G}\to u$. Alors $u_n'\to u'$ faible $\implies$ $\liminf_{n\to ∞}∫_0^1|u'_n|^2≥∫_0^1|u'|$. ($\liminf\norm{u'_n}≥\norm{u'}$)
 		
-		$\Rightarrow$ $\liminf_{n\to ∞}∫_0^1g(u_n)\dd{x}≥∫_0^1(\liminf_n(g(u_n)))\dd{x}≥∫g(x)\dd{x}$
+		$\implies$ $\liminf_{n\to ∞}∫_0^1g(u_n)\dd{x}≥∫_0^1(\liminf_n(g(u_n)))\dd{x}≥∫g(x)\dd{x}$
 		(car $\liminf_{n\to ∞}g(u_n)≥g(u)$).
 	\end{enumerate}
 \end{example}
@@ -474,24 +472,24 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	
 	$\norm{u}_X\overset{\text{def}}= \norm{\nabla u}_{L^∞(Ω)}$
 	
-	(si $\nabla u=0$ pp $\Rightarrow$ $u=\const$ $\Rightarrow$ $u=0 $(car $u(b)=0$))
+	(si $\nabla u=0$ pp $\implies$ $u=\const$ $\implies$ $u=0 $(car $u(b)=0$))
 	
 	Choix de $G$
 	
-	$\norm{u_n}_X≤C$ $\Rightarrow$ $\norm{\nabla u_n}_{L^∞}≤ C L^∞(Ω)=(L^1(Ω))^*$
+	$\norm{u_n}_X≤C$ $\implies$ $\norm{\nabla u_n}_{L^∞}≤ C L^∞(Ω)=(L^1(Ω))^*$
 	
 	Alors $\forall x |u_n(x)-u_n(y)|≤C|x-y|$ pour $y$ racine de $x$
 	
-	$\Rightarrow$ $(u_n)$ est équicontinue au point $x$
+	$\implies$ $(u_n)$ est équicontinue au point $x$
 	
-	$u_n(b)=0$ $\Rightarrow$ $|u_n(x)|≤CL(γ)$ où $φ$ est une courbe joignant $b$ au point $x$.
+	$u_n(b)=0$ $\implies$ $|u_n(x)|≤CL(γ)$ où $φ$ est une courbe joignant $b$ au point $x$.
 	
 	Alors d'après Ascoli: $\exists u_{uk}$ $\exists u$ continue | $u_{uk}\to u$ uniformément sur $\bar Ω$
-	$\norm{\nabla u_{nk}}_{L^∞}≤M$ $\Rightarrow$ $\nabla u_{nk}\overset*\rightharpoonup u$ dans $L^∞(Ω)$ faible.
+	$\norm{\nabla u_{nk}}_{L^∞}≤M$ $\implies$ $\nabla u_{nk}\overset*\rightharpoonup u$ dans $L^∞(Ω)$ faible.
 	
 	$G$= converge uniforme sur $\bar Ω$.
 	\begin{enumerate}
-		\item $F(u)<+∞$ $\Rightarrow$ $\norm{u}_X≤\sup_Ωk=M$ $\Rightarrow$ $\lim_{\norm{u}\to∞}F(u)=+∞$
+		\item $F(u)<+∞$ $\implies$ $\norm{u}_X≤\sup_Ωk=M$ $\implies$ $\lim_{\norm{u}\to∞}F(u)=+∞$
 		\item $F$ est $G$ s.c.i. 
 	\end{enumerate}
 	Soit $(u_n)$ une suite telle que $u_n\to u$ uniformément et telle que $\liminf_{n\to∞} F(u_n)<+∞$ Il faut montrer que $\liminf F(u_n)≥F(u)$. Quitte à extraire une sous suite, on peut supposer que $\liminf_nF(u_n)=\lim_{n\to∞}F(u_n)$. Alors $F(u_n)$ est majoré pour $n$ assez grand et donc $\sup_n\norm{u_n}_X<+∞$. Donc on a $u_n\to u$ uniformément $|\nabla u_n|≤M$.
@@ -501,20 +499,20 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	
 	On sait que $\nabla u_n\overset{*}\rightharpoonup\nabla u$ dans $L^∞(Ω)$
 	
-	$\Rightarrow$ $∫_Ω\nabla u_n•v(x)\to ∫_Ω\nabla u(x)v(x)$
+	$\implies$ $∫_Ω\nabla u_n•v(x)\to ∫_Ω\nabla u(x)v(x)$
 	
 	$\forall v\in (L^1(Ω))^d $
 	$v(x)=z\ind_{B(x_0,ε)} z\in\R^2$
 	
 	\textbullet $B(x_0,ε)$ boule centre dans $Ω$
-	$\Rightarrow$ $∫_{B(x_0,ε)}(\nabla u_n(x),z)\to∫_{B(x_0,ε)}\nabla u(x),z$
+	$\implies$ $∫_{B(x_0,ε)}(\nabla u_n(x),z)\to∫_{B(x_0,ε)}\nabla u(x),z$
 	
 	$|∫_{B(x_0,ε)}\nabla u_n(x) z|≤∫_{B(x_0,ε)}\nabla |u_n(x)| |z|\dd{x}≤(∫_{B(x_0,ε)}k(x)\dd{x})|z|$
 	
 	d'où qd $n\to ∞$
 	$|∫_{B(x_0,ε)}\nabla u(x) z|≤(∫_{B(x,ε)}k(x))|z|$
 	
-	$\Rightarrow$
+	$\implies$
 	$\frac{1}{B(x_0,ε)}|∫_{B(x_0,ε)}\nabla u_n(x) z\dd{x}|≤$
 	$\frac{1}{B(x_0,ε)}|∫_{B(x_0,ε)}k(x)\dd{x} |z|$
 	
@@ -523,9 +521,9 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	$\lim_{ε\to 0}\frac 1{B}∫_{B(x_0,ε)}k(x)\dd{x}=k(x_0)$
 	
 	$\nabla u(x_0) z≤k(x_0) z$
-	$\forall z\in\R^d pp x_0\in Ω$ $\Rightarrow$ $|\nabla u(x_0)|≤k(x_0) pp x_0\in Ω$
+	$\forall z\in\R^d pp x_0\in Ω$ $\implies$ $|\nabla u(x_0)|≤k(x_0) pp x_0\in Ω$
 	
-	Conclusion $u_n(a)\to u(a)$ $u_n(b)$ $\forall x$ $\Rightarrow$ $u(b)=0$
+	Conclusion $u_n(a)\to u(a)$ $u_n(b)$ $\forall x$ $\implies$ $u(b)=0$
 	$|\nabla u|≤k(x) pp x\inΩ$
 	
 	Donc $u\in X$, avec $|\nabla u|≤k$ pp et $F(u)=u(a)$.
@@ -541,7 +539,7 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	
 	On a déjà vu que
 	$u(b)-u(a)≤∫_0^1 k(γ)|γ(a)|$ si $u\in X$ et $γ\in Lip([0,1],Ω)$ $γ(0)=a$ et $γ(1)=b$
-	$\Rightarrow$ $M_{Ω,k}(a,b)≤\inf\{∫_0^1k(γ)|γ'|\dd{t},\ γ(0)=a\ γ(1)=b\ \}$---distance géodésique.
+	$\implies$ $M_{Ω,k}(a,b)≤\inf\{∫_0^1k(γ)|γ'|\dd{t},\ γ(0)=a\ γ(1)=b\ \}$---distance géodésique.
 	
 	Posons $\bar U(x)=-\inf\{∫_0^1k(γ(t))|γ'(t)|\dd{t}\ |\ γ(0)=x\ γ(1)=b\}$
 	
@@ -555,7 +553,7 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 	$z\nabla \bar u(x)=\lim\frac{\bar u(x+tx)-\bar u(x)}{t}$
 	
 	$|\bar u(x+tz)-\bar u(x)|≤∫_0^tk(x+tz)t|z|\dd{z}$
-	$\Rightarrow$ $\nabla \bar u(x)z≤k(x)|z|$
+	$\implies$ $\nabla \bar u(x)z≤k(x)|z|$
 	
 	$k(x)=k_1, k(x)=k_2$
 	
@@ -565,3 +563,832 @@ $\inf_{u\in X}F(u) où F(u)=∫_0^1 |1-{u'}^2|\dd{x}+∫_0^1 u^2\dd{x}$
 % paragraph l_1_\xCF\x89_n_est_pas_reflexif (end)  
 % subsection cas_importantes (end)
 % section cas_ou_x_est_un_banach_non_hilbert (end)
+\chapter{Analyse Convexe} % (fold)
+\label{cha:analyse_convexe}
+$E$ espace vectoriel sur $\R$
+
+\section{Ensembles et fonctions convexes} % (fold)
+\label{sec:ensembles_et_fonctions_convexes}
+$x,y\in E$ Notation
+$[x,y]=\{x+tx+ty| t\in [0,1]\}$
+$]x,y[=\{x+tx+ty| t\in ]0,1[\}$
+$[x,y[=\{x+tx+ty| t\in [0,1[\}$
+
+\begin{definition}
+	ACE convexe si:
+	$\forall (x,y)\in A\times A [x,y]\subset A$
+\end{definition}
+\begin{remark}
+	A convexe $\implies$ $\frac{x+y}{2} \in A \forall (x,y)\in A$
+	$\Leftarrow$ vrai si $A$ est fermé pomme topologie $G$ ($\R^d$) telle que $t\rightarrow (1-t)+ty (x,y\in E)$ conime de $\R$ dans $E$. 
+\end{remark}
+\begin{remark}[indication]
+	$D=\{t\in [0,1]|(1-t)x+y\in A\}$
+	$D$ est fermé $D\supset \{ 0,\frac12,1\} $ $\implies$ $ D\supset \{\frac k{2^n}, 0≤k≤2^n\}$
+\end{remark}
+Si $E$ est un e.v.n. ($G$ associée à la norme de $E$) alors
+\begin{lemme}
+	$A$ convexe de $E$ tel que $Å≠ø$. Alors $x\in Å$, $y\in Å $$\implies$ $[x,y[\supset Å$. De plus:
+	$\bar Å=A$ et $Å$ est convexe.
+\end{lemme}
+\begin{theorem}[properties]
+	\begin{itemize}
+		\item $(A_i)_{i\in I}$ famille de convexes $\implies$ $\cup_{i\in I}A_i$ est un convexe.
+		\item $A$ convexe $\implies$ $\left\{\mqty{Å\text{ convexe}\\\bar A convexe}\right.$
+	\end{itemize}
+\end{theorem}
+\begin{definition}
+	$co(A)$ enveloppe convexe de $A = \cup_{\substack{B convex\\B\supset A}}$ plus petit convexe contenant A.
+	$\overline{co}(A)=\{\cup B|B convexe fermé B\supset A\}=\overline{co(A)}$.
+\end{definition}
+
+Si $\dim E<∞$ ($E=\R^N$) Carateodory.
+
+$A$ fermé $\subset E$. $\overset{co(A)}=\{∑_{i=1}^{N+1}λ_ix_i | λ_i≥0,\ ∑_{i=1}^{N+1} λ_i=0\ x_i\in A\}$
+compinaison convexe des vecteurs $x_1,...,x_{N+1}$.
+
+$N=2,$
+$A={a,b,c}$
+$\forall x\in co(A) \exists !λ_1λ_2λ_3 | λ_1a+λ_2b+λ_3c=x, λ_1+λ_2+λ_3=1$
+coordonnées barycentriques
+
+% section ensembles_et_fonctions_convexes (end)
+\section{Fonctions convexes} % (fold)
+\label{sec:fonctions_convexes}
+$f:E\rightarrow ]-∞,+∞]$
+
+\begin{definition}
+	$f$ convexe si $\forall(x,y)\in E\times e \forall λ\in [0,1]$:
+	$f((1-λ)x+λy)≤(1-λ)f(x)+λf(y)$ (inegalite dans $]-∞,+∞]$) $f$ est strictement convexe si de plus si l'égalité entraine que $x=y$ ou bien $λ\in\{0,1\}$. 
+\end{definition}
+
+Alors
+$x+y$ $\implies$ $f(\frac{x+y}2)<\frac 12[f(x)+f(y)]$
+
+\begin{example}
+	$E $e.v.n. $f_p(x)=\frac 1p\norm{x}^p$ $1≤p<+∞$
+	Alors $f_p$ est convexe $\forall p\in [1,+∞[ $strictement convexe si $p>1$\\
+	\textbullet  $p=2$ $\norm{\frac{x+y}2}^2=\frac 12(\norm{x}^2+\norm{y}^2)-\frac 12\norm{x-y}^2$\\
+	\textbullet  $p=1$ $y=2x$ $\norm{\frac{x+y}2}=\frac 32\norm{x} \frac 12(\norm{x}+\norm{y})=\frac 32\norm{x}$\\
+	\textbullet  $p=+∞$ $f_{∞}(x)=\{\substack{0 si \norm{x}≤1\\+∞ si \norm{x}>1}$ convexe sci $E\rightarrow [0,+∞]$
+\end{example}
+\begin{lemme}
+	$f$ convexe $\iff$ $epi f=\{(x,α)\in E\times \R\ f(x)≤α \}$ est un convexe de $E\times\R$;
+	$f $convexe sci $\iff$ $epi f$ est un convexe fermé de $e\times \R$.
+\end{lemme}
+\begin{remark}
+	$f$ convexe $\implies$ $\forall α\in\R \{x\in E\ |\ f(x)≤α\}$ est un convexe de $e$.
+	$\Leftarrow$ faux, mais vrai si $f$ ne prend que les valeurs $0$ et $+∞$)
+\end{remark}
+\begin{example}
+	$δ_A: x\in E\rightarrow \bra{\substack{0 si x\in A\\+∞ si x\not\in A}}$ (indicatrice de l'ensemble $A$.)
+	$δ_A$ convexe $\implies$ $A$ convexe .($epi(δ_A)=A\times \R^+$)
+\end{example}
+% section fonctions_convexes (end)
+\section{Continuité des fonctions convexes} % (fold)
+\label{sec:continuite_des_fonctions_convexes}
+$E$ e.v.n. sur $\R$.
+$f: E\rightarrow ]-∞,+∞]$ convexe
+\begin{definition}
+	$\dom f=\{x\in E\ |\ f(x)<+∞\}$.
+\end{definition}
+\begin{lemme}
+	Soit $V$ un ouvert de $E$ tel que $\sup_V f<+∞$. Alors $f$ est continue, localement Lipstitzienne) sur $V$.
+\end{lemme}
+\begin{proof}
+	Soit $x_0\in V$ et $M=\sup_V f$ ($M<+∞$). Quitte à ecrire fo sous la forme $f(x)=f(x_0)+g(x-x_0)$ ; on peut supposer que $x_0 = 0_E$ et $f(x_0)=0$.
+	\textbullet  $V$ ouvert contenant $0$ $\implies$ $\exists R>0 | \norm{x}≤R$. $f(x)≤M$
+	
+	Alors pour tout $x\in E$ telle que $\norm{x}<r$ (avec $r<R$) on a:
+	$f(\frac Rrx)≤M$ $\implies$ $f(\frac rR(\frac{Rx}r)≤convexite= \frac rRf(\frac{Rx}{r})+(1-\frac rR)f(0)$$\implies$ $f(x)≤\frac rR M$, si$\norm{x}<r$.
+	$f(x)-f(0)≤\frac{\norm{x}R}M. \forall\norm{x}<R$
+	$\implies$$\limsup_{\norm{x}\to 0}f(x)≤0=f(0_E)$
+	
+	Montrons que
+	$\liminf_{\norm{x}\to 0} f(x)≥0$
+	
+	$z=-kx$
+	$(1-λ)x+λz=0$ $\implies$ $x=λ(x-z)=λ(1+k)x.$ $λ=\frac1{1+k}$, $λ\in]0,1[$
+	
+	$\frac k{1+k} x+ \frac z{1+k}=0$ $\implies$ $f(0_e)=0≤\frac{k}{1+k}+\frac 1{1+k}f(z)$ $\implies$
+	$0≤\frac k{1+k}f(x)+\frac m{1+k}$ $\implies$ $f(x)≥-\frac Mk$ si $\norm{-kx}≤R$ $\implies$ $f(x)≥-\frac{M}{\frac{R}{\norm{x}}}=-\frac MR\norm{x}$
+	
+	Finalement on a obtenu:
+	$|f(x)-f(0_E)|≤\frac MR\norm{x}$, $\forall x\in B_R$.
+	
+	d'où $\lim_{\norm{x}\to 0}=f(0_E)$
+\end{proof}
+\begin{corollary}
+	\begin{enumerate}
+		\item $f$ convexe majorée sur toute boule de $E$ $\implies$ $f$ continue sur $E$.
+		\item $f$ est continue sur $\overset{º}{\dom f}$ si $f $est s.c.i. 
+	\end{enumerate}
+	$\dom f=\cup_{n\in\N}\underbrace{\{x\in E\ |\ f(x)≤n\}}_{\text{fermée}}$.
+	
+	Baire $\overset{º}{\dom f≠0}$ $\implies$ $\exists n_0\ |\ \overset{º}{\{x\in E\ |\ f(x)≤n\}}≠ø$, $\forall n≥n_0$.
+	Alors $x\in\overset{º}{\dom f}$ $\implies$ $\exists n\ |\ x\in V_n=\overset{º}{\{f≤n\}} f$ majorée sur l'ouvert $V_n$ $\implies$ $f$ continue au pt $x$. 
+\end{corollary}
+% section continuite_des_fonctions_convexes (end)
+
+\section{Conjuguée de Fenchel} % (fold)
+\label{sec:conjuguee_de_fenchel}
+X e.v.n. sur $\R$
+$f:X\rightarrow ]-∞,+∞]$ $\dom f=\{x|f(x)<+5\}≠ø$.
+\begin{definition}
+	$f*:X^*\rightarrow \bar\R$
+	$\forall x^*\in X^*\qand f^*(x^*)=\sup\{\expval{x,x^*}-f(x)\ |\ x\in X\}$.
+\end{definition}
+\begin{remark}
+	Si $E$ est un Hilbert ($X^*\sim X$), $f^*$ s'appelle la conjuguée de Fenchel de $f$. On a : $\forall x\in X\forall x^*\in X^*\qand \expval{x,x^*}≤f(x)+f^*(x^*)$ inégalité de Fenchel.
+	
+	\textbullet  Interprétation si $X=\R$
+	$y=f'(\bar x)(x-\bar x)+f(\bar x)$ 
+	ordonné de l'intersection avec $x=0$ de la tangente au graphe de f dont la ponte est égale à $x^*$ (il faut une tangente en dessous du graphe)
+\end{remark}
+\begin{example}
+	\begin{itemize}
+	\item Economie $X=\R^n$
+	$f(x_1,x_2,...,x_n)$ cout de fonction de quantités $x_1, x_2,...,x_n$ de produits $A_1, A_2, ..., A_n$. $x^*=(x_1^*,x_2^*,...,x_n^*)$, $x_i^*$ $= $prix de vente unitaire de $A_i$.
+	
+	Profit $=x_1x_1^*+...+x_nx_n^*-f(x_1,x_2,...,x_n)$ $f^*(x^*)$=profit optimal.
+	$X$ Hilbert $f_p(x)=\frac 1p\norm{x}^p$ $1≤p<+∞$.
+		$f_1^*(x^*)=\sup_{x\in X}(x|x^*)-\norm{x}$ 
+		$f^*(x^*)≥t\norm{x^*}^2-t\norm{x^*}≥t\norm{x^*}(\norm{x^*}-1) \forall t≥0$.
+		
+		$f^*(x^*)=+∞ si \norm{x^*}≤1$
+		
+		Si $\norm{x^*}≤1$, on a: $(x|x^*)≤\norm{x}$ $\implies$ $(x|x^*)-\norm{x}≤0, \forall x\in X$. $\implies$ $f^*(x^*)=0.$
+		
+		$f_1^*(x^*)=\sup_{x\in X}((x|x^*)-\norm{x})=\left\{\mqty{0 si \norm{x^*}≤1\\+∞ si \norm{x^*}>1}=f_∞(x^*)\right.$ où $f_∞=\left\{\mqty{0 si \norm{y}≤1\\+∞ si \norm{y}>1}=f_∞(x^*)\right.$
+		
+		$1<p<+∞$
+		$f_p^+(x^*)=\sup_{x\in X}\{(x|x^*)-\frac 1p\norm{x}^p\}$
+		$\forall x\in X, \exists!t≥0, \exists!u\in X \norm{u}=1 $tel que $x=tu$
+		
+		($t=\norm{x}$ et $u=\frac 1{\norm{x}}$)
+		
+		$f_p^*(x^*)=\sup_{\substack{t≥0\\\norm{u}=1}}|t(u|x^*)-\frac 1p|t|^p|=\sup_{\norm{u}=1}\sup_{t≥0}|t(u|x^*)-\frac 1p|t|^p|$
+		
+		$φ(t)=t(u|x^*)-\frac 1pt^p$
+		$φ'(t)=(u|x^*)-|t|^{p-2}t$
+		
+		$φ'(\bar t)=0$ $\iff$ $|\bar t|^{p-2}t=(u|x^*)$
+		
+		$\sup_{t\in\R}φ(t)=φ(\bar t)=\bar t(u|x^*)-\frac 1p|\bar t|^p=\bar t\bar t|\bar t|^{p-2}-\frac 1p|\bar t|^p=|\bar t|^p(1-\frac 1p)$.
+		
+		$|\bar t|^{p-1}=|(u|x^*)|$ $\implies$ $|\bar t|^p=|(u|x^*)|^{\frac p{p-1}}=|(u|x^*)|^{p'} où (\frac 1p+\frac 1{p'}=1)$ $\implies$ $ \sup_{t\in\R}φ(t)=\frac 1{p'}|(u|x^*)|^{p'}$ où p' est expression conjugué de $p$.
+		
+		$f_p^*(x^*)=\sup_{\norm{u}=1}\frac 1{p'}|(u|x^*)|^{p'}$
+		$\sup_{\norm{u}=1}(u|x^*)=\norm{x^*}$ $\implies$ $ f_p^*(x^*)=\frac 1{p'}\norm{x^*}^{p'} f_p^*=f_{p'}$
+		
+		Pour $p=2$, on obtenir $f_2^*=f_2$, $f_p^*=f_{p'}$ $\forall p\in]1,+∞[$
+		$f_1^*=f_∞. f_∞^*$?
+		
+		$f_∞^*(x^*)=\sup[(x|x^*)-f_∞(x)]=\sup_{\norm{x}≤1}(x|x^*)=\norm{x^*}=f_1$.
+		
+		Inégalité de Fenchel $\expval{x,x^*}≤\frac 1p\norm{x}^2+\frac 1{p'}\norm{x^*}^{p'}$ égalité $\iff$ $x=x^{p-2}x$.
+	\item$ C$ convexe de $E$
+	$f=δ_C(x)=\left\{\mqty{0 si x\in C\\+∞ sinon}\right.$
+	$f^*(x^*)=δ-C^*(x^*)=\sup_{x\in C}(x|x^*)$
+	$δ_C^*$ est convexe, sous additive $(δ_C^*(x^*+y^*)≤δ_C^*(x^*)+δ_C^*(y^*))$
+	et positivement 1-homogène:
+	$δ_C^*(λx^*)=λδ_C^*(x^*)\ \forall x≥0$.
+	
+	$δ_C^*$ est appelée fonction d'appeau de $C$. 
+	\end{itemize}
+\end{example}
+\begin{exercise}
+	$δ_c^*$ est une semi-norme si et seulement si
+	$C$ fermé et $-C=C$. Ce sera une norme si de plus $0\in \dot C$.
+\end{exercise}
+% section conjuguee_de_fenchel (end)
+\section{Biconjuguée de Fenchel} % (fold)
+\label{sec:biconjuguee_de_fenchel}
+$f: x\rightarrow ]-∞,+∞[$
+$f^{**}:X\rightarrow \bar\R$ est définie par:
+$f^{**}(x)=\sup\{\expval{x,x^*}-f^*(x^*)|x^*\in X^*\}$
+\begin{example}
+	$X $Hilbert $f_{p}=\frac 1p\norm{x}^p$ $1≤p<+∞$
+	$\forall p\in [1,+∞]$ $f_{p}^{**}=f_p$, $f_∞^{**}=f_∞$.
+\end{example}
+\begin{theorem}[properties]
+	[de $f^*$ et $f^{**}$]
+	\begin{enumerate}
+		\item $f^*$ est convexe et s.c.i. pour la topologie * faible (=faible ssi $E$ est réflexif).
+		\item $\inf_Xf=-f^*(0)$
+		$f≤g$ $\implies$ $f^*≥g^*$
+		\item $(f_i)_{i\in I}$ famille de fonctions sur $X$
+		($\inf_{i\in I}f_i)^*=\sup_{i\in I}(f_i)^*$
+		\item $f^{**}≤f$ (mais ${f^{**}}^*=f^*$)
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	1) $f^*(x^*)=\sup\{\expval{x,x^{*}}-f(x)\ |\ x\in X\} où g_x: x^*\in E^* \rightarrow  \expval{x,x^*}-f(x)$ affine * faiblement continue. $G=$topologie faible $g_x$ affine, $G$-continue. Or $g^*=\sup_{x\in X}g_x$ $g_x$ convexe, $G$---s.c.i. enveloppe superior de fonctions convexes s.c.i.
+	
+	$f^*(0)=\sup\{-f(x)\ |\ x\in X\}=-\inf_X f$
+	
+	$f≤g$ $\implies$ $\expval{x,x^*}-f(x)≥\expval{x,x^*}-g(x),\ \forall x\in X$.
+	$\implies$ $f^*(x^*)≥f^*(x^*)$
+	4) $(\inf_{i\in I}f_i)^*|x^*)=\sup_{x}|\expval{x,x^*}-\inf_{i\in I}f_{i}(x)|=\sup_x|\expval{x,x^*}+\sup_{i\in I}-f_i(x)|=\sup_{i\in I}\underbrace{\sup_x|\expval{x,x^*}-f_i(x)|}_{f_i^*(x^*)}$
+	5) $\expval{x,x^*}≤f(x)+f^*(x^*) \forall x\in X, \forall x^*\in X^*$
+	
+	Donc $\expval{x,x^*}-f^*(x^*)≤f(x)$ $\implies$ $\underbrace{\sup_{x^*}\expval{x,x^*}-f^*(x^*)≤f(x)}_{f^{**}}\ \forall x\in X. g_x , G$ 
+\end{proof}
+\begin{lemme}
+	$f^{**}(x)=\left\{\mqty{\sup\{g(x)\ |\ g affine continue g≤f\}\\-∞ s'il n'existe pas de tel mimisants g}\right.$
+\end{lemme}
+\begin{proof}
+	Soit $g$ une fonction affine continue telle que $f≥g$. Alors $\exists x^*\in X^*$, $\exists β\in\R$ tel que $g(x)=\expval{x,x^*}-β$ et $g≤g$$\iff$ $\expval{x,x^*}-β≤f(x)$, $\forall x\in X$ $\iff$ $\sup_{x\in X}(\expval{x,x^*}-f(x))≤β$ $\iff$ $f^*(x^*)≤β$ ($\implies$ $x^*\in \dom f^*$). Si $\dom f^*≠ø$ ($f^*=+∞$) $\implies$ $\not\exists g$ affine continue $≤f$.
+	$\dom f^*≠ø$ $\iff$ $\exists g$ affine continue $≤f$
+	Supposons $\dom f^*≠ø$ alors $\sup_{\substack{g≤f\\g affine}}g(x)=\sup_{(x^*,β)\in E^*\times\R}\{\expval{x,x^*}-β\ |\ f^*(x^*)\}$
+	$=\sup_{x^*\in\dom f^*}|sup_{β≥f^*(x^*)}\expval{x,x^*}-β|=\sup_{x^*\in\dom f^*}|\expval{x,x^*}-f^*(x^*)|=\sup_{x\in X^*}\expval{x,x^*}-f^*(x^*)=f^{**}(x)$
+\end{proof}
+\begin{theorem}
+	$X$ e.v.n. $f$ convexe: $X\rightarrow ]-∞,+∞]$ tel que $\exists x_0\in X\ |\ f(x)<+∞$. Alors
+	\begin{enumerate}
+		\item $f$ s.c.i. sur $X$ $\implies$ $f^{**}=f$
+		\item supposons que $\dom f^*≠ø$ alors $f^{**}=\bar f$.
+	\end{enumerate}
+	où $f$ est la plus grande fonction s.c.i. inferiore à $G$  $(\bar f(x)=\sup\{g(x)\ |\ g s.c.i. ≤f\})=\inf_{x_n\to x}\liminf_{n\to ∞}f(x_n)=\lim_{r>0}(\inf_{B(u,r)}G))$
+	
+\end{theorem}
+\begin{remark}
+	$\epi\bar f=\overline{\epi f}$
+\end{remark}
+\begin{proof}[Preuve de ii)]
+	\begin{rappel}
+		$f^{**}≤f$ $\implies$ $f^{**}≤\bar f$
+		$f^{**}(x)=\sup\{g(x)\ |\ g affine continue ≤f\}$
+	\end{rappel}
+
+	Soit $x_0\in X$ et $α_0<\bar f(x_0)$. Montrons que $α_0< f^{**}(x_0)$ (alors on aura $\bar f(x_0)≤f^{**}(x_0)$)
+	
+	Il suffit de montrer $g(x)=\expval{x,x_0^*}-β_0$ tel que $g≤f$ et $α_0≤g(x_0)$. $\bar f(x_0)>α_0$ $\implies$ $(x_0,α_0)\not\in \bar f$. convexe fermé de $X\times\R$.
+	D'après Hahn-banach $\exists (x_0^*,β_0)\in X^*\times\R$ tel que $\expval{x_0,α_0}+α_0β_0<γ_0=\inf\{\expval{x,x_0^*}+αβ_0\}$
+	
+en particulier
+$\expval{x_0,x_0^*}+α_0β_0<\expval{x,x^*}+αβ_0$ $\implies$ $β_0≤0$ (sinon si $f(x)<+∞$ on peut faire $α\to∞$).
+
+$β_0<0$ impossible car ssi $\bar x$ est tel que $f(\bar x)<+∞$ alors $\expval{x_0,x_0^*}+α_0β_0<\expval{\bar x,x_0^*}+αβ_0\ \forall α>f(\bar x)$
+qd $α\to +∞$ on obtient une contradiction. Donc $β_0≥0$.
+
+1er cas $β_0>0$ On a: $\expval{x_0,x_0^*}+α_0β_0≤\expval{x,x_0^*}+β_0\bar f(x)$ ($α=\bar f(x)$) $\implies$ $\bar f(x)≥\underbrace{\expval{x_0-x,\frac{x_0^*}β}+α_0}_{g(x) affine continue}$
+$g(x_0)=α_0$.
+\end{proof}
+
+$f:X\rightarrow ]-∞,+∞]$, $\epi f=\{(x,α)\in X\times\R\ f(x)≤α\}$
+
+$\bar f(x)\overset{\text{def}}{=}\sup\{g(x)\ |\ g sci g≤f\}$
+
+$(x_0,x_0^*)+α_0β_0<\inf\{\expval{x,x_0^+}+αβ_0\ |\ \bar f(x)≤α\}$
+
+$f^{**}(x_0)\overset{?}{≥}\bar f(x_0), α_0<\bar f(x_0)$.
+
+où $f^{**}(x_0)=\sup\{g(x_0)\ |\ g\text{---affine continue }g≤f\} β_0≥0$
+
+$β_0>0$ OK
+$f^{**}(x_0)≤α_0\ \forallα_0<\bar f(x_0)$ $\implies$ $f^{**}(x_0)≥\bar f(x_0)$.
+
+$β_0=0$ on va montrer que $f^{**}(x_0)=+∞$
+Par hypotese $\exists g_0$ affine continue telle que $g_0≤f$. 
+
+Soit $ε>0$ et posons $γ_0=\inf\{\expval{x,x_0^*}+0\ |\ \bar f(x)≤α\}$ ($β_0=0$)
+
+On soit que $\expval{x_0,x_0^*}<γ_0$ et $\expval{x,x^*_0}≥γ$ si $\bar f(x)<+∞$.
+
+$\expval{x,x_0^*}+εf(x)≥γ_0+εg_0(x)$ $\forall x\in\dom f$ ($\bar f(x)≤f(x)<+∞$).
+
+Donc $f(x)≥\underbrace{g_0(x)+\frac{γ_0-\expval{x,x_0^*}}ε}_{g_ε\text{ affine continue}}, \forall x\in X$.
+$\implies$ $f^{**}(x_0)≥g_ε(x_0)=g_0(x_0)+\frac{γ_0-\expval{x_0,x_0^*}}ε, \forall ε>0$.
+
+$γ_0>\expval{x_0,x_0^*}$ $\implies$ $\lim_{ε\to 0_+}g_ε(x_0)=+∞$ $\implies$ $f^{**}(x_0)=+∞$.
+
+$f$ convexe et admet une minimisant affine continue $\implies$ $f^{**}=\bar f$.
+
+\begin{remark}
+	$f$ admet minimisante affine continue $\iff$ $\exists x_0^*\ |\ f^*(x_0)<+∞$
+	($\dom f^*≠ø$).
+\end{remark}
+
+\begin{proof}
+	i) $f$ est supposée convexe s.c.i. avec $\dom f≠ø$. Si $f$ admet une minimisante affine continue, d'apres ii), on aura $\bar f=f=f^{**}$. Montrons l'existence d'une telle minimisante.
+	$\epi f$ est une convexe fermé de $X\times\R$ (car $f$ est convexe sci) qui est non vide car $\exists x_0\in X$ tel que $f(x_0)<+∞$. De plus $f(x_0)>-∞$ $\implies$ $\exists α_0<f(x_0)$ $\implies$ $(x_0,α_0)\in\epi f$. D'après HB strict: $\exists x_0^*\in X^*$, $\exists β_0\in \R | \expval{x_0,x_)^*}+α_0β_0<\inf\{\expval{x,x_0^*}+αβ_0\ |\ (x,α)\in \epi f\}$
+	
+	Alors $β_0≥0$.
+	
+	Si $β_0=0$, on doit aura $\expval{x_0,x_0^*}<\expval{x,x^*_0}$, $\forall x\in\dom f$. Pour $x=x_0$, on obtient une contradiction d'où $β_0>0$.
+	
+			Donc $β_0> 0$ et pour $α=f(x)$ $x\in\dom f$ $\expval{x_0,x_0^*}+α_0β_0≤\expval{x,x_0^*}+β_0f(x)$ $\implies$ $\forall x\in\dom f$, $f(x)≥\expval{x_0-x,x^*/β}+α_0$ $\implies$ $f≥g_0$ où $g_0$ affine continue $g_0(x)$.
+\end{proof}
+\begin{rappel}
+	H.B. analogique $E$ espace vectoriel sur $\R$. $V$ sous espace vectoriel de $E$. $p:E\rightarrow [0,+∞[$ telle que $p(x+y)≤p(x)+p(y)$ $\forall (x,y)\in E^2$
+	$p(λx)=λp(x)$, $\forall λ≥0 \forall x\in E$.
+	
+	$f:V\rightarrow \R$ forme linéaire telle que $f(x)≤p(x)\ \forall x\in V$
+	
+	Alors $\exists \tilde f$ forme lineaire sur $E$ telle que $\tilde f(x)=f(x)\ \forall x\in V \tilde f(x)≤p(x)\ \forall x\in E$. Si $p(-x)=p(x)$ (semi. norme) alors $|\tilde f(x)|≤p(x)$ $\forall x\in E$
+	
+	cas $E$=Hilbert $f$ continue sur $V$ fermé $|f(x)|≤C\norm{x}$ $\forall x\in V E=V\oplus V^\perp$. $\tilde f(x)=f(P_Vx)$ où $P_Vx=x^*$ $\iff$ $x^*\in V x-x^*\in V^\perp$
+	
+	$|\tilde f(x)|≤C\norm{P_Vx}≤C\norm{x}\ \forall x\in E$.
+\end{rappel}
+
+\begin{example}
+	$C$ convexe de $E$. $0_E\in C j_C(x)=\inf_{t>0}\{\frac xt\in C\}$
+	
+	$C=\{\norm{x}≤1\}$
+	
+	$\norm{\frac xt}=\frac 1t\norm{x}≤1 \frac xt\in C$ $\iff$ $t≥\norm{x}$
+	
+	$j_c(x)=\norm{x}$
+\end{example}
+$\{f_c<1\}\subset C\subset \{j_C≤1\}$
+
+$0<t<t'$ $\frac xt\in C$ $\implies$ $\frac x{t'}\in C$?
+
+$\frac x{t'}=\frac t{t'}\frac xt+(1-\frac t{t'})0_E$.
+
+$\mqty{\frac xt\in C\\0\in C}$ $\implies$ $\frac x{t'}\in C$
+
+Donc $\{t>0\ |\ \frac xt\in C\} = [j_C(x),+∞[ ou ]j_C(x),+∞] \supset[1,+∞]$
+
+\textbullet  $j_C(x)<1$
+$\implies$$\{t>0\ |\ \frac xt\in C\}\supset [1,+∞[$ $\implies$ $x\in C$
+\textbullet  $x\in C$ $\implies$ $1\in\{t>0\ |\ \frac xt\in C\}$ $\implies$ $j_C(x)≤ 1$
+
+b) $j_C(x+y)≤j_C(x)+j_C(y)$
+Soit $j_C(x)<α$ et $j_C(y)<β$ et montrons que $j_C(x+y)<α+β$ $j_C(x)<α+β$
+$j_C(x)<α$ $\implies$ $\frac xα\in C et j_C(y)<β$ $\implies$ $\frac yβ\in C$
+
+$\implies$ $\frac α{α+β}\frac xα +\frac β{α+β}\frac yβ\in C$
+(convexité de $C$ et $0<\frac α{α+β}≤1$) 
+$\implies$ $\frac{x+y}{α+β}\in C$
+$\implies$ $j_C(x+y)≤α+β$
+d'où la conclusion qd $α\downarrow j_C(x)$ et $β\downarrow j_C(y)$.
+
+$j_C(λx)=λj_C(x)$ pour $λ≥0$ est évident
+
+c) $0\in \mathring{C}$ $\iff$ $\exists M|_{j_C(x)}≤M\norm{x}$, $\forall x\in E$
+(1)$\iff$(2)
+(1) $\implies$ (2)
+$0\in \mathring{C}$ $\implies$ $\exists r>0: \overline{B(0,r)}\subset C$ $\implies$ $\forall x≠0_E\ r\frac{x}{\norm{x}}\in C$ $\implies$ $\forall x≠0_E\ \frac xt\in C si t≥\frac{\norm{x}}r$
+$\implies$ $j_C(\frac xt)<1 \forall t≥\norm{x}/r$ $\implies$ $j_C(\frac xt)≤1 \forall t≥\frac{\norm{x}}r$
+$\implies$ $j_C(x)≤t \forall t≥\norm{x}/t$.
+$\implies$ $j_C(x)≤\norm{x}r (M=\frac 1r)$
+(2) $\implies$ (1) $j_C(x)≤M\norm{x}$ $\implies$ $j_C(x)<1$ si $\norm{x}<\frac 1M$ $\implies$ $\{\norm{x}<\frac 1M\}\subset C$ $\implies$ $0\in C$
+
+d) $C$ ouvert $\iff$ $0\in \mathring{C}$ et $C=\{j_c<1\}$
+(1)$\iff$(2)
+(2)$\implies$(1) $0\in \mathring{C}$ $\implies$ $j_C(x)≤M\norm{x}$ $\implies$ $j_C$ convexe , $j_C$ continue sur toute boule $\implies$ $\{j_C<1\}$ est ouvert $\implies$ $C$ ouvert.
+
+\textbullet  $j_C$$((1-θ)x+θy)≤j_C((1-θ)x)+j_C(θy)≤(1-θ)j_C(x)+θj_C(y)$ $\implies$ $j_C$ est convexe
+sous additif et $1$ lienague 
+
+(1) $\implies$ (2) $C$ ouvert $\implies$ $\mathring{C}=C$
+(donc $0\in C$ $\implies$ $0\in \mathring{C}$)
+
+On $0\in \mathring{C}$ $\implies$ $j_C$ continue $\implies$ $\{j_C<1\}$ est ouvert contenu dans $C$. Il reste à établir que $C\subset \{j_C<1\}$. $x\in C \{t>0\ |\ \frac xt\in C\}$
+
+$x\in C$ $φ: t\rightarrow \frac xt$ continue de $]0,+∞[$ à valeurs dans $E$ $\implies$ $φ\dmo(C) =\{t>0\ |\ \frac xt\in C\}$
+
+est un ouvert de $]0,+∞[$ comme image réciproque de l'ouvert $C$
+
+Donc $\{t>0, \frac xt\in C\} x\in C$ $\implies$ $1 \in ]j_C(x),+∞[$
+ $\implies$ $j_C(x)<1$
+ Donc $C$ ouvert $\implies$ $\{j_C<1\} =C$
+ 
+\begin{rappel}
+	$f$ convexe s.c.i. $\implies$ $f^{**}=f$.
+\end{rappel}
+
+\begin{theorem}
+	Soit $h:X\rightarrow ]-∞,+∞]$ convexe telle que h continue au point $x=0$.
+	Alors
+	\begin{enumerate}[(i)]
+		\item $h^{*}$ atteint son minimum sur $X^*$ (et $arg\min h^*$ est *faiblement compact dans $X^{**}$)
+		\item $\inf_{X^*}h^* (=\min_{X^*})=-h(0)$
+	\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+	variante $h$ continue en $x_0$. Même résultat mais avec $x^*\rightarrow h^*(x^*)-\expval{x_0,x^*}$ et $\inf [h^*(•)-\expval{x_0,•}]=-h(x_0)$
+	
+	$\sup_x|\expval{x,x^*}-h(x_0+x)|=h^*(x^*)-\expval{x_0,x^*}$.
+	$(h(x_0+•))^*=h^*-\expval{x_0,•}$
+\end{remark}
+\begin{proof}
+	$h$ continue en $0$ $\implies$ $\exists R>0\ \exists M$> tels que $h(x)≤M$ $\forall\norm{x}<$R. Alors $h^*(x^*)=\sup_{x\in X}\expval{x,x^*}-h(x)≥\sup_{\norm{x}≤R}|\expval{x,x^*}-M|≥R\norm{x^*}_{X^*}-M$
+	
+	$\implies$ $\lim_{\norm{x^*}\to +∞}h^*(x^*)=+∞$.
+	
+	$\forall h^*$ est convexe sur $X^*$ $\forall R' \{\norm{x^*}≤R'\}$ est *faiblement compact $h^*$ est *faiblement s.c.i. 
+	
+	$\implies$ $\argmin_{X^*}h^*$ est un convexe non vide compact par la topologie faible.
+	
+	$K_n=\{h^*≤α_n\}$ compact $≠ø$ $α_n\downarrow \inf h^*$.
+	
+	Alors:
+		$\argmin h^*=\{x^*\in X^* h^*(x^*)≤\inf h^*\} =\cap_n\{h^*≤α_n\}$
+		
+	Preuve de ii) $\inf h^*=-(h^*)^*(0)=-\bar h(0)$ $h$ continue en $0$ $\implies$ $\bar h(0)=h(0)$
+\end{proof}
+\section{Differentiabilite des fonctions convexes} % (fold)
+\label{sec:differentiabilite_des_fonctions_convexes}
+Soit $f:X\rightarrow ]-∞,+∞]$.
+
+\begin{definition}
+	Soit $x\in\dom f$ et $x^*\in X^*$. Alors $x^*$ est dans le sous-différentiel de $f$ au point $x$ si $\forall y\in X f(y)≥\underbrace{f(x)+\expval{y-x,x^*}}_{g(y)\text{ affine}}$.
+\end{definition}
+
+\begin{example}
+	$f(x)=|x|$ sur $\R$. $\forall x^*\in[-1,1] x^*\in \pdv f()$. $|y|≥0+(y-0)x^*$, $y\in\R$. $x^*$ est an sous-gradient de $f$ au point $x$ $\pdv f(x)=\{x^*\in X^*\ |\ x^* sous gradient au point x\}$
+	
+	$f(x)=|x|$ au $\R$. $\pdv f(x)=\left\{ 
+		\mqty{ \{\frac x{|x|}\} \text{ si }x≠0 \\ [-1,1]\text{ si }x=0}
+	\right.$ 
+\end{example}
+\begin{lemme}
+	\begin{enumerate}
+		\item $x^*\in \pdv f(x)$ $\iff$$ \expval{x,x^*}=f(x)+f^*(x^*)$
+		\item Si $f$ est convexe sci alors $x^*\in \pdv f(x)$ $\iff$ $x\in\pdv f^*(x^*)$
+	\end{enumerate}
+\end{lemme}
+\begin{proof}
+	$x^*\in \pdv f(x)$ $\iff$ $f(y)>f(x)+\expval{y-x,x^*}\ \forall y\in X$ $\iff$ $\expval{x,x^*}-f(x)≥\expval{y,x^*}-f(y)\ \forall y\in X$ $\iff$ $\expval{x,x^*}-f(x)≥\sup_{y\in X}\expval{y,x^*}-f(y)$ $\iff$ $\expval{x,x^*}≥f(x)+f^*(x^*)$ $\iff$ $"="$
+	
+	ii) $x\in \pdv f^*(x^*)$ $\iff$(i) $f^*(x^*)+\underbrace{f^{**}(x)}_{f(x)}=\expval{x,x^*}$ car $f$ convexe s.c.i.
+\end{proof}
+\begin{theorem}
+	$f$ convexe $X\rightarrow ]-∞,+∞]$ tel que $\exists x_0\in\dom f | f$ continue en $x_0$. Alors $\forall x\in \mathcircle{\dom f} \pdv f(x)$ est une convexe compact non vide de $X^*$ (topologie *faible).
+\end{theorem}
+\begin{proof}
+	on applique le Thm 2 avec $h(y)=f(x+y)$ où $x$ est un point de continuite de $f$ ($f$ continue au point $x$ $\iff$ $x\in \mathcircle{\dom f}$ et $\mathcircle{\dom f}≠ø$) Alors $h(0)=-\min h^*, h^*(x^*)=f^*(x^*)-\expval{x,x^*}$. $\implies$ $f(x)=-\min_{X^*}[f^*(x^*)-\expval{x,x^*}]$
+	
+	Si $x^*$ realese le minimum, on a:
+	$f(x)=-f^*(x^*)+\expval{x,xt}$. Donc $x^*\i$$n \pdv f(x)$ $\iff$ $x^*\in\argmin[f^*-\expval{•,x^*}]$---compact non vide. 
+\end{proof}
+
+% section differentiabilite_des_fonctions_convexes (end)
+\section{lien avec la différentialité} % (fold)
+\label{sec:lien_avec_la_differentialite}
+Soit $f:X\rightarrow \R$ continue dérivée de $f$ dans la direction $h\in X$ au point $x$:
+$\lim_{ε\to 0_+}\frac{f(x+εh)-f(x)}ε\eqdef f'(x,h)$.
+
+\begin{definition}
+	$f$ est $G$-dérivable au point $x$ si $f'(x,h)$ existe et est lineaire continue par rapport à $h$. Notons $f'(x)$ l'eelement de $X^*$ associé à cette forme lineaire. 	 
+\end{definition}
+On a:
+	$f'(x,h)=\expval{h,f'(x)} \forall h\in H. f'(x)$ est la $G$-dérivée de $f$ au point $x$.
+	
+	Si $f$ est de classe $C^1$ sur $X$ alors $f'(x)$ coïncide avec la différentielle de f noté $df(x)$ ou bien $\nabla f(x)$ si $X$ est un Hilbert
+	
+\begin{exercise}
+	$f$ classe $C^1$ sur $\R^N \nabla f(x)=(\pdv{f}{x_1},\pdv{f}{x_2},...\pdv{f}{x_N})$
+	$\lim_{t\to 0_+}\frac{f(x)+th)-f(x)}{t}=(\nabla f(x)|h)$
+\end{exercise}
+
+\begin{lemme}
+	Soit $f:X\rightarrow ]-∞,+∞]$ convexe telle que $f$ est minorée par une function affine. Alors $\forall x\in\dom f$, $f'(x,h)$ existe $\forall h\in x$ et on a
+	$f'(x,h)≥\expval{h,x^*}\ \forall h\in \pdv f(x)$.
+\end{lemme}
+\begin{proof}
+	$\frac{f(x+εh)-f(x)}ε$ est une fonction monotone croissante de $ε$. Donc:
+	$\lim_{ε\to 0_+}\frac{f(x+εh)-f(x)}ε=\inf_{ε>0}\frac{f(x+εh)-f(x)}ε$.
+	
+	Soit $x^*\in \pdv f(x)$ ($x\in \mathcircle{\dom f}$ $\implies$ $\pdv f(x)≠ø)$).Alors $f(x+εh)≥f(x)+\expval{εh,x^*}$ $\implies$ $\frac{f(x+εh)-f(x)}ε≥\expval{h,x^*}\forall ε$.
+	
+	Donc on a $f'(x,h)≥\expval{x^*,h}\ \forall x^*\in\pdv f(x)$. 
+\end{proof}
+\begin{corollary}
+	Si $f$ est convexe, $G$ dérivable au point $x$, alors $\pdv f(x)=\{f'(x)\}$ où $f'(x)$ est la $G$ dérivée de $f$.
+\end{corollary}
+\begin{proof}
+	$\expval{h,f'(x)}=f'(x,h)≥\expval{h,x^*}\ \forall x^*\in \pdv f(x)$
+	
+	Par linéarité, on a donc $f'(x)=x^*$.
+\end{proof}
+\begin{theorem}
+	Si $f$ est convexe centre au point $x$. Alors $f$ est $G$ dérivable au point $x$ $\iff$ $\pdv f(x)$ est réduit à un point.
+\end{theorem}
+% section lien_avec_la_differentialite (end)
+\section{Application de la dualité en optimisation} % (fold)
+\label{sec:application_de_la_dualite_en_optimisation}
+Soit $f:X\rightarrow ]-∞,+∞]$ convexe s.c.i. et $C$ un compacte fermé de $X$. On considère le Pb
+$\inf_{x\in C}f(x)$.
+
+On cherche des conditions nécessaires et suffisantes d'optimalité.
+\begin{theorem}
+	On supposons que $\exists x_0\in c$ tel que $f$ continue en $x_0$. Alors $\bar x$ solution $\iff$ $\exists x^*\in \pdv f(\bar x)$ tel que $\expval{y-\bar x,x^*}≥0\ \forall y\in C$.
+\end{theorem}
+\begin{proof}
+	Soit $F=f+δ_C$.
+	$F(x)=\left\{\smqty{f(x)\text{ si }x\in C\\+∞ \text{ sinon}}\right.$
+	
+	$f$ est convexe sci $\dom F≠0$. ($F(x_0)<+∞$). 
+	
+	$\bar x$ solution $\iff$ $F(\bar x)=\inf F=-F^*(0)$ $\iff$ $F(\bar x)+F^*(0)=\expval{\bar x,0}$ $\iff$ $0\in \pdv F(\bar x)$
+	
+	Supposons que: $\pdv F(\bar x)=\pdv (f+δ_C)(\bar x)=\pdv f(\bar x)+\pdv δ_C(\bar x)$
+	
+	Alors $\bar x$ solution $\iff$ $0\in \pdv f(\bar x)+\pdv δ_C(\bar x)$
+	$\iff$ $\exists x^*\in \pdv f(\bar x)$ avec $-x^*\in\pdv δ_C(\bar x)$
+	
+	$-x^*\in\pdvδ_C(\bar x)$ $\iff$ $\underbrace{δ_C(\bar x)}_0+δ_C^*(-x^*)=-\expval{\bar x,x^*}$ $\iff$ $\sup_{y\in C}\expval{y,-x^*}=-\expval{\bar x,x^*}$
+	$\iff$ $\forall y\in C -\expval{y,x^*}≤-\expval{\bar x,x^*}$ $\iff$ $\expval{y-\bar x,x^*}≥0 \forall y\in C$.
+	
+\end{proof}
+\begin{theorem}
+	$f,g$ convexes s.c.i. $X\rightarrow ]-∞,+∞]$ $\exists x_0\in\dom g | f$ continue au point $x_0$. Alors $\pdv(f+g)(x)=\pdv f(x)+\pdv g(x)$.
+\end{theorem}
+% section application_de_la_dualite_en_optimisation (end)
+\section{Kuhn-Tucker} % (fold)
+\label{sec:kuhn_tucker}
+$C=\{x\in X\ |\ g_i(x)≤0, 1≤i≤N\}$ on $g_i$ affine continue sur $X$. ( $C$ déterminé par $N$ contraintes linéaires de type inégalité)
+
+Soit $λ=(λ_1,λ_2,...,λ_N) \in\R_+^N$ et posons $F_X(x)=f(x)+∑_{i=1}^{i=N}λ_ig_i(x)$
+
+$\sup_{λ≥0}F_λ(x)=f(x)$ si $x\in C$ et $+∞$ sinon.
+
+On pénalise la contrante $C$ en remplacent $δ_C$ par $∑λ_ig_i(x)$.
+
+\begin{theorem}
+	Supposons qu'il existe x$_0\in\dom f$ tel que $g_i(x_0)<0$  $\forall i\in\{1,2,3,...,N\}$
+	
+	Condition de qualification SLATER) ($x_0\in\mathcircle{C}$).
+	
+	Alors $\bar x\in C$ solution $\iff$ $\exists \barλ\in(\R_+)^\N$ tel que:
+	
+	\begin{enumerate}
+		\item $F_{\bar x}(\bar x)≤F_{\bar x}\ \forall x\in X$. ($\bar x$ réalise $\inf_XF_{\bar x}$)
+		\item $\bar X_i g_i(\bar x)$ et $g_i(\bar x)≤0 \forall i\in\{1,...,N\}$
+		($g_i(\bar x)<0$ $\implies$ $\bar λ_i=0$)
+	\end{enumerate}
+\end{theorem}
+En pratique si $g_i(x)=\expval{x,x_i^*}+β_i$ et si $f$ est $G$ dérivable la condition équivalent à $F_{\bar x}'(\bar x)=0$
+	
+	$f'(\bar x)+∑_{i=1}^N\bar λ_ix_i^*=0$
+	
+$L(\bar x,x)≤L(\bar x,\bar λ)≤L(x,\bar λ)$
+$\forall x\in X \forall λ\in R_N^+$
+% section kuhn_tucker (end)
+% chapter analyse_convexe (end)
+
+
+\ifcomment
+
+\chapter{Exercices} % (fold)
+\label{cha:exercices}
+\section{exercice 1} % (fold)
+\label{sec:exercice_1}
+
+\inf[∫_0^1f(u,u')\dd{x}| u(0)=0 u(1)=h]
+f:\R\times\R \rightarrow [0,+∞]
+X=\{u\in C^0([0,1]) |u'\in L^2(0,1)\}
+F(u)=\mqty{∫_0^1 f(u,u')\dd{x}
+
+C=\{u\in X\ |\ u(0)=0\ u(1)=h\} convexe fermé dans X
+
+α|z|^2≤f(t,z)≤β(1+|z|^2) $\implies$ \lim_{\norm{u}\to +∞}F(u)=+∞ et F est definie et continue sur X.
+\begin{enumerate}
+	\item Si F est feulement s.c.i., alors \exists\bar u\in C\ |\ F(\bar u)=\inf_X F. (au z\mapsto f(t,z) est convexe)
+	But: caracteriser \bar u à l'aide d'une équation. 
+	\item  \textbf{2)} f classe C^1 sur \R\times\R_- u,v\in X.
+
+	\lim_{ε\to 0}\frac{F(u+εv)-F(u)}ε ?
+\end{enumerate}
+	∫\underbrace{[\frac{f(u+εv,u'+εv')-f(u,u')}_{g_ε(x)}ε]}\dd{x}
+	
+	g_ε(x)\overset{pp}{\to}\pdv{f}{t}(u(x),u'(x))v(x)+\pdv{f}{z}(u(x),u'(x))v'(x)
+	
+	|g_ε(x)|≤h(x) où ∫_0^1h(x)\dd{x}<+∞ $\implies$ ∫_0^1(\pdv{f}{t}(u,u')v(x)+\pdv{f}{z}(u,u')v'(x))\dd{x}. Supposons que F(\bar u)=\inf_C F.
+	
+	Alors si v\in X avec v(0)=v(h)=0, on a u+εv\in C ((u+εv)(0)=0 (u+εv)(1)=u(1)=h)\forall ε>0.
+	
+	Donc F(\bar u+εv)≥F(\bar u), \forall v\in X tel que v(0)=v(1)=0 $\implies$ F'(\bar u, v)=0, \forall v\in X_0=\{v\in X\ |\ v(0)=v(1)=0\}
+	
+	∫_0^1[\pdv{f}{t}(\bar u,\bar u')v+\pdv{f}{t}(\bar u,\bar u')v']\dd{x}=0 \forall v\in X_0.
+	
+	Supposons v de classe C^1 et v(0)=v(1)=0
+	∫_0^1[\pdv{f}{t}(\bar u,\bar u')-(\pdv{f}{z}(\bar u,\bar u'))']v\dd{x}=0
+	
+	$\implies$ \bar u vérifie l'équation (Euler),
+	
+	-\dv{x}(\pdv{f}{z}(\bar u,\bar u'))+\pdv{f}{t}(\bar u,\bar u')=0
+\textbf{1)}
+\begin{example}
+	f(t,z)=\frac{|z|^2}2+g(t), g classe C^1 sur \R
+	-\dv{x}[(\bar u)']+g'(\bar u)=0
+	-\bar u''+g'(\bar u)=0
+	g(t)=-t $\implies$ \bar u''=-1 $\implies$\bar u(x)=-\frac{x^2}2+λx
+	-Δ\bar u+g'(\bar u)=0
+	
+	\inf\{\frac12∫_0^1|u'|^2-∫_0^1u\dd{x}\ |\ u(0)=0\ u(1)=h\}
+	$\implies$ \bar u(x)=-\frac{x^2}2+(h+\frac 12)x
+\end{example}
+\textbf{3)}
+\bar u denné u_ε(y)=u(ψ_ε\dmo(y))
+où ψ_ε: x\in [0,1]\rightarrow x+εφ(x) où φ est C^∞ et suppφ\subset]0,1[
+
+Si ε est petit ψ_ε est une bijection de [0,1] sur [0,1]. (qui coïncide avec l'identité dans un voisinage de 0 et 1) |ψ_ε(u)-1|≤Cε $\implies$ ψ_ε'≥1-Cε>0, si ε<\frac 1C $\implies$ ψ_ε\dmo existe.
+
+u_ε'(y)=|u'|(ψ_ε\dmo(y))(ψ_ε\dmo)(ψ_ε\dmo)'(y)=\frac 1{ψ_ε'(ψ_ε'(y))}
+
+F(u_ε)=∫_0^1 f(u_ε(y),u_ε'(y))\dd{y}=∫_0^1 f(\bar u(ψ_ε\dmo(y)),\frac{(\bar u)'(ψ_ε\dmo(y))}{ψ_ε\dmo(y)})\dd{y}
+Posons x=ψ_ε\dmo(y) (x+εφ(x)=y).
+
+∫_0^1 f(\bar u(x),\frac{\bar u'(x)}{1+εφ'(x)})(1+εφ'(x))\dd{x}
+
+F(u_ε)=∫_0^1f(\bar u,\frac{\bar u'}{1+εφ'})\dd{x}+ ε∫f(\bar u,\frac{\bar u'}{1+εφ'})φ'\dd{x}
+
+\frac{F(u_ε)-F(\bar u)}ε=∫_0^1\frac{f(\bar u,\frac{\bar u'}{1+εφ'})-f(\bar u,\bar u')}ε\dd{x}+∫_0^1f(\bar u, \frac{\bar u'}{1+εφ'})φ'\dd{x}
+
+\lim_{ε\to 0}\frac{f(\bar u,\frac{\bar u'}{1+εφ'})-f(\bar u,\bar u')}ε ?
+
+\sim \pdv_zf(\bar u,\bar u') \frac{\bar u'(\frac 1{1+εφ'}-1)}ε
+
+\rightarrow 
+-\pdv_zf(\bar u,\bar u')\bar u'φ'
+
+\lim_{ε\to 0}\frac{F(u_ε)-F(u)}ε=∫_0^1[-\pdv_zf(\bar u,\bar u')\bar u'φ'+f(\bar u,\bar u')φ']\dd{x}
+
+u_ε(0)=\bar u(ψ_ε\dmo(0))=\bar u(0)=0
+u_ε(1)=\bar u(ψ_ε\dmo(1))=\bar u(1)=h
+
+$\implies$F(u_ε)≥F(\bar u)
+
+Donc φ\in C^∞ φ(0)=φ(1)=0 $\implies$ ∫_0^1[f(\bar u,\bar u')-\pdv_zf(\bar u,\bar u')]φ'\dd{x}=0
+
+$\implies$ ∫_0^1\pdv{x} (\pdv_zf(\bar u,\bar u')\bar u'-f(\bar u,\bar u'))φ=0
+
+$\implies$ \exists λ\in\R\ |\ \pdv_zf(\bar u,\bar u')\bar u' - f(u,\bar u')=N
+
+\inf_{\substack{u(0)=h\\u(1)=0}}∫_0^1\sqrt{\frac{1+{u'}^2}{u}}\dd{x}
+
+f(t,z)=\sqrt{\frac{1+|z|^2}t}
+
+T=∫_0^1\frac{\sqrt{1+{v'^}2}}{\sqrt{2g(h-v)}}\dd{x} problème Bernoulli en 1690 résolu par Euler en 1740 et Lagrange en 1780.
+
+% section exercice_1 (end)
+
+
+
+
+% section biconjuguee_de_fenchel (end)
+\section{exercice} % (fold)
+\label{sec:exercice}
+
+\begin{exercise}
+	\begin{enumerate}[(i)]
+		\item montrer que \overline{\epi f}=\epi(\bar f)
+		\item \bar f(x)=\lim_{r\to 0_+}\inf_{B(x,r)}f=\inf_{\substack{(x_n)}\\x_n\to x}\{\liminf_{n\to ∞}f(x_n)\}
+	\end{enumerate}
+\end{exercise}
+
+Etape 1: \exists \tilde f:X\rightarrow ]-∞,+∞] | \overline{\epi f}=\epi\tilde f (\tilde f est donc s.c.i.)
+
+Etape 2: \tilde f≤f et g s.c.i. ≤f $\implies$ g≤\tilde f $\implies$ \tilde f=\bar f.
+
+A\supset X\times\R
+\begin{enumerate}
+	\item (x,α)\in A $\implies$ (x,β)\in A\ \forall β≥α
+	\item \exists \tilde f:X\rightarrow ]-∞,+∞] | A=\epi\tilde f.
+\end{enumerate}
+
+(1) $\iff$ (2)
+
+x\in X I(x)=\{α\in \R\ |\ (x,α)\in A\}. D'après (1). α\in I(x) $\implies$ β\in I(x) \forall β≥α. Posons \tilde f(x)=\inf\{I(x)\}. On a donc I(x)=\left\{\mqty{[f(x),+∞]\\\R\text{ si }\tilde f(x)=-∞\right.
+
+\epi \tilde f=\{(x,α)\ |\ \tilde f(x)≤α\}
+
+\paragraph{etape 1} % (fold)
+\label{par:etape_1}
+\exists \tilde f: X\rightarrow ]-∞,+∞]\ |\ \overline{\epi f}=\epi \tilde f (\tilde f est donc s.c.i.) A=\overline{\epi f} est un fermé de X\times\R. Soit (x,α)\in A et β>α. Alors \exists (x_n,α_n)\in\epif\ |\ x_n\to et α_n\toα
+f(x_n)≤α_n\ \forall n $\implies$ f(x_n)≤β pour n grand $\implies$ (χ_n,β)\in \epi f$\implies$ (x,β)\in\overline{\epi f}
+donc (x,β)\in A\ \forall β≥α.
+
+Alors A=\epi\tilde f
+où \tilde f(x)=\inf\{α\ |\ (x,α)\in\overline{\epi f}
+
+Conclusion: \overline{\epi f}=\epi \tilde f et \tilde f est s.c.i.
+
+De plus \epi f\subset\overline{\epi{f}}=\epi\tilde f $\implies$ \tilde f≤f.
+
+Soit g s.c.i. ≤f. alors \epi g\supset \epi f.
+
+\left\{\mqty{\epi g\text{ fermé}\\\epi g\supset \epi f}\right. $\implies$ \epi g\supset\overline{\epi f}=\epi(\tilde f) $\implies$ f≤\tilde f.
+
+Donc on a bien
+\tilde f(x)=\sup\{g(x)\ |\ g s.c.i. ≤f\}\overset{\text{def}}{=} \bar f(x).
+QED i)
+
+Preuve de ii). Posons h(x)=\lim_{r\to 0^+}\inf_{B(x,r)} f=\sup_{r>0}\inf_{B(x,r)}f.
+
+Alors h(x)≤f(x)\ \forall x (car \inf_{B(x,r)}f≤f(x)\ \forall r>0)
+
+Posons h_n(x)=\inf_{B(x,\frac1n)}f. Alors h(x)=\lim_{n\to ∞}h_n(x)=\sup_{n}h_n(x)
+
+\inf\{f(y),\ \norm{y-x}<\frac 1n\}=h(x)≤α
+h_n(x)≤α, \forall n.
+
+\forall n\exists x_n\ |\ \norm{x_n-x}≤\frac 1n, f(x_n)≤α $\implies$ (x_n,α)\in\epi f\ \forall n $\implies$ (x,α)\in\overline{\epi f}.
+
+Donc \epi h\subset\overset{\epi f}=\epi\tilde f $\implies$ h≥\tilde f
+
+(x,α)\in\epi\bar f $\implies$ (x,α)\in\overbrace{\epi f} $\implies$ \exists (x_n,α_n)\ |\ f(x_n)≤α_n ex x_n\to x, α_n\to α.
+
+On a \forall r>0 \inf_{B(x,r)}f≤α. En effet x_n\to x $\implies$ \exists N | x_n\in B(x,r)\ \forall n≥N $\implies$ f(x_n)≥\inf_{B(x,r)}f, \forall n≥N $\implies$ α_n≥\norm{•} \forall n≥N.
+
+Donc h(x)≤α i.e. \overline{(x,α)}\in\epi h.
+
+Conclusion \epi\bar f\subset \epi h\subset \epi\bar f $\implies$ h=\bar f.
+% paragraph etape_1 (end)
+
+% section exercice (end)
+\section{exercice 2} % (fold)
+\label{sec:exercise}
+j_C(x)=\inf\{t>0\ |\ \frac xt\in C\}
+A ouvert non vide (0\in A) p(x)=j_A(x) sous additive 1 homogène.
+x_0≠0
+V=\{tx_0,t\in \R\} f(tx_0)=t
+
+f≤p sur V ?
+f(tx_0)≤p(tx_0) car t≤j_A(tx_0) t≤0 ok
+
+\forall t>0 j_A(tx_0)=tj_A(tx_0)>t
+car j_A(x_0)>1
+D'après HB
+\exists \tilde f:X\rightarrow \R lineaire telle que \tilde f=f sur V
+\tilde f(x)≤p(x)\ \forall x\in E.
+
+Puisque 0\in A ouvert, \exists M>0 | j_A(x)≤M\norm{x} $\implies$ \tilde f(x)≤M\norm{x} $\implies$ \tilde f\in X^*.
+
+\tilde f≤j_A sur X $\implies$ 
+
+f(x)<1 \forall x\in A
+
+A\in\{\tilde f≤1\} \R espace affine fermé. H=\{\tilde f=1\} hyperplan affine
+x_0≠0
+V=\{tx_0, t\in\R\}
+f(tx_0)=t. Donc f≤p sur V.
+
+A ouvert convexe B convexe. A\cap B≠ø.
+
+Posons C=A-B=\{a-b\ |\ (a,b)\in A\times B\}
+
+A\cup B=ø $\iff$ 0\not\in C.
+A,B convexes $\implies$ C est convexe 
+A ouvert $\implies$ C ouvert, car C=\cup_{b\in B}(A-\{b\})
+
+D'après 2) applique à C et à x_0=0. \exists f\in X^* tel que
+\sup_C f≤f(0)=0
+
+Or \sup_Cf=\sup\{f(a-b)\ |\ (a,b)\in A\times B\}
+C=\sup\{f(a)-f(b)\ |\ a\in A, b\in B\}=\sup_A f + \sup_B(-f) =\sup_{A}f-\inf_{B}f.
+
+F fermé, K compact F\cap K=ø.
+\exists ε>0 tel que F_ε\cap K_ε=ø.
+
+\exists ε>0 tel que F_ε\cap K_ε=ø
+οù F_ε=\{x\in X\ |\ d(x,F)<ε\} et K_ε=\{x\in X\ |\ d(x,K)<ε\} 
+
+F_ε et K_ε sont des ouverts car d(•,F) et d(•, K) sont continue.
+
+β=\inf_{\substack{y\in K\\z\in F}}\norm{y-z}>2ε $\implies$ K_ε\cap F_ε=ø.
+
+x\in F_ε\cap K_ε: d(x,F)<ε $\implies$ \exists y\in F\ \norm{x-y}<ε et d(x,K)<ε $\implies$ \exists y\in K\ \norm{x-y}<ε
+
+$\implies$ \norm{y-z}<2ε.
+
+A\cap B=ø $\iff$ 0\not\in C. A,B convexes $\implies$ C est convexe. A ouvert $\implies$ C ouvert car C=\cup_{b\in B}(A-\{b\})
+
+Supposons β=0. Alors \exists (y_n,z_n)\in K\times F. Tel que \norm{y_n-z_n}\to 0. 
+
+K compact $\implies$ \exists \bar y\in K \exists n_k | y_{n_k}\to \bar y $\implies$ z_{n_k}\to \bar y
+
+F fermé z_{n_k}\in F $\implies$ \bar y\in f impossible ε<\frac β2 $\implies$ K_ε\cap F_ε=ø.
+
+Donc \exists f\in X^* tel que \sup_{K_ε}≤\inf_{F_ε}f.
+
+K_ε=\{x+εz\ |\ x\in K_ε, \norm{z}≤1\}
+F_ε=\{x+εz'\ |\ x\in F_ε, \norm{z'}≤1\}
+
+\sup_K f=\sup_{x\in K}\{f(x)-εf(z)\}≤\sup_K f+ε\norm{f}_{X^*}
+
+\norm{z}<1 
+
+|\sup_{K_ε}f-\sup_Kf|≤ε\norm{f}_{X^*}
+|\sup_{F_ε}f-\sup_Ff|≤ε\norm{f}_{X^*}
+
+\exists α\in\R f(x)+εf(z)≤α≤f(y)+εf(z')
+\forall x\in K\ \forall y\in F
+\forall \norm{z}≤1, \forall \norm{z'}≤1
+
+$\implies$ \forall x\in K f(x)≤α-ε\norm{f}
+\forall y\in F f(y)≥α+ε\norm{f}
+$\implies$\sup_K ≤α-ε\norm{f}≤α+ε\norm{f}≤\inf_F f
+$\implies$ \sup_K f<α<\inf_F f
+
+\fi
+
+% section exercise (end)
+% chapter exercices (end)
