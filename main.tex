@@ -1134,99 +1134,96 @@ $\forall x\in X \forall λ\in R_N^+$
 % chapter analyse_convexe (end)
 
 
-\ifcomment
-
 \chapter{Exercices} % (fold)
 \label{cha:exercices}
 \section{exercice 1} % (fold)
 \label{sec:exercice_1}
 
-\inf[∫_0^1f(u,u')\dd{x}| u(0)=0 u(1)=h]
-f:\R\times\R \rightarrow [0,+∞]
-X=\{u\in C^0([0,1]) |u'\in L^2(0,1)\}
-F(u)=\mqty{∫_0^1 f(u,u')\dd{x}
+$\inf[∫_0^1f(u,u')\dd{x}| u(0)=0 u(1)=h]$
+$f:\R\times\R \rightarrow [0,+∞]$
+$X=\{u\in C^0([0,1]) |u'\in L^2(0,1)\}$
+$F(u)=\mqty{∫_0^1 f(u,u')}\dd{x}$
 
-C=\{u\in X\ |\ u(0)=0\ u(1)=h\} convexe fermé dans X
+$C=\{u\in X\ |\ u(0)=0\ u(1)=h\}$ convexe fermé dans X
 
-α|z|^2≤f(t,z)≤β(1+|z|^2) $\implies$ \lim_{\norm{u}\to +∞}F(u)=+∞ et F est definie et continue sur X.
+$α|z|^2≤f(t,z)≤β(1+|z|^2)$ $\implies$ $\lim_{\norm{u}\to +∞}F(u)=+∞$ et $F$ est definie et continue sur $X$.
 \begin{enumerate}
-	\item Si F est feulement s.c.i., alors \exists\bar u\in C\ |\ F(\bar u)=\inf_X F. (au z\mapsto f(t,z) est convexe)
-	But: caracteriser \bar u à l'aide d'une équation. 
-	\item  \textbf{2)} f classe C^1 sur \R\times\R_- u,v\in X.
+	\item Si $F$ est feulement s.c.i., alors $\exists\bar u\in C\ |\ F(\bar u)=\inf_X F$. (au $z\mapsto f(t,z)$ est convexe)
+	But: caracteriser $\bar u$ à l'aide d'une équation. 
+	\item  $\textbf{2)} f$ classe $C^1$ sur $\R\times\R_- u,v\in X$.
 
-	\lim_{ε\to 0}\frac{F(u+εv)-F(u)}ε ?
+	$\lim_{ε\to 0}\frac{F(u+εv)-F(u)}ε$ ?
 \end{enumerate}
-	∫\underbrace{[\frac{f(u+εv,u'+εv')-f(u,u')}_{g_ε(x)}ε]}\dd{x}
+	$∫\underbrace{[\frac{f(u+εv,u'+εv')-f(u,u')}{g_ε(x)}ε]}\dd{x}$
 	
-	g_ε(x)\overset{pp}{\to}\pdv{f}{t}(u(x),u'(x))v(x)+\pdv{f}{z}(u(x),u'(x))v'(x)
+	$g_ε(x)\overset{pp}{\to}\pdv{f}{t}(u(x),u'(x))v(x)+\pdv{f}{z}(u(x),u'(x))v'(x)$
 	
-	|g_ε(x)|≤h(x) où ∫_0^1h(x)\dd{x}<+∞ $\implies$ ∫_0^1(\pdv{f}{t}(u,u')v(x)+\pdv{f}{z}(u,u')v'(x))\dd{x}. Supposons que F(\bar u)=\inf_C F.
+	$|g_ε(x)|≤h(x) où ∫_0^1h(x)\dd{x}<+∞$ $\implies$ $∫_0^1(\pdv{f}{t}(u,u')v(x)+\pdv{f}{z}(u,u')v'(x))\dd{x}$. Supposons que $F(\bar u)=\inf_C F$.
 	
-	Alors si v\in X avec v(0)=v(h)=0, on a u+εv\in C ((u+εv)(0)=0 (u+εv)(1)=u(1)=h)\forall ε>0.
+	Alors si $v\in X$ avec $v(0)=v(h)=0$, on a $u+εv\in C$ $((u+εv)(0)=0$ $(u+εv)(1)=u(1)=h)\forall ε>0$.
 	
-	Donc F(\bar u+εv)≥F(\bar u), \forall v\in X tel que v(0)=v(1)=0 $\implies$ F'(\bar u, v)=0, \forall v\in X_0=\{v\in X\ |\ v(0)=v(1)=0\}
+	Donc $F(\bar u+εv)≥F(\bar u)$, $\forall v\in X$ tel que $v(0)=v(1)=0$ $\implies$ $F'(\bar u, v)=0$, $\forall v\in X_0=\{v\in X\ |\ v(0)=v(1)=0\}$
 	
-	∫_0^1[\pdv{f}{t}(\bar u,\bar u')v+\pdv{f}{t}(\bar u,\bar u')v']\dd{x}=0 \forall v\in X_0.
+	$∫_0^1[\pdv{f}{t}(\bar u,\bar u')v+\pdv{f}{t}(\bar u,\bar u')v']\dd{x}=0 \forall v\in X_0$.
 	
-	Supposons v de classe C^1 et v(0)=v(1)=0
-	∫_0^1[\pdv{f}{t}(\bar u,\bar u')-(\pdv{f}{z}(\bar u,\bar u'))']v\dd{x}=0
+	Supposons $v$ de classe $C^1$ et $v(0)=v(1)=0$
+	$∫_0^1[\pdv{f}{t}(\bar u,\bar u')-(\pdv{f}{z}(\bar u,\bar u'))']v\dd{x}=0$
 	
-	$\implies$ \bar u vérifie l'équation (Euler),
+	$\implies$ $\bar u$ vérifie l'équation (Euler),
 	
-	-\dv{x}(\pdv{f}{z}(\bar u,\bar u'))+\pdv{f}{t}(\bar u,\bar u')=0
+	$-\dv{x}(\pdv{f}{z}(\bar u,\bar u'))+\pdv{f}{t}(\bar u,\bar u')=0$
 \textbf{1)}
 \begin{example}
-	f(t,z)=\frac{|z|^2}2+g(t), g classe C^1 sur \R
-	-\dv{x}[(\bar u)']+g'(\bar u)=0
-	-\bar u''+g'(\bar u)=0
-	g(t)=-t $\implies$ \bar u''=-1 $\implies$\bar u(x)=-\frac{x^2}2+λx
-	-Δ\bar u+g'(\bar u)=0
+	f$(t,z)=\frac{|z|^2}2+g(t), g classe C^1 sur \R$
+	$-\dv{x}[(\bar u)']+g'(\bar u)=0$
+	$-\bar u''+g'(\bar u)=0$
+	$g(t)=-t$ $\implies$ $\bar u''=-1$ $\implies$ $\bar u(x)=-\frac{x^2}2+λx
+	-Δ\bar u+g'(\bar u)=0$
 	
-	\inf\{\frac12∫_0^1|u'|^2-∫_0^1u\dd{x}\ |\ u(0)=0\ u(1)=h\}
-	$\implies$ \bar u(x)=-\frac{x^2}2+(h+\frac 12)x
+	$\inf\{\frac12∫_0^1|u'|^2-∫_0^1u\dd{x}\ |\ u(0)=0\ u(1)=h\}$
+	$\implies$ $\bar u(x)=-\frac{x^2}2+(h+\frac 12)x$
 \end{example}
 \textbf{3)}
-\bar u denné u_ε(y)=u(ψ_ε\dmo(y))
-où ψ_ε: x\in [0,1]\rightarrow x+εφ(x) où φ est C^∞ et suppφ\subset]0,1[
+$\bar u$ denné $u_ε(y)=u(ψ_ε\dmo(y))$
+où $ψ_ε$: $x\in [0,1]\rightarrow x+εφ(x)$ où $φ$ est $C^∞$ et $suppφ\subset]0,1[$
 
-Si ε est petit ψ_ε est une bijection de [0,1] sur [0,1]. (qui coïncide avec l'identité dans un voisinage de 0 et 1) |ψ_ε(u)-1|≤Cε $\implies$ ψ_ε'≥1-Cε>0, si ε<\frac 1C $\implies$ ψ_ε\dmo existe.
+Si $ε$ est petit $ψ_ε$ est une bijection de $[0,1]$ sur $[0,1$$]$. (qui coïncide avec l'identité dans un voisinage de 0 et 1) $|ψ_ε(u)-1|≤Cε$ $\implies$ $ψ_ε'≥1-Cε>0$, si $ε<\frac 1C$ $\implies$ $ψ_ε\dmo existe$.
 
-u_ε'(y)=|u'|(ψ_ε\dmo(y))(ψ_ε\dmo)(ψ_ε\dmo)'(y)=\frac 1{ψ_ε'(ψ_ε'(y))}
+$u_ε'(y)=|u'|(ψ_ε\dmo(y))(ψ_ε\dmo)(ψ_ε\dmo)'(y)=\frac 1{ψ_ε'(ψ_ε'(y))}$
 
-F(u_ε)=∫_0^1 f(u_ε(y),u_ε'(y))\dd{y}=∫_0^1 f(\bar u(ψ_ε\dmo(y)),\frac{(\bar u)'(ψ_ε\dmo(y))}{ψ_ε\dmo(y)})\dd{y}
-Posons x=ψ_ε\dmo(y) (x+εφ(x)=y).
+$F(u_ε)=∫_0^1 f(u_ε(y),u_ε'(y))\dd{y}=∫_0^1 f(\bar u(ψ_ε\dmo(y)),\frac{(\bar u)'(ψ_ε\dmo(y))}{ψ_ε\dmo(y)})\dd{y}$
+Posons $x=ψ_ε\dmo(y)$ $(x+εφ(x)=y)$.
 
-∫_0^1 f(\bar u(x),\frac{\bar u'(x)}{1+εφ'(x)})(1+εφ'(x))\dd{x}
+$∫_0^1 f(\bar u(x),\frac{\bar u'(x)}{1+εφ'(x)})(1+εφ'(x))\dd{x}$
 
-F(u_ε)=∫_0^1f(\bar u,\frac{\bar u'}{1+εφ'})\dd{x}+ ε∫f(\bar u,\frac{\bar u'}{1+εφ'})φ'\dd{x}
+$F(u_ε)=∫_0^1f(\bar u,\frac{\bar u'}{1+εφ'})\dd{x}+ ε∫f(\bar u,\frac{\bar u'}{1+εφ'})φ'\dd{x}$
 
-\frac{F(u_ε)-F(\bar u)}ε=∫_0^1\frac{f(\bar u,\frac{\bar u'}{1+εφ'})-f(\bar u,\bar u')}ε\dd{x}+∫_0^1f(\bar u, \frac{\bar u'}{1+εφ'})φ'\dd{x}
+$\frac{F(u_ε)-F(\bar u)}ε=∫_0^1\frac{f(\bar u,\frac{\bar u'}{1+εφ'})-f(\bar u,\bar u')}ε\dd{x}+∫_0^1f(\bar u, \frac{\bar u'}{1+εφ'})φ'\dd{x}
+$
+$\lim_{ε\to 0}\frac{f(\bar u,\frac{\bar u'}{1+εφ'})-f(\bar u,\bar u')}ε$ ?
 
-\lim_{ε\to 0}\frac{f(\bar u,\frac{\bar u'}{1+εφ'})-f(\bar u,\bar u')}ε ?
+$\sim \partial_z{ }f(\bar u,\bar u') \frac{\bar u'(\frac 1{1+εφ'}-1)}ε$
 
-\sim \pdv_zf(\bar u,\bar u') \frac{\bar u'(\frac 1{1+εφ'}-1)}ε
+$\rightarrow 
+-\partial_zf(\bar u,\bar u')\bar u'φ'$
 
-\rightarrow 
--\pdv_zf(\bar u,\bar u')\bar u'φ'
+$\lim_{ε\to 0}\frac{F(u_ε)-F(u)}ε=∫_0^1[-\partial_zf(\bar u,\bar u')\bar u'φ'+f(\bar u,\bar u')φ']\dd{x}$
 
-\lim_{ε\to 0}\frac{F(u_ε)-F(u)}ε=∫_0^1[-\pdv_zf(\bar u,\bar u')\bar u'φ'+f(\bar u,\bar u')φ']\dd{x}
+$u_ε(0)=\bar u(ψ_ε\dmo(0))=\bar u(0)=0$
+$u_ε(1)=\bar u(ψ_ε\dmo(1))=\bar u(1)=h$
 
-u_ε(0)=\bar u(ψ_ε\dmo(0))=\bar u(0)=0
-u_ε(1)=\bar u(ψ_ε\dmo(1))=\bar u(1)=h
+$\implies$ $F(u_ε)≥F(\bar u)$
 
-$\implies$F(u_ε)≥F(\bar u)
+Donc $φ\in C^∞ φ(0)=φ(1)=0$ $\implies$ $∫_0^1[f(\bar u,\bar u')-\partial_zf(\bar u,\bar u')]φ'\dd{x}=0$
 
-Donc φ\in C^∞ φ(0)=φ(1)=0 $\implies$ ∫_0^1[f(\bar u,\bar u')-\pdv_zf(\bar u,\bar u')]φ'\dd{x}=0
+$\implies$ $∫_0^1\pdv{x} (\partial_zf(\bar u,\bar u')\bar u'-f(\bar u,\bar u'))φ=0$
 
-$\implies$ ∫_0^1\pdv{x} (\pdv_zf(\bar u,\bar u')\bar u'-f(\bar u,\bar u'))φ=0
+$\implies$ $\exists λ\in\R\ |\ \partial_zf(\bar u,\bar u')\bar u' - f(u,\bar u')=N$
 
-$\implies$ \exists λ\in\R\ |\ \pdv_zf(\bar u,\bar u')\bar u' - f(u,\bar u')=N
+$\inf_{\substack{u(0)=h\\u(1)=0}}∫_0^1\sqrt{\frac{1+{u'}^2}{u}}\dd{x}$
 
-\inf_{\substack{u(0)=h\\u(1)=0}}∫_0^1\sqrt{\frac{1+{u'}^2}{u}}\dd{x}
-
-f(t,z)=\sqrt{\frac{1+|z|^2}t}
-
-T=∫_0^1\frac{\sqrt{1+{v'^}2}}{\sqrt{2g(h-v)}}\dd{x} problème Bernoulli en 1690 résolu par Euler en 1740 et Lagrange en 1780.
+$f(t,z)=\sqrt{\frac{1+|z|^2}t}$
+$T=∫_0^1 \frac{\sqrt{1+{v'}^2 }}{\sqrt{2g(h-v)}} \dd{x}$ problème Bernoulli en 1690 résolu par Euler en 1740 et Lagrange en 1780.
 
 % section exercice_1 (end)
 
@@ -1239,156 +1236,156 @@ T=∫_0^1\frac{\sqrt{1+{v'^}2}}{\sqrt{2g(h-v)}}\dd{x} problème Bernoulli en 169
 
 \begin{exercise}
 	\begin{enumerate}[(i)]
-		\item montrer que \overline{\epi f}=\epi(\bar f)
-		\item \bar f(x)=\lim_{r\to 0_+}\inf_{B(x,r)}f=\inf_{\substack{(x_n)}\\x_n\to x}\{\liminf_{n\to ∞}f(x_n)\}
+		\item montrer que $\overline{\epi f}=\epi(\bar f)$
+		\item $\bar f(x)=\lim_{r\to 0_+}\inf_{B(x,r)}f=\inf_{\substack{(x_n)}\\x_n\to x}\{\liminf_{n\to ∞}f(x_n)\}$
 	\end{enumerate}
 \end{exercise}
 
-Etape 1: \exists \tilde f:X\rightarrow ]-∞,+∞] | \overline{\epi f}=\epi\tilde f (\tilde f est donc s.c.i.)
+Etape 1: $\exists \tilde f:X\rightarrow ]-∞,+∞] | \overline{\epi f}=\epi\tilde f$ ($\tilde f$ est donc s.c.i.)
 
-Etape 2: \tilde f≤f et g s.c.i. ≤f $\implies$ g≤\tilde f $\implies$ \tilde f=\bar f.
+Etape 2: $\tilde f≤f$ et $g$ s.c.i. $≤f$ $\implies$ $g≤\tilde f$ $\implies$ $\tilde f=\bar f$.
 
-A\supset X\times\R
+$A\supset X\times\R$
 \begin{enumerate}
-	\item (x,α)\in A $\implies$ (x,β)\in A\ \forall β≥α
-	\item \exists \tilde f:X\rightarrow ]-∞,+∞] | A=\epi\tilde f.
+	\item $(x,α)\in A$ $\implies$ $(x,β)\in A\ \forall β≥α$
+	\item $\exists \tilde f:X\rightarrow ]-∞,+∞] | A=\epi\tilde f$.
 \end{enumerate}
 
 (1) $\iff$ (2)
 
-x\in X I(x)=\{α\in \R\ |\ (x,α)\in A\}. D'après (1). α\in I(x) $\implies$ β\in I(x) \forall β≥α. Posons \tilde f(x)=\inf\{I(x)\}. On a donc I(x)=\left\{\mqty{[f(x),+∞]\\\R\text{ si }\tilde f(x)=-∞\right.
+$x\in X I(x)=\{α\in \R\ |\ (x,α)\in A\}$. D'après (1). $α\in I(x)$ $\implies$ $β\in I(x) \forall β≥α$. Posons $\tilde f(x)=\inf\{I(x)\}$. On a donc $I(x)=\left\{\mqty{[f(x),+∞]\\ \R\text{ si }\tilde f(x)=-∞}\right.$
 
-\epi \tilde f=\{(x,α)\ |\ \tilde f(x)≤α\}
+$\epi \tilde f=\{(x,α)\ |\ \tilde f(x)≤α\}$
 
 \paragraph{etape 1} % (fold)
 \label{par:etape_1}
-\exists \tilde f: X\rightarrow ]-∞,+∞]\ |\ \overline{\epi f}=\epi \tilde f (\tilde f est donc s.c.i.) A=\overline{\epi f} est un fermé de X\times\R. Soit (x,α)\in A et β>α. Alors \exists (x_n,α_n)\in\epif\ |\ x_n\to et α_n\toα
-f(x_n)≤α_n\ \forall n $\implies$ f(x_n)≤β pour n grand $\implies$ (χ_n,β)\in \epi f$\implies$ (x,β)\in\overline{\epi f}
-donc (x,β)\in A\ \forall β≥α.
+$\exists \tilde f$: $X\rightarrow ]-∞,+∞]\ |\ \overline{\epi f}=\epi \tilde f$ ($\tilde f$ est donc s.c.i.) $A=\overline{\epi f}$ est un fermé de $X\times\R$. Soit $(x,α)\in A$ et $β>α$. Alors $\exists (x_n,α_n)\in\epi f\ |\ x_n\to et α_n\toα$
+$f(x_n)≤α_n\ \forall n$ $\implies$ $f(x_n)≤β$ pour $n$ grand $\implies$ $(χ_n,β)\in \epi f$ $\implies$ $(x,β)\in\overline{\epi f}$
+donc $(x,β)\in A\ \forall β≥α$.
 
-Alors A=\epi\tilde f
-où \tilde f(x)=\inf\{α\ |\ (x,α)\in\overline{\epi f}
+Alors $A=\epi\tilde f$
+où $\tilde f(x)=\inf\{α\ |\ (x,α)\in\overline{\epi f}$
 
-Conclusion: \overline{\epi f}=\epi \tilde f et \tilde f est s.c.i.
+Conclusion: $\overline{\epi f}=\epi \tilde f$ et $\tilde f$ est s.c.i.
 
-De plus \epi f\subset\overline{\epi{f}}=\epi\tilde f $\implies$ \tilde f≤f.
+De plus $\epi f\subset\overline{\epi{f}}=\epi\tilde f$ $\implies$ $\tilde f≤f$.
 
-Soit g s.c.i. ≤f. alors \epi g\supset \epi f.
+Soit $g$ s.c.i. $≤f$. alors $\epi g\supset \epi f$.
 
-\left\{\mqty{\epi g\text{ fermé}\\\epi g\supset \epi f}\right. $\implies$ \epi g\supset\overline{\epi f}=\epi(\tilde f) $\implies$ f≤\tilde f.
+$\left\{\mqty{\epi g\text{ fermé}\\\epi g\supset \epi f}\right.$ $\implies$ $\epi g\supset\overline{\epi f}=\epi(\tilde f)$ $\implies$ $f≤\tilde f$.
 
 Donc on a bien
-\tilde f(x)=\sup\{g(x)\ |\ g s.c.i. ≤f\}\overset{\text{def}}{=} \bar f(x).
+$\tilde f(x)=\sup\{g(x)\ |\ g s.c.i. ≤f\}\overset{\text{def}}{=} \bar f(x)$.
 QED i)
 
-Preuve de ii). Posons h(x)=\lim_{r\to 0^+}\inf_{B(x,r)} f=\sup_{r>0}\inf_{B(x,r)}f.
+Preuve de ii). Posons $h(x)=\lim_{r\to 0^+}\inf_{B(x,r)} f=\sup_{r>0}\inf_{B(x,r)}f$.
 
-Alors h(x)≤f(x)\ \forall x (car \inf_{B(x,r)}f≤f(x)\ \forall r>0)
+Alors $h(x)≤f(x)\ \forall x (car \inf_{B(x,r)}f≤f(x)\ \forall r>0)$
 
-Posons h_n(x)=\inf_{B(x,\frac1n)}f. Alors h(x)=\lim_{n\to ∞}h_n(x)=\sup_{n}h_n(x)
+Posons $h_n(x)=\inf_{B(x,\frac1n)}f. Alors h(x)=\lim_{n\to ∞}h_n(x)=\sup_{n}h_n(x)$
 
-\inf\{f(y),\ \norm{y-x}<\frac 1n\}=h(x)≤α
-h_n(x)≤α, \forall n.
+$\inf\{f(y),\ \norm{y-x}<\frac 1n\}=h(x)≤α$
+$h_n(x)≤α$, $\forall n$.
 
-\forall n\exists x_n\ |\ \norm{x_n-x}≤\frac 1n, f(x_n)≤α $\implies$ (x_n,α)\in\epi f\ \forall n $\implies$ (x,α)\in\overline{\epi f}.
+$\forall n\exists x_n\ |\ \norm{x_n-x}≤\frac 1n, f(x_n)≤α$ $\implies$ $(x_n,α)\in\epi f\ \forall n$ $\implies$ $(x,α)\in\overline{\epi f}$.
 
-Donc \epi h\subset\overset{\epi f}=\epi\tilde f $\implies$ h≥\tilde f
+Donc $\epi h\subset\overset{\epi f}=\epi\tilde f$ $\implies$ $h≥\tilde f$
 
-(x,α)\in\epi\bar f $\implies$ (x,α)\in\overbrace{\epi f} $\implies$ \exists (x_n,α_n)\ |\ f(x_n)≤α_n ex x_n\to x, α_n\to α.
+$(x,α)\in\epi\bar f$ $\implies$ $(x,α)\in\overbrace{\epi f}$ $\implies$ $\exists (x_n,α_n)\ |\ f(x_n)≤α_n$ ex $x_n\to x$, $α_n\to α$.
 
-On a \forall r>0 \inf_{B(x,r)}f≤α. En effet x_n\to x $\implies$ \exists N | x_n\in B(x,r)\ \forall n≥N $\implies$ f(x_n)≥\inf_{B(x,r)}f, \forall n≥N $\implies$ α_n≥\norm{•} \forall n≥N.
+On a $\forall r>0$ $\inf_{B(x,r)}f≤α$. En effet $x_n\to x$ $\implies$ $\exists N | x_n\in B(x,r)\ \forall n≥N$ $\implies$ $f(x_n)≥\inf_{B(x,r)}f$, $\forall n≥N$ $\implies$ $α_n≥\norm{•} \forall n≥N$.
 
-Donc h(x)≤α i.e. \overline{(x,α)}\in\epi h.
+Donc $h(x)≤α$ i.e. $\overline{(x,α)}\in\epi h$.
 
-Conclusion \epi\bar f\subset \epi h\subset \epi\bar f $\implies$ h=\bar f.
+Conclusion $\epi\bar f\subset \epi h\subset \epi\bar f$ $\implies$ $h=\bar f$.
 % paragraph etape_1 (end)
 
 % section exercice (end)
 \section{exercice 2} % (fold)
 \label{sec:exercise}
-j_C(x)=\inf\{t>0\ |\ \frac xt\in C\}
-A ouvert non vide (0\in A) p(x)=j_A(x) sous additive 1 homogène.
-x_0≠0
-V=\{tx_0,t\in \R\} f(tx_0)=t
+$j_C(x)=\inf\{t>0\ |\ \frac xt\in C\}$
+$A$ ouvert non vide $(0\in A)$ $p(x)=j_A(x)$ sous additive 1 homogène.
+$x_0≠0$
+$V=\{tx_0,t\in \R\} f(tx_0)=t$
 
-f≤p sur V ?
-f(tx_0)≤p(tx_0) car t≤j_A(tx_0) t≤0 ok
+$f≤p$ sur $V$ ?
+$f(tx_0)≤p(tx_0)$ car $t≤j_A(tx_0)$ $t≤0$ ok
 
-\forall t>0 j_A(tx_0)=tj_A(tx_0)>t
-car j_A(x_0)>1
+$\forall t>0 j_A(tx_0)=tj_A(tx_0)>t$
+car $j_A(x_0)>1$
 D'après HB
-\exists \tilde f:X\rightarrow \R lineaire telle que \tilde f=f sur V
-\tilde f(x)≤p(x)\ \forall x\in E.
+$\exists \tilde f:X\rightarrow \R$ lineaire telle que $\tilde f=f$ sur $V$
+$\tilde f(x)≤p(x)\ \forall x\in E$.
 
-Puisque 0\in A ouvert, \exists M>0 | j_A(x)≤M\norm{x} $\implies$ \tilde f(x)≤M\norm{x} $\implies$ \tilde f\in X^*.
+Puisque $0\in A$ ouvert, $\exists M>0 | j_A(x)≤M\norm{x}$ $\implies$ $\tilde f(x)≤M\norm{x}$ $\implies$ $\tilde f\in X^*$.
 
-\tilde f≤j_A sur X $\implies$ 
+$\tilde f≤j_A$ sur $X$ $\implies$ 
 
-f(x)<1 \forall x\in A
+$f(x)<1$ $\forall x\in A$
 
-A\in\{\tilde f≤1\} \R espace affine fermé. H=\{\tilde f=1\} hyperplan affine
-x_0≠0
-V=\{tx_0, t\in\R\}
-f(tx_0)=t. Donc f≤p sur V.
+$A\in\{\tilde f≤1\}$ $\R$ espace affine fermé. $H=\{\tilde f=1\}$ hyperplan affine
+$x_0≠0$
+$V=\{tx_0, t\in\R\}$
+$f(tx_0)=t$. Donc $f≤p$ sur $V$.
 
-A ouvert convexe B convexe. A\cap B≠ø.
+$A$ ouvert convexe $B$ convexe. $A\cap B≠ø$.
 
-Posons C=A-B=\{a-b\ |\ (a,b)\in A\times B\}
+Posons $C=A-B=\{a-b\ |\ (a,b)\in A\times B\}$
 
-A\cup B=ø $\iff$ 0\not\in C.
-A,B convexes $\implies$ C est convexe 
-A ouvert $\implies$ C ouvert, car C=\cup_{b\in B}(A-\{b\})
+$A\cup B=ø$ $\iff$ $0\not\in C$.
+$A,B$ convexes $\implies$ $C$ est convexe 
+$A$ ouvert $\implies$ $C$ ouvert, car $C=\cup_{b\in B}(A-\{b\})$
 
-D'après 2) applique à C et à x_0=0. \exists f\in X^* tel que
-\sup_C f≤f(0)=0
+D'après 2) applique à $C$ et à $x_0=0$. $\exists f\in X^*$ tel que
+$\sup_C f≤f(0)=0$
 
-Or \sup_Cf=\sup\{f(a-b)\ |\ (a,b)\in A\times B\}
-C=\sup\{f(a)-f(b)\ |\ a\in A, b\in B\}=\sup_A f + \sup_B(-f) =\sup_{A}f-\inf_{B}f.
+Or $\sup_Cf=\sup\{f(a-b)\ |\ (a,b)\in A\times B\}$
+$C=\sup\{f(a)-f(b)\ |\ a\in A, b\in B\}=\sup_A f + \sup_B(-f) =\sup_{A}f-\inf_{B}f$.
 
-F fermé, K compact F\cap K=ø.
-\exists ε>0 tel que F_ε\cap K_ε=ø.
+$F$ fermé, $K$ compact $F\cap K=ø$.
+$\exists ε>0 $tel que $F_ε\cap K_ε=ø$.
 
-\exists ε>0 tel que F_ε\cap K_ε=ø
-οù F_ε=\{x\in X\ |\ d(x,F)<ε\} et K_ε=\{x\in X\ |\ d(x,K)<ε\} 
+$\exists ε>0$ tel que $F_ε\cap K_ε=ø$
+οù $F_ε=\{x\in X\ |\ d(x,F)<ε\}$ et $K_ε=\{x\in X\ |\ d(x,K)<ε\} $
 
-F_ε et K_ε sont des ouverts car d(•,F) et d(•, K) sont continue.
+$F_ε$ et $K_ε$ sont des ouverts car $d(•,F)$ et $d(•, K)$ sont continue.
 
-β=\inf_{\substack{y\in K\\z\in F}}\norm{y-z}>2ε $\implies$ K_ε\cap F_ε=ø.
+$β=\inf_{\substack{y\in K\\z\in F}}\norm{y-z}>2ε$ $\implies$ $K_ε\cap F_ε=ø$.
 
-x\in F_ε\cap K_ε: d(x,F)<ε $\implies$ \exists y\in F\ \norm{x-y}<ε et d(x,K)<ε $\implies$ \exists y\in K\ \norm{x-y}<ε
+$x\in F_ε\cap K_ε: d(x,F)<ε$ $\implies$ $\exists y\in F\ \norm{x-y}<ε et d(x,K)<ε$ $\implies$ $\exists y\in K\ \norm{x-y}<ε$
 
-$\implies$ \norm{y-z}<2ε.
+$\implies$ $\norm{y-z}<2ε$.
 
-A\cap B=ø $\iff$ 0\not\in C. A,B convexes $\implies$ C est convexe. A ouvert $\implies$ C ouvert car C=\cup_{b\in B}(A-\{b\})
+$A\cap B=ø$ $\iff$ $0\not\in C$. $A,B$ convexes $\implies$ $C$ est convexe. $A$ ouvert $\implies$ $C$ ouvert car $C=\cup_{b\in B}(A-\{b\})$
 
-Supposons β=0. Alors \exists (y_n,z_n)\in K\times F. Tel que \norm{y_n-z_n}\to 0. 
+Supposons $β=0$. Alors $\exists (y_n,z_n)\in K\times F$. Tel que $\norm{y_n-z_n}\to 0$. 
 
-K compact $\implies$ \exists \bar y\in K \exists n_k | y_{n_k}\to \bar y $\implies$ z_{n_k}\to \bar y
+$K$ compact $\implies$ $\exists \bar y\in K \exists n_k | y_{n_k}\to \bar y$ $\implies$ $z_{n_k}\to \bar y$
 
-F fermé z_{n_k}\in F $\implies$ \bar y\in f impossible ε<\frac β2 $\implies$ K_ε\cap F_ε=ø.
+$F$ fermé $z_{n_k}\in F$ $\implies$ $\bar y\in f$ impossible $ε<\frac β2$ $\implies$ $K_ε\cap F_ε=ø$.
 
-Donc \exists f\in X^* tel que \sup_{K_ε}≤\inf_{F_ε}f.
+Donc $\exists f\in X^*$ tel que $\sup_{K_ε}≤\inf_{F_ε}f$.
 
-K_ε=\{x+εz\ |\ x\in K_ε, \norm{z}≤1\}
-F_ε=\{x+εz'\ |\ x\in F_ε, \norm{z'}≤1\}
+$K_ε=\{x+εz\ |\ x\in K_ε, \norm{z}≤1\}$
+$F_ε=\{x+εz'\ |\ x\in F_ε, \norm{z'}≤1\}$
 
-\sup_K f=\sup_{x\in K}\{f(x)-εf(z)\}≤\sup_K f+ε\norm{f}_{X^*}
+$\sup_K f=\sup_{x\in K}\{f(x)-εf(z)\}≤\sup_K f+ε\norm{f}_{X^*}$
 
-\norm{z}<1 
+$\norm{z}<1$ 
 
-|\sup_{K_ε}f-\sup_Kf|≤ε\norm{f}_{X^*}
-|\sup_{F_ε}f-\sup_Ff|≤ε\norm{f}_{X^*}
+$|\sup_{K_ε}f-\sup_Kf|≤ε\norm{f}_{X^*}$
+$|\sup_{F_ε}f-\sup_Ff|≤ε\norm{f}_{X^*}$
 
-\exists α\in\R f(x)+εf(z)≤α≤f(y)+εf(z')
-\forall x\in K\ \forall y\in F
-\forall \norm{z}≤1, \forall \norm{z'}≤1
+$\exists α\in\R f(x)+εf(z)≤α≤f(y)+εf(z')$
+$\forall x\in K\ \forall y\in F$
+$\forall \norm{z}≤1, \forall \norm{z'}≤1$
 
-$\implies$ \forall x\in K f(x)≤α-ε\norm{f}
-\forall y\in F f(y)≥α+ε\norm{f}
-$\implies$\sup_K ≤α-ε\norm{f}≤α+ε\norm{f}≤\inf_F f
-$\implies$ \sup_K f<α<\inf_F f
+$\implies$ $\forall x\in K f(x)≤α-ε\norm{f}$
+$\forall y\in F f(y)≥α+ε\norm{f}$
+$\implies$ $\sup_K ≤α-ε\norm{f}≤α+ε\norm{f}≤\inf_F f$
+$\implies$ $\sup_K f<α<\inf_F f$
 
-\fi
+%\fi
 
 % section exercise (end)
 % chapter exercices (end)
